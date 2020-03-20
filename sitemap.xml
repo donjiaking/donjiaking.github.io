@@ -2,13 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://don.easiestsoft.com/ubuntu/test/</loc>
-    
-    <lastmod>2020-03-20T01:16:08.471Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://don.easiestsoft.com/vscode-latex/</loc>
     
     <lastmod>2020-03-07T08:30:42.296Z</lastmod>
@@ -37,9 +30,9 @@
   </url>
   
   <url>
-    <loc>http://don.easiestsoft.com/numpy-image/</loc>
+    <loc>http://don.easiestsoft.com/python/numpy-image/</loc>
     
-    <lastmod>2020-02-23T02:01:04.706Z</lastmod>
+    <lastmod>2020-02-23T02:01:04.000Z</lastmod>
     
   </url>
   

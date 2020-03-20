@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://don.easiestsoft.com/ubuntu/test/</loc>
-    <lastmod>2020-03-20</lastmod>
-  </url>  <url>
     <loc>http://don.easiestsoft.com/vscode-latex/</loc>
     <lastmod>2020-03-07</lastmod>
   </url>  <url>
@@ -13,7 +10,7 @@
     <loc>http://don.easiestsoft.com/jupyter-notebook-convert/</loc>
     <lastmod>2020-02-23</lastmod>
   </url>  <url>
-    <loc>http://don.easiestsoft.com/numpy-image/</loc>
+    <loc>http://don.easiestsoft.com/python/numpy-image/</loc>
     <lastmod>2020-02-23</lastmod>
   </url>  <url>
     <loc>http://don.easiestsoft.com/pandas-access-create-series-dataframes-01/</loc>

@@ -49,25 +49,25 @@
   <meta name="description" content="An example on Simple Image Data Analysis Using Numpy">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Simple Image Data Analysis Using Numpy">
-<meta property="og:url" content="http://don.easiestsoft.com/numpy-image/index.html">
+<meta property="og:url" content="http://don.easiestsoft.com/python/numpy-image/index.html">
 <meta property="og:site_name" content="Codem">
 <meta property="og:description" content="An example on Simple Image Data Analysis Using Numpy">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://don.easiestsoft.com/numpy-image/numpy_image_7_2.png">
-<meta property="og:image" content="http://don.easiestsoft.com/numpy-image/numpy_image_9_2.png">
-<meta property="og:image" content="http://don.easiestsoft.com/numpy-image/numpy_image_11_1.png">
-<meta property="og:image" content="http://don.easiestsoft.com/numpy-image/numpy_image_14_2.png">
-<meta property="og:image" content="http://don.easiestsoft.com/numpy-image/numpy_image_16_1.png">
+<meta property="og:image" content="http://don.easiestsoft.com/python/numpy-image/numpy_image_7_2.png">
+<meta property="og:image" content="http://don.easiestsoft.com/python/numpy-image/numpy_image_9_2.png">
+<meta property="og:image" content="http://don.easiestsoft.com/python/numpy-image/numpy_image_11_1.png">
+<meta property="og:image" content="http://don.easiestsoft.com/python/numpy-image/numpy_image_14_2.png">
+<meta property="og:image" content="http://don.easiestsoft.com/python/numpy-image/numpy_image_16_1.png">
 <meta property="article:published_time" content="2020-01-30T09:25:57.000Z">
-<meta property="article:modified_time" content="2020-02-23T02:01:04.706Z">
+<meta property="article:modified_time" content="2020-02-23T02:01:04.000Z">
 <meta property="article:author" content="Jayden">
 <meta property="article:tag" content="numpy">
 <meta property="article:tag" content="image data analysis">
 <meta property="article:tag" content="matplotlib">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://don.easiestsoft.com/numpy-image/numpy_image_7_2.png">
+<meta name="twitter:image" content="http://don.easiestsoft.com/python/numpy-image/numpy_image_7_2.png">
 
-<link rel="canonical" href="http://don.easiestsoft.com/numpy-image/">
+<link rel="canonical" href="http://don.easiestsoft.com/python/numpy-image/">
 
 
 <script id="page-configurations">
@@ -195,7 +195,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
-    <link itemprop="mainEntityOfPage" href="http://don.easiestsoft.com/numpy-image/">
+    <link itemprop="mainEntityOfPage" href="http://don.easiestsoft.com/python/numpy-image/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -255,8 +255,8 @@
       </span>
       <span class="post-meta-item-text">Valine: </span>
     
-    <a title="valine" href="/numpy-image/#comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/numpy-image/" itemprop="commentCount"></span>
+    <a title="valine" href="/python/numpy-image/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/python/numpy-image/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -292,7 +292,7 @@
   [ 1  8 52]]]
 428637
 71.33186122523254
-0 255</code></pre><p><img src="/numpy-image/numpy_image_7_2.png" alt="png"></p>
+0 255</code></pre><p><img src="/python/numpy-image/numpy_image_7_2.png" alt="png"></p>
 <p>From <code>photo_data.shape</code> we can see actually we can treat it as a rank 3 ndarray (or call it a three layered matrix). The first two numbers here are length and width, and the third number (i.e. 3) is for three layers: Red, Green and Blue. We can use the first 2 dimensions to locate pixels and use the last dimension to access its color value, which is a rank 1 ndarray. </p>
 <h2 id="Now-we-can-try-to-change-the-pixels-Assume-we-want-to-change-the-pixels-with-low-color-values"><a href="#Now-we-can-try-to-change-the-pixels-Assume-we-want-to-change-the-pixels-with-low-color-values" class="headerlink" title="Now we can try to change the pixels. Assume we want to change the pixels with low color values:"></a><strong>Now we can try to change the pixels. Assume we want to change the pixels with low color values:</strong></h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># set a filter, it's an ndarray with the same size as photo_data, but it only consists of boolean values</span></span><br><span class="line"><span class="comment"># note that we can use np.logical_and() to combine two conditions: filter = np.logical_and(a&gt;10,a&lt;100)</span></span><br><span class="line">low_value_filter = photo_data &lt; <span class="number">100</span></span><br><span class="line">print(low_value_filter)</span><br><span class="line"><span class="comment"># set all pixels with low color values (lower than 100) to 0, for example, [50,200,255] -&gt;[0,200,255]</span></span><br><span class="line">photo_data[low_value_filter] = <span class="number">0</span></span><br><span class="line">plt.figure(figsize=(<span class="number">5</span>,<span class="number">5</span>))</span><br><span class="line">plt.imshow(photo_data)</span><br></pre></td></tr></table></figure>
 
@@ -302,19 +302,19 @@
   ...
   [ True  True  True]
   [ True  True  True]
-  [ True  True  True]]]</code></pre><p><img src="/numpy-image/numpy_image_9_2.png" alt="png"></p>
+  [ True  True  True]]]</code></pre><p><img src="/python/numpy-image/numpy_image_9_2.png" alt="png"></p>
 <p>It became darker, meanwhile it also became more contrast. </p>
 <h2 id="we-can-also-use-slicing-to-change-colors-in-a-range-instead-of-using-boolean-method"><a href="#we-can-also-use-slicing-to-change-colors-in-a-range-instead-of-using-boolean-method" class="headerlink" title="we can also use slicing to change colors in a range, instead of using boolean method:"></a><strong>we can also use slicing to change colors in a range, instead of using boolean method:</strong></h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">photo_data[<span class="number">0</span>:<span class="number">20</span>, : , :] = [<span class="number">255</span>,<span class="number">0</span>,<span class="number">0</span>]</span><br><span class="line">photo_data[:, <span class="number">0</span>:<span class="number">20</span> , :] = [<span class="number">255</span>,<span class="number">0</span>,<span class="number">0</span>]</span><br><span class="line">photo_data[<span class="number">321</span>:<span class="number">341</span>,: , :] = [<span class="number">255</span>,<span class="number">0</span>,<span class="number">0</span>]</span><br><span class="line">photo_data[:, <span class="number">400</span>:<span class="number">420</span> , :] = [<span class="number">255</span>,<span class="number">0</span>,<span class="number">0</span>]</span><br><span class="line">plt.figure(figsize=(<span class="number">5</span>,<span class="number">5</span>))</span><br><span class="line">plt.imshow(photo_data)</span><br></pre></td></tr></table></figure>
 
-<p><img src="/numpy-image/numpy_image_11_1.png" alt="png"></p>
+<p><img src="/python/numpy-image/numpy_image_11_1.png" alt="png"></p>
 <h2 id="In-some-cases-we-may-want-to-mask-images"><a href="#In-some-cases-we-may-want-to-mask-images" class="headerlink" title="In some cases, we may want to mask images:"></a><strong>In some cases, we may want to mask images:</strong></h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">total_rows, total_cols, total_layers = photo_data.shape</span><br><span class="line"><span class="comment"># use no.ogid() to generate 2 ndarrays, the first one is a column vector, the second one is a row vector</span></span><br><span class="line">X, Y = np.ogrid[:total_rows, :total_cols]</span><br><span class="line">print(X.shape, Y.shape)</span><br></pre></td></tr></table></figure>
 
 <pre><code>(341, 1) (1, 419)</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">center_row, center_col = total_rows / <span class="number">2</span>, total_cols / <span class="number">2</span></span><br><span class="line"><span class="comment"># dist_from_center is a 2D ndarray that contains the distance from any pixel to the center pixel</span></span><br><span class="line">dist_from_center = (X - center_row)**<span class="number">2</span> + (Y - center_col)**<span class="number">2</span></span><br><span class="line">print(dist_from_center.shape)</span><br><span class="line"><span class="comment"># create a circle with r = 20</span></span><br><span class="line">radius = <span class="number">20</span>**<span class="number">2</span></span><br><span class="line">circular_mask = (dist_from_center &gt; radius)</span><br><span class="line">photo_data[circular_mask] = <span class="number">0</span></span><br><span class="line">plt.figure(figsize=(<span class="number">5</span>,<span class="number">5</span>))</span><br><span class="line">plt.imshow(photo_data)</span><br></pre></td></tr></table></figure>
 
-<pre><code>(341, 419)</code></pre><p><img src="/numpy-image/numpy_image_14_2.png" alt="png"></p>
+<pre><code>(341, 419)</code></pre><p><img src="/python/numpy-image/numpy_image_14_2.png" alt="png"></p>
 <h2 id="We-may-also-want-to-mask-some-particular-colors-instead-of-geographical-areas"><a href="#We-may-also-want-to-mask-some-particular-colors-instead-of-geographical-areas" class="headerlink" title="We may also want to mask some particular colors, instead of geographical areas:"></a><strong>We may also want to mask some particular colors, instead of geographical areas:</strong></h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">photo_data = imageio.imread(<span class="string">'./firefox.png'</span>)</span><br><span class="line"><span class="comment"># Let's mask blue. </span></span><br><span class="line">blue_mask  = photo_data[:, : ,<span class="number">2</span>] &gt; <span class="number">150</span></span><br><span class="line">photo_data[blue_mask] = <span class="number">0</span></span><br><span class="line">plt.figure(figsize=(<span class="number">5</span>,<span class="number">5</span>))</span><br><span class="line">plt.imshow(photo_data)</span><br></pre></td></tr></table></figure>
 
-<p><img src="/numpy-image/numpy_image_16_1.png" alt="png"></p>
+<p><img src="/python/numpy-image/numpy_image_16_1.png" alt="png"></p>
 <p>And…blue truned black, as expected.</p>
 <h2 id="Applications"><a href="#Applications" class="headerlink" title="Applications?"></a>Applications?</h2><p>Above are just some basic operations using numpy to analyse images. In reality, like satellite image analysis, which can help detect wildfire or track burnt areas, is far much more complicated. </p>
 <p><em>( PS: This notebook is basically my learning note in UCSanDiegoX course: <span class="exturl" data-url="aHR0cHM6Ly9jb3Vyc2VzLmVkeC5vcmcvY291cnNlcy9jb3Vyc2UtdjE6VUNTYW5EaWVnb1grRFNFMjAweCszVDIwMTlhL2NvdXJzZS8=" title="https://courses.edx.org/courses/course-v1:UCSanDiegoX+DSE200x+3T2019a/course/">Python for Data Science<i class="fa fa-external-link"></i></span> )</em></p>
@@ -417,7 +417,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-count">12</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
