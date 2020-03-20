@@ -1,40 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://don.easiestsoft.com/vscode-latex/</loc>
+    <loc>http://don.easiestsoft.com/latex/vscode-latex/</loc>
     <lastmod>2020-03-07</lastmod>
   </url>  <url>
-    <loc>http://don.easiestsoft.com/latex-chinese/</loc>
+    <loc>http://don.easiestsoft.com/latex/latex-chinese/</loc>
     <lastmod>2020-03-07</lastmod>
   </url>  <url>
-    <loc>http://don.easiestsoft.com/jupyter-notebook-convert/</loc>
+    <loc>http://don.easiestsoft.com/python/jupyter-notebook-convert/</loc>
     <lastmod>2020-02-23</lastmod>
   </url>  <url>
     <loc>http://don.easiestsoft.com/python/numpy-image/</loc>
     <lastmod>2020-02-23</lastmod>
   </url>  <url>
-    <loc>http://don.easiestsoft.com/pandas-access-create-series-dataframes-01/</loc>
+    <loc>http://don.easiestsoft.com/python/pandas-access-create-series-dataframes-01/</loc>
     <lastmod>2020-02-23</lastmod>
   </url>  <url>
-    <loc>http://don.easiestsoft.com/pandas-data-cleaning-02/</loc>
+    <loc>http://don.easiestsoft.com/python/pandas-data-cleaning-02/</loc>
     <lastmod>2020-02-23</lastmod>
   </url>  <url>
-    <loc>http://don.easiestsoft.com/pandas-groupby-03/</loc>
+    <loc>http://don.easiestsoft.com/python/pandas-groupby-03/</loc>
     <lastmod>2020-02-23</lastmod>
   </url>  <url>
-    <loc>http://don.easiestsoft.com/pandas-visualization-04/</loc>
+    <loc>http://don.easiestsoft.com/python/pandas-visualization-04/</loc>
     <lastmod>2020-02-23</lastmod>
   </url>  <url>
-    <loc>http://don.easiestsoft.com/random-walk/</loc>
+    <loc>http://don.easiestsoft.com/python/random-walk/</loc>
     <lastmod>2020-02-23</lastmod>
   </url>  <url>
-    <loc>http://don.easiestsoft.com/ubuntu-tips/</loc>
+    <loc>http://don.easiestsoft.com/ubuntu/ubuntu-tips/</loc>
     <lastmod>2020-02-23</lastmod>
   </url>  <url>
-    <loc>http://don.easiestsoft.com/ubuntu-vpn-l2tp/</loc>
+    <loc>http://don.easiestsoft.com/ubuntu/ubuntu-vpn-l2tp/</loc>
     <lastmod>2020-02-23</lastmod>
   </url>  <url>
-    <loc>http://don.easiestsoft.com/pandas-seaborn-05/</loc>
+    <loc>http://don.easiestsoft.com/python/pandas-seaborn-05/</loc>
     <lastmod>2020-02-20</lastmod>
   </url>
 </urlset>

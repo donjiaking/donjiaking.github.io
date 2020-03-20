@@ -46,23 +46,22 @@
   };
 </script>
 
-  <meta name="description" content="Introduce how to use LaTeX in the most powerful editor -- Vscode">
+  <meta name="description" content="Introduce syntax on creaing and accessing series and dataframe in pandas library">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LaTeX Workshop:Use LaTeX in Vscode">
-<meta property="og:url" content="http://don.easiestsoft.com/vscode-latex/index.html">
+<meta property="og:title" content="Pandas:Create and Access Series and DataFrame">
+<meta property="og:url" content="http://don.easiestsoft.com/python/pandas-access-create-series-dataframes-01/index.html">
 <meta property="og:site_name" content="Codem">
-<meta property="og:description" content="Introduce how to use LaTeX in the most powerful editor -- Vscode">
+<meta property="og:description" content="Introduce syntax on creaing and accessing series and dataframe in pandas library">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-03-07T06:12:45.000Z">
-<meta property="article:modified_time" content="2020-03-07T08:30:42.000Z">
+<meta property="article:published_time" content="2020-02-03T13:41:26.000Z">
+<meta property="article:modified_time" content="2020-02-23T02:00:17.000Z">
 <meta property="article:author" content="Jayden">
-<meta property="article:tag" content="vscode">
-<meta property="article:tag" content="LaTeX">
-<meta property="article:tag" content="configuration">
-<meta property="article:tag" content="LaTeX Workshop">
+<meta property="article:tag" content="pandas">
+<meta property="article:tag" content="series">
+<meta property="article:tag" content="dataframe">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://don.easiestsoft.com/vscode-latex/">
+<link rel="canonical" href="http://don.easiestsoft.com/python/pandas-access-create-series-dataframes-01/">
 
 
 <script id="page-configurations">
@@ -74,7 +73,7 @@
   };
 </script>
 
-  <title>LaTeX Workshop:Use LaTeX in Vscode | Codem</title>
+  <title>Pandas:Create and Access Series and DataFrame | Codem</title>
   
 
 
@@ -190,7 +189,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
-    <link itemprop="mainEntityOfPage" href="http://don.easiestsoft.com/vscode-latex/">
+    <link itemprop="mainEntityOfPage" href="http://don.easiestsoft.com/python/pandas-access-create-series-dataframes-01/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -203,7 +202,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          LaTeX Workshop:Use LaTeX in Vscode
+          Pandas:Create and Access Series and DataFrame
         </h2>
 
         <div class="post-meta">
@@ -212,18 +211,24 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2020-03-07 14:12:45 / Modified: 16:30:42" itemprop="dateCreated datePublished" datetime="2020-03-07T14:12:45+08:00">2020-03-07</time>
+              <time title="Created: 2020-02-03 21:41:26" itemprop="dateCreated datePublished" datetime="2020-02-03T21:41:26+08:00">2020-02-03</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-02-23 10:00:17" itemprop="dateModified" datetime="2020-02-23T10:00:17+08:00">2020-02-23</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/LaTeX/" itemprop="url" rel="index">
-                    <span itemprop="name">LaTeX</span>
+                  <a href="/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
                   </a>
                 </span>
             </span>
@@ -244,13 +249,13 @@
       </span>
       <span class="post-meta-item-text">Valine: </span>
     
-    <a title="valine" href="/vscode-latex/#comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/vscode-latex/" itemprop="commentCount"></span>
+    <a title="valine" href="/python/pandas-access-create-series-dataframes-01/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/python/pandas-access-create-series-dataframes-01/" itemprop="commentCount"></span>
     </a>
   </span>
   
   
-            <div class="post-description">Introduce how to use LaTeX in the most powerful editor -- Vscode</div>
+            <div class="post-description">Introduce syntax on creaing and accessing series and dataframe in pandas library</div>
 
         </div>
       </header>
@@ -261,23 +266,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="Install-LaTeX"><a href="#Install-LaTeX" class="headerlink" title="Install LaTeX"></a>Install LaTeX</h2><ol>
-<li>Install LaTeX: <code>sudo apt install texlive-full</code></li>
-<li>Install LaTeX compile engine: <code>sudo apt install texlive-xetex</code></li>
-<li>Fonts support: <code>sudo apt install texlive-fonts-extra</code></li>
-<li>(optional)Install GUI editor: <code>sudo apt install texstudio</code></li>
-</ol>
-<h2 id="Configure-settings-in-Vscode"><a href="#Configure-settings-in-Vscode" class="headerlink" title="Configure settings in Vscode"></a>Configure settings in Vscode</h2><ol>
-<li>Install LaTeX Workshop extension</li>
-<li>Open command pallete:<code>ctrl+shift+P</code>, type <code>settings.json</code> to open settings</li>
-<li>Add the following code to <code>settings.json</code>:</li>
-</ol>
+        <h2 id="Series"><a href="#Series" class="headerlink" title="Series"></a>Series</h2><h3 id="Create-Series"><a href="#Create-Series" class="headerlink" title="Create Series"></a>Create Series</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># create Series from ndarray</span></span><br><span class="line">arr = np.array([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>])</span><br><span class="line">ser = pd.Series(arr, index=[<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># create Series from dict</span></span><br><span class="line">dic = &#123;<span class="string">'a'</span>:<span class="number">1</span>, <span class="string">'b'</span>:<span class="number">2</span>, <span class="string">'c'</span>:<span class="number">3</span>&#125;</span><br><span class="line">ser = pd.Series(dic)</span><br><span class="line"></span><br><span class="line"><span class="comment"># create Series from list</span></span><br><span class="line">lis = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">ser = pd.Series(lis, index=[<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>])</span><br></pre></td></tr></table></figure>
+
 <a id="more"></a>
 
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">"latex-workshop.latex.recipes": [    // the first recipe is the default compile tool</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="attr">"name"</span>: <span class="string">"xelatex"</span>,  <span class="comment">// you can change this to your compile tool if different </span></span><br><span class="line">        <span class="attr">"tools"</span>: [<span class="string">"xelatex"</span>]</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;                               <span class="comment">// the seconde recipe is the recipe chain compile</span></span><br><span class="line">        <span class="attr">"name"</span>: <span class="string">"xelatex-&gt;bibtex-&gt;xelatex*2"</span>,</span><br><span class="line">        <span class="attr">"tools"</span>: [</span><br><span class="line">        <span class="string">"xelatex"</span>,</span><br><span class="line">        <span class="string">"bibtex"</span>,</span><br><span class="line">        <span class="string">"xelatex"</span>,</span><br><span class="line">        <span class="string">"xelatex"</span></span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br><span class="line">],</span><br><span class="line">"latex-workshop.latex.tools":[</span><br><span class="line">    &#123;   <span class="comment">// compile tools and commands</span></span><br><span class="line">        <span class="attr">"name"</span>:<span class="string">"xelatex"</span>,</span><br><span class="line">        <span class="attr">"command"</span>: <span class="string">"xelatex"</span>,</span><br><span class="line">        <span class="attr">"args"</span>: [</span><br><span class="line">            <span class="string">"-synctex=1"</span>,</span><br><span class="line">            <span class="string">"-interaction=nonstopmode"</span>,</span><br><span class="line">            <span class="string">"-file-line-error"</span>,</span><br><span class="line">            <span class="string">"%DOCFILE%"</span></span><br><span class="line">        ]</span><br><span class="line">    &#125;, &#123;</span><br><span class="line">        "name":"bibtex",</span><br><span class="line">        "command": "bibtex",</span><br><span class="line">        "args": [</span><br><span class="line">            <span class="string">"%DOCFILE%"</span></span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br><span class="line">],</span><br><span class="line">"latex-workshop.latex.clean.fileTypes": [           // (Optional)choose which kind of files to clean</span><br><span class="line">    "*.aux",  </span><br><span class="line">    "*.log",  </span><br><span class="line">    <span class="string">"*.synctex.gz"</span>  </span><br><span class="line">  ],  </span><br><span class="line">"latex-workshop.latex.autoClean.run": "onBuilt",    // (Optional)clean auxiliary files if you want a clean working directory</span><br><span class="line">"latex-workshop.latex.autoBuild.run": "never",      // (Optional)never auto build .tex file when the file is auto-saved</span><br><span class="line">"latex-workshop.view.pdf.hand": true,               // (Optional)set default to hand mode when open pdf viewer in vscode</span><br></pre></td></tr></table></figure>
+<h3 id="Access-Data-in-Series"><a href="#Access-Data-in-Series" class="headerlink" title="Access Data in Series"></a>Access Data in Series</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># using position number</span></span><br><span class="line">s = pd.Series([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>], index=[<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>])</span><br><span class="line">s[<span class="number">0</span>]</span><br><span class="line">s[:<span class="number">3</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># using series index</span></span><br><span class="line">s[<span class="string">'a'</span>]</span><br><span class="line">s[[<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>]]</span><br></pre></td></tr></table></figure>
 
-<p>Note: The difference between <code>latex-workshop.latex.recipes</code> and <code>latex-workshop.latex.tools</code> may be confusion. Actually, <code>latex-workshop.latex.toolchains</code> is responsible for these stuff, but now it is seperated to parts. In my opinion, you can think that <code>latex-workshop.latex.recipes</code> is responsible for logical control while <code>latex-workshop.latex.tools</code> is responsible for args control. </p>
-<p>After this, it should be ok to run.</p>
+<h2 id="DataFrame"><a href="#DataFrame" class="headerlink" title="DataFrame"></a>DataFrame</h2><h3 id="Create-Dataframes"><a href="#Create-Dataframes" class="headerlink" title="Create Dataframes"></a>Create Dataframes</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># create dataframes from dict (of lists)</span></span><br><span class="line">data = &#123;<span class="string">'Name'</span>:[<span class="string">'Tom'</span>, <span class="string">'Jack'</span>, <span class="string">'Steve'</span>],<span class="string">'Age'</span>:[<span class="number">28</span>,<span class="number">34</span>,<span class="number">29</span>]&#125;</span><br><span class="line">df = pd.DataFrame(data)</span><br><span class="line"></span><br><span class="line"><span class="comment"># create dataframes from list (of dicts)</span></span><br><span class="line">data = [&#123;<span class="string">'a'</span>: <span class="number">1</span>, <span class="string">'b'</span>: <span class="number">2</span>&#125;,&#123;<span class="string">'a'</span>: <span class="number">5</span>, <span class="string">'b'</span>: <span class="number">10</span>, <span class="string">'c'</span>: <span class="number">20</span>&#125;]</span><br><span class="line">df = pd.DataFrame(data)</span><br><span class="line"></span><br><span class="line"><span class="comment"># create dataframes from dict (of series)</span></span><br><span class="line">data = &#123;<span class="string">'one'</span>:pd.Series([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>], index=[<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>], <span class="string">'two'</span>:pd.Series([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>], index=[<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>,<span class="string">'d'</span>])&#125;</span><br><span class="line">df = pd.DateFrame(data)</span><br><span class="line"></span><br><span class="line"><span class="comment"># create dataframes from files</span></span><br><span class="line">df = pd.read_csv(<span class="string">'path'</span>, sep=<span class="string">','</span>)</span><br><span class="line">df = pd.read_json(<span class="string">'path'</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="Access-select-Data-in-Dataframes"><a href="#Access-select-Data-in-Dataframes" class="headerlink" title="Access (select) Data in Dataframes"></a>Access (select) Data in Dataframes</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># access by row (return either a series or a dataframe)</span></span><br><span class="line">df.loc[<span class="string">'first_index'</span>]</span><br><span class="line">df.iloc[<span class="number">0</span>]</span><br><span class="line">df.loc[<span class="string">'first_index'</span>:<span class="string">'third_index'</span>] <span class="comment"># will contain 'first_index', 'second_index', 'third_index'</span></span><br><span class="line">df.iloc[<span class="number">1</span>:<span class="number">3</span>] <span class="comment"># will only contain index 1, 2</span></span><br><span class="line">df[<span class="number">0</span>]</span><br><span class="line">df[<span class="number">0</span>:<span class="number">3</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># access by column (return either a series or a dataframe)</span></span><br><span class="line">df[<span class="string">'column_1'</span>]</span><br><span class="line">df[[<span class="string">'column_1'</span>,<span class="string">'column_1'</span>]]</span><br><span class="line">df.column_1</span><br><span class="line"></span><br><span class="line"><span class="comment"># access both by row and by column</span></span><br><span class="line">df.loc[[<span class="string">'first_row'</span>,<span class="string">'second_row'</span>], [<span class="string">'first_column'</span>, <span class="string">'second_column'</span>]]</span><br><span class="line">df.iloc[<span class="number">0</span>:<span class="number">2</span>, <span class="number">0</span>:<span class="number">2</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># access by conditional expression</span></span><br><span class="line">movies_df[(movies_df[<span class="string">'director'</span>] == <span class="string">'Christopher Nolan'</span>) | (movies_df[<span class="string">'director'</span>] == <span class="string">'Ridley Scott'</span>)]</span><br><span class="line">movies_df[movies_df[<span class="string">'director'</span>].isin([<span class="string">'Christopher Nolan'</span>, <span class="string">'Ridley Scott'</span>])]</span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -287,8 +284,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/LaTeX/" rel="tag"># LaTeX</a>
-              <a href="/tags/vscode/" rel="tag"># vscode</a>
+              <a href="/tags/pandas/" rel="tag"># pandas</a>
           </div>
 
         
@@ -297,12 +293,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/ubuntu-vpn-l2tp/" rel="prev" title="Ubunbu下配置L2TP/Ipsec搭建vpn教程">
-      <i class="fa fa-chevron-left"></i> Ubunbu下配置L2TP/Ipsec搭建vpn教程
+    <a href="/python/numpy-image/" rel="prev" title="Simple Image Data Analysis Using Numpy">
+      <i class="fa fa-chevron-left"></i> Simple Image Data Analysis Using Numpy
     </a></div>
       <div class="post-nav-item">
-    <a href="/latex-chinese/" rel="next" title="Ubuntu下安装LaTeX中文环境配置指南">
-      Ubuntu下安装LaTeX中文环境配置指南 <i class="fa fa-chevron-right"></i>
+    <a href="/python/pandas-data-cleaning-02/" rel="next" title="Pandas:Data Cleaning(Dealing With Missing Values)">
+      Pandas:Data Cleaning(Dealing With Missing Values) <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -364,7 +360,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Install-LaTeX"><span class="nav-number">1.</span> <span class="nav-text">Install LaTeX</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Configure-settings-in-Vscode"><span class="nav-number">2.</span> <span class="nav-text">Configure settings in Vscode</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Series"><span class="nav-number">1.</span> <span class="nav-text">Series</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-Series"><span class="nav-number">1.1.</span> <span class="nav-text">Create Series</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Access-Data-in-Series"><span class="nav-number">1.2.</span> <span class="nav-text">Access Data in Series</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DataFrame"><span class="nav-number">2.</span> <span class="nav-text">DataFrame</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-Dataframes"><span class="nav-number">2.1.</span> <span class="nav-text">Create Dataframes</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Access-select-Data-in-Dataframes"><span class="nav-number">2.2.</span> <span class="nav-text">Access (select) Data in Dataframes</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
