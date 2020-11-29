@@ -48,16 +48,19 @@
 
   <meta name="description" content="Python, C++, Ubuntu...">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Codem">
+<meta property="og:title" content="Varlanar">
 <meta property="og:url" content="http://don.easiestsoft.com/page/2/index.html">
-<meta property="og:site_name" content="Codem">
+<meta property="og:site_name" content="Varlanar">
 <meta property="og:description" content="Python, C++, Ubuntu...">
 <meta property="og:locale" content="en_US">
-<meta property="article:author" content="Jayden">
+<meta property="article:author" content="J">
+<meta property="article:tag" content="computer_science">
 <meta property="article:tag" content="programming">
 <meta property="article:tag" content="code">
 <meta property="article:tag" content="python">
+<meta property="article:tag" content="c++">
 <meta property="article:tag" content="ubuntu">
+<meta property="article:tag" content="leetcode">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://don.easiestsoft.com/page/2/">
@@ -72,7 +75,7 @@
   };
 </script>
 
-  <title>Codem - Sharing some programming knowledge.</title>
+  <title>Varlanar - Share some knowledge, post study notes or talk nonsense.</title>
   
 
 
@@ -116,11 +119,11 @@
     <div>
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Codem</span>
+        <span class="site-title">Varlanar</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
-        <h1 class="site-subtitle" itemprop="description">Sharing some programming knowledge.</h1>
+        <h1 class="site-subtitle" itemprop="description">Share some knowledge, post study notes or talk nonsense.</h1>
       
   </div>
 
@@ -188,21 +191,21 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://don.easiestsoft.com/python/numpy-image/">
+    <link itemprop="mainEntityOfPage" href="http://don.easiestsoft.com/python/pandas-visualization-04/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Jayden">
+      <meta itemprop="name" content="J">
       <meta itemprop="description" content="Python, C++, Ubuntu...">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Codem">
+      <meta itemprop="name" content="Varlanar">
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/numpy-image/" class="post-title-link" itemprop="url">Simple Image Data Analysis Using Numpy</a>
+            <a href="/python/pandas-visualization-04/" class="post-title-link" itemprop="url">Pandas:Visualization Using Matplotlib and Pandas</a>
         </h2>
 
         <div class="post-meta">
@@ -212,14 +215,14 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2020-01-30 17:25:57" itemprop="dateCreated datePublished" datetime="2020-01-30T17:25:57+08:00">2020-01-30</time>
+              <time title="Created: 2020-02-19 10:06:37" itemprop="dateCreated datePublished" datetime="2020-02-19T10:06:37+08:00">2020-02-19</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-02-23 10:01:04" itemprop="dateModified" datetime="2020-02-23T10:01:04+08:00">2020-02-23</time>
+                <time title="Modified: 2020-02-23 09:57:49" itemprop="dateModified" datetime="2020-02-23T09:57:49+08:00">2020-02-23</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -242,13 +245,13 @@
       </span>
       <span class="post-meta-item-text">Valine: </span>
     
-    <a title="valine" href="/python/numpy-image/#comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/python/numpy-image/" itemprop="commentCount"></span>
+    <a title="valine" href="/python/pandas-visualization-04/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/python/pandas-visualization-04/" itemprop="commentCount"></span>
     </a>
   </span>
   
   
-            <div class="post-description">An example on Simple Image Data Analysis Using Numpy</div>
+            <div class="post-description">Visualization using matplotlib and pandas itself</div>
 
         </div>
       </header>
@@ -259,11 +262,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>As we all known, images that we saw on the screen are the combination of lots of pixels. Every pixel has its own color and was recorded in computer by a string of binary numbers. Commonly, each pixel is represented by 24 bit (3 bytes) binary numbers, and each byte represents Red, Green, Blue respectively. So the value of each color is in range 0 ~ 255. Specifically, a pixel in python can be stored as a list: [255,0,254]. But it’s more convenient and efficient to use python library <code>imageio</code>. Once we have stored it, we can start to analysis it. </p>
-<p>Here I will take Firefox icon, because it’s my most frequently used browser and I’m using it now to write this Jupyter notebook. </p>
+          <p>In Python, there are many plotting libraries like <code>matplotlib</code>, <code>pandas visualization</code>, <code>seaborn</code> or <code>plotly</code>. Among them, <code>matplotlib</code> and <code>pandas visualization</code> are bases and they are the most common way to plot basic graphs. In this article, I would like to summarise the syntax of using them and try to offer a clear explaination in a plain way.</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/python/numpy-image/#more" rel="contents">
+              <a class="btn" href="/python/pandas-visualization-04/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -287,21 +289,21 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://don.easiestsoft.com/python/random-walk/">
+    <link itemprop="mainEntityOfPage" href="http://don.easiestsoft.com/pandas-visualization-04/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Jayden">
+      <meta itemprop="name" content="J">
       <meta itemprop="description" content="Python, C++, Ubuntu...">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Codem">
+      <meta itemprop="name" content="Varlanar">
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/python/random-walk/" class="post-title-link" itemprop="url">Visualizing Random Walk In Python Using Matplotlib</a>
+            <a href="/pandas-visualization-04/" class="post-title-link" itemprop="url">Pandas:Visualization Using Matplotlib and Pandas</a>
         </h2>
 
         <div class="post-meta">
@@ -311,14 +313,14 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2020-01-29 11:33:23" itemprop="dateCreated datePublished" datetime="2020-01-29T11:33:23+08:00">2020-01-29</time>
+              <time title="Created: 2020-02-19 10:06:37" itemprop="dateCreated datePublished" datetime="2020-02-19T10:06:37+08:00">2020-02-19</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-02-23 09:56:55" itemprop="dateModified" datetime="2020-02-23T09:56:55+08:00">2020-02-23</time>
+                <time title="Modified: 2020-02-23 09:57:49" itemprop="dateModified" datetime="2020-02-23T09:57:49+08:00">2020-02-23</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -341,13 +343,13 @@
       </span>
       <span class="post-meta-item-text">Valine: </span>
     
-    <a title="valine" href="/python/random-walk/#comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/python/random-walk/" itemprop="commentCount"></span>
+    <a title="valine" href="/pandas-visualization-04/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/pandas-visualization-04/" itemprop="commentCount"></span>
     </a>
   </span>
   
   
-            <div class="post-description">Visualizing Random Walk In Python Using Matplotlib</div>
+            <div class="post-description">Visualization using matplotlib and pandas itself</div>
 
         </div>
       </header>
@@ -358,10 +360,974 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="Random-Walk"><a href="#Random-Walk" class="headerlink" title="Random Walk"></a>Random Walk</h2><p>A <code>random walk</code> is the process by which randomly-moving objects wander away from where they started. There are many kinds of Random Walk, but we only consider <code>Lattice Random Walk Problem</code> in this article, which simply assumes the object is walking on a lattice.</p>
+          <p>In Python, there are many plotting libraries like <code>matplotlib</code>, <code>pandas visualization</code>, <code>seaborn</code> or <code>plotly</code>. Among them, <code>matplotlib</code> and <code>pandas visualization</code> are bases and they are the most common way to plot basic graphs. In this article, I would like to summarise the syntax of using them and try to offer a clear explaination in a plain way.</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/python/random-walk/#more" rel="contents">
+              <a class="btn" href="/pandas-visualization-04/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://don.easiestsoft.com/python/pandas-groupby-03/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="J">
+      <meta itemprop="description" content="Python, C++, Ubuntu...">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Varlanar">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/python/pandas-groupby-03/" class="post-title-link" itemprop="url">Pandas:groupby(Grouping and Aggregating the Data)</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-02-04 13:51:22" itemprop="dateCreated datePublished" datetime="2020-02-04T13:51:22+08:00">2020-02-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-02-23 09:58:39" itemprop="dateModified" datetime="2020-02-23T09:58:39+08:00">2020-02-23</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/python/pandas-groupby-03/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/python/pandas-groupby-03/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+            <div class="post-description">Summarize the use of groupby in pandas library</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="groupby"><a href="#groupby" class="headerlink" title="groupby()"></a>groupby()</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">users = pd.read_csv(<span class="string">"https://raw.githubusercontent.com/justmarkham/DAT8/master/data/u.user"</span>, sep=<span class="string">"|"</span>, index_col=<span class="string">'user_id'</span>)</span><br><span class="line">users.head()</span><br></pre></td></tr></table></figure>
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}</code></pre><p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>age</th>
+      <th>gender</th>
+      <th>occupation</th>
+      <th>zip_code</th>
+    </tr>
+    <tr>
+      <th>user_id</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>24</td>
+      <td>M</td>
+      <td>technician</td>
+      <td>85711</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>53</td>
+      <td>F</td>
+      <td>other</td>
+      <td>94043</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>23</td>
+      <td>M</td>
+      <td>writer</td>
+      <td>32067</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>24</td>
+      <td>M</td>
+      <td>technician</td>
+      <td>43537</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>33</td>
+      <td>F</td>
+      <td>other</td>
+      <td>15213</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Use DataFrame.groupby() to return a groupby object</span></span><br><span class="line">users.groupby(<span class="string">"occupation"</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x7f68cbf2c790&gt;</code></pre>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/python/pandas-groupby-03/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://don.easiestsoft.com/pandas-groupby-03/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="J">
+      <meta itemprop="description" content="Python, C++, Ubuntu...">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Varlanar">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/pandas-groupby-03/" class="post-title-link" itemprop="url">Pandas:groupby(Grouping and Aggregating the Data)</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-02-04 13:51:22" itemprop="dateCreated datePublished" datetime="2020-02-04T13:51:22+08:00">2020-02-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-02-23 09:58:39" itemprop="dateModified" datetime="2020-02-23T09:58:39+08:00">2020-02-23</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/pandas-groupby-03/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/pandas-groupby-03/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+            <div class="post-description">Summarize the use of groupby in pandas library</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="groupby"><a href="#groupby" class="headerlink" title="groupby()"></a>groupby()</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">users = pd.read_csv(<span class="string">"https://raw.githubusercontent.com/justmarkham/DAT8/master/data/u.user"</span>, sep=<span class="string">"|"</span>, index_col=<span class="string">'user_id'</span>)</span><br><span class="line">users.head()</span><br></pre></td></tr></table></figure>
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}</code></pre><p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>age</th>
+      <th>gender</th>
+      <th>occupation</th>
+      <th>zip_code</th>
+    </tr>
+    <tr>
+      <th>user_id</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>24</td>
+      <td>M</td>
+      <td>technician</td>
+      <td>85711</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>53</td>
+      <td>F</td>
+      <td>other</td>
+      <td>94043</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>23</td>
+      <td>M</td>
+      <td>writer</td>
+      <td>32067</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>24</td>
+      <td>M</td>
+      <td>technician</td>
+      <td>43537</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>33</td>
+      <td>F</td>
+      <td>other</td>
+      <td>15213</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Use DataFrame.groupby() to return a groupby object</span></span><br><span class="line">users.groupby(<span class="string">"occupation"</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x7f68cbf2c790&gt;</code></pre>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/pandas-groupby-03/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://don.easiestsoft.com/ubuntu/ubuntu-tips/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="J">
+      <meta itemprop="description" content="Python, C++, Ubuntu...">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Varlanar">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/ubuntu/ubuntu-tips/" class="post-title-link" itemprop="url">Ubuntu (Linux) Tips on Creating a Convenient Environment</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-02-03 21:51:19" itemprop="dateCreated datePublished" datetime="2020-02-03T21:51:19+08:00">2020-02-03</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-02-23 09:56:02" itemprop="dateModified" datetime="2020-02-23T09:56:02+08:00">2020-02-23</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/ubuntu/" itemprop="url" rel="index">
+                    <span itemprop="name">ubuntu</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/ubuntu/ubuntu-tips/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/ubuntu/ubuntu-tips/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+            <div class="post-description">Introduce some Ubuntu (Linux) Tips on Creating a Convenient Environment</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="Create-a-symlink-symbolic-link-in-Ubuntu"><a href="#Create-a-symlink-symbolic-link-in-Ubuntu" class="headerlink" title="Create a symlink (symbolic link) in Ubuntu"></a>Create a symlink (symbolic link) in Ubuntu</h2><ul>
+<li>Usage (Example): <code>sudo ln -s ~/Downloads/eigen/Eigen /usr/local/include/Eigen</code></li>
+<li>After doing this, <code>/usr/local/include/Eigen</code> will link to the original folder <code>~/Downloads/eigen/Eigen</code>, so the compiler will be able to detect Eigen library. </li>
+<li>Note: <code>-s</code> means the link is permanant ( will not disappear after rebooting ); must provide full paths rather than relative paths.</li>
+</ul>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/ubuntu/ubuntu-tips/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://don.easiestsoft.com/ubuntu-tips/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="J">
+      <meta itemprop="description" content="Python, C++, Ubuntu...">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Varlanar">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/ubuntu-tips/" class="post-title-link" itemprop="url">Ubuntu (Linux) Tips on Creating a Convenient Environment</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-02-03 21:51:19" itemprop="dateCreated datePublished" datetime="2020-02-03T21:51:19+08:00">2020-02-03</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-02-23 09:56:02" itemprop="dateModified" datetime="2020-02-23T09:56:02+08:00">2020-02-23</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/ubuntu/" itemprop="url" rel="index">
+                    <span itemprop="name">ubuntu</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/ubuntu-tips/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/ubuntu-tips/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+            <div class="post-description">Introduce some Ubuntu (Linux) Tips on Creating a Convenient Environment</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="Create-a-symlink-symbolic-link-in-Ubuntu"><a href="#Create-a-symlink-symbolic-link-in-Ubuntu" class="headerlink" title="Create a symlink (symbolic link) in Ubuntu"></a>Create a symlink (symbolic link) in Ubuntu</h2><ul>
+<li>Usage (Example): <code>sudo ln -s ~/Downloads/eigen/Eigen /usr/local/include/Eigen</code></li>
+<li>After doing this, <code>/usr/local/include/Eigen</code> will link to the original folder <code>~/Downloads/eigen/Eigen</code>, so the compiler will be able to detect Eigen library. </li>
+<li>Note: <code>-s</code> means the link is permanant ( will not disappear after rebooting ); must provide full paths rather than relative paths.</li>
+</ul>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/ubuntu-tips/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://don.easiestsoft.com/python/pandas-data-cleaning-02/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="J">
+      <meta itemprop="description" content="Python, C++, Ubuntu...">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Varlanar">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/python/pandas-data-cleaning-02/" class="post-title-link" itemprop="url">Pandas:Data Cleaning(Dealing With Missing Values)</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-02-03 21:50:49" itemprop="dateCreated datePublished" datetime="2020-02-03T21:50:49+08:00">2020-02-03</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-02-23 09:59:30" itemprop="dateModified" datetime="2020-02-23T09:59:30+08:00">2020-02-23</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/python/pandas-data-cleaning-02/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/python/pandas-data-cleaning-02/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+            <div class="post-description">Introduce methods on data cleaning using pandas library</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="Check-the-Null-Data"><a href="#Check-the-Null-Data" class="headerlink" title="Check the Null Data"></a>Check the Null Data</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># check which cells in your DataFram are null (return a dataframe)</span></span><br><span class="line">df.isnull()</span><br><span class="line"></span><br><span class="line"><span class="comment"># is any column null ? (return a series)</span></span><br><span class="line">df.isnull().any()</span><br><span class="line"></span><br><span class="line"><span class="comment"># count the number of nulls in each column (return a series)</span></span><br><span class="line">df.isnull().sum()</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/python/pandas-data-cleaning-02/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://don.easiestsoft.com/pandas-data-cleaning-02/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="J">
+      <meta itemprop="description" content="Python, C++, Ubuntu...">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Varlanar">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/pandas-data-cleaning-02/" class="post-title-link" itemprop="url">Pandas:Data Cleaning(Dealing With Missing Values)</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-02-03 21:50:49" itemprop="dateCreated datePublished" datetime="2020-02-03T21:50:49+08:00">2020-02-03</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-02-23 09:59:30" itemprop="dateModified" datetime="2020-02-23T09:59:30+08:00">2020-02-23</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/pandas-data-cleaning-02/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/pandas-data-cleaning-02/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+            <div class="post-description">Introduce methods on data cleaning using pandas library</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="Check-the-Null-Data"><a href="#Check-the-Null-Data" class="headerlink" title="Check the Null Data"></a>Check the Null Data</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># check which cells in your DataFram are null (return a dataframe)</span></span><br><span class="line">df.isnull()</span><br><span class="line"></span><br><span class="line"><span class="comment"># is any column null ? (return a series)</span></span><br><span class="line">df.isnull().any()</span><br><span class="line"></span><br><span class="line"><span class="comment"># count the number of nulls in each column (return a series)</span></span><br><span class="line">df.isnull().sum()</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/pandas-data-cleaning-02/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://don.easiestsoft.com/python/pandas-access-create-series-dataframes-01/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="J">
+      <meta itemprop="description" content="Python, C++, Ubuntu...">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Varlanar">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/python/pandas-access-create-series-dataframes-01/" class="post-title-link" itemprop="url">Pandas:Create and Access Series and DataFrame</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-02-03 21:41:26" itemprop="dateCreated datePublished" datetime="2020-02-03T21:41:26+08:00">2020-02-03</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-02-23 10:00:17" itemprop="dateModified" datetime="2020-02-23T10:00:17+08:00">2020-02-23</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/python/pandas-access-create-series-dataframes-01/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/python/pandas-access-create-series-dataframes-01/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+            <div class="post-description">Introduce syntax on creaing and accessing series and dataframe in pandas library</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="Series"><a href="#Series" class="headerlink" title="Series"></a>Series</h2><h3 id="Create-Series"><a href="#Create-Series" class="headerlink" title="Create Series"></a>Create Series</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># create Series from ndarray</span></span><br><span class="line">arr = np.array([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>])</span><br><span class="line">ser = pd.Series(arr, index=[<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># create Series from dict</span></span><br><span class="line">dic = &#123;<span class="string">'a'</span>:<span class="number">1</span>, <span class="string">'b'</span>:<span class="number">2</span>, <span class="string">'c'</span>:<span class="number">3</span>&#125;</span><br><span class="line">ser = pd.Series(dic)</span><br><span class="line"></span><br><span class="line"><span class="comment"># create Series from list</span></span><br><span class="line">lis = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">ser = pd.Series(lis, index=[<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>])</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/python/pandas-access-create-series-dataframes-01/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://don.easiestsoft.com/pandas-access-create-series-dataframes-01/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="J">
+      <meta itemprop="description" content="Python, C++, Ubuntu...">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Varlanar">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/pandas-access-create-series-dataframes-01/" class="post-title-link" itemprop="url">Pandas:Create and Access Series and DataFrame</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-02-03 21:41:26" itemprop="dateCreated datePublished" datetime="2020-02-03T21:41:26+08:00">2020-02-03</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-02-23 10:00:17" itemprop="dateModified" datetime="2020-02-23T10:00:17+08:00">2020-02-23</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/pandas-access-create-series-dataframes-01/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/pandas-access-create-series-dataframes-01/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+            <div class="post-description">Introduce syntax on creaing and accessing series and dataframe in pandas library</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="Series"><a href="#Series" class="headerlink" title="Series"></a>Series</h2><h3 id="Create-Series"><a href="#Create-Series" class="headerlink" title="Create Series"></a>Create Series</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># create Series from ndarray</span></span><br><span class="line">arr = np.array([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>])</span><br><span class="line">ser = pd.Series(arr, index=[<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># create Series from dict</span></span><br><span class="line">dic = &#123;<span class="string">'a'</span>:<span class="number">1</span>, <span class="string">'b'</span>:<span class="number">2</span>, <span class="string">'c'</span>:<span class="number">3</span>&#125;</span><br><span class="line">ser = pd.Series(dic)</span><br><span class="line"></span><br><span class="line"><span class="comment"># create Series from list</span></span><br><span class="line">lis = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">ser = pd.Series(lis, index=[<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>])</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/pandas-access-create-series-dataframes-01/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -385,7 +1351,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -443,7 +1409,7 @@
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <p class="site-author-name" itemprop="name">Jayden</p>
+  <p class="site-author-name" itemprop="name">J</p>
   <div class="site-description" itemprop="description">Python, C++, Ubuntu...</div>
 </div>
 <div class="site-state-wrap motion-element">
@@ -451,7 +1417,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-count">24</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -503,7 +1469,7 @@
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">Jayden</span>
+  <span class="author" itemprop="copyrightHolder">J</span>
 </div>
   <div class="powered-by">Powered by <span class="exturl theme-link" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> v4.2.0
   </div>
