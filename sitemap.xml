@@ -2,16 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://don.easiestsoft.com/about/index.html</loc>
+    <loc>http://don.easiestsoft.com/ubuntu/ubuntu-tips/</loc>
     
-    <lastmod>2020-11-29T08:27:07.181Z</lastmod>
+    <lastmod>2020-11-29T08:36:55.160Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://don.easiestsoft.com/ubuntu/ubuntu-tips/</loc>
+    <loc>http://don.easiestsoft.com/about/index.html</loc>
     
-    <lastmod>2020-11-29T08:01:57.514Z</lastmod>
+    <lastmod>2020-11-29T08:34:57.155Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://don.easiestsoft.com/tags/index.html</loc>
+    
+    <lastmod>2020-11-29T08:34:39.155Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://don.easiestsoft.com/categories/index.html</loc>
+    
+    <lastmod>2020-11-29T08:34:07.775Z</lastmod>
     
   </url>
   
@@ -26,20 +40,6 @@
     <loc>http://don.easiestsoft.com/python/jupyter-notebook-convert/</loc>
     
     <lastmod>2020-02-23T02:01:56.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://don.easiestsoft.com/tags/index.html</loc>
-    
-    <lastmod>2020-02-05T09:05:11.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://don.easiestsoft.com/categories/index.html</loc>
-    
-    <lastmod>2020-02-05T09:05:11.000Z</lastmod>
     
   </url>
   
