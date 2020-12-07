@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://don.easiestsoft.com/algorithm/18_4Sum/</loc>
+    <lastmod>2020-12-07</lastmod>
+  </url>  <url>
+    <loc>http://don.easiestsoft.com/algorithm/36_valid_sudoku/</loc>
+    <lastmod>2020-12-07</lastmod>
+  </url>  <url>
+    <loc>http://don.easiestsoft.com/algorithm/406_queue_reconstruction/</loc>
+    <lastmod>2020-12-07</lastmod>
+  </url>  <url>
     <loc>http://don.easiestsoft.com/ubuntu/ubuntu-tips/</loc>
     <lastmod>2020-12-07</lastmod>
   </url>  <url>
