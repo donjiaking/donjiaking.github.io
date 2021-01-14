@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.0">
+<meta name="generator" content="Hexo 5.3.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -56,8 +56,7 @@
 <meta property="article:published_time" content="2020-02-19T06:40:57.000Z">
 <meta property="article:modified_time" content="2020-12-07T14:08:37.910Z">
 <meta property="article:author" content="J">
-<meta property="article:tag" content="jupyter notebook">
-<meta property="article:tag" content="convert">
+<meta property="article:tag" content="Jupyter Notebook">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://don.easiestsoft.com/python/jupyter-notebook-convert/">
@@ -265,20 +264,27 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h3 id="Install-extensions-if-convert-commands-below-can’t-work"><a href="#Install-extensions-if-convert-commands-below-can’t-work" class="headerlink" title="Install extensions if convert commands below can’t work"></a>Install extensions if convert commands below can’t work</h3><p><code>pip install jupyter_contrib_nbextensions</code> or <code>conda install jupyter_contrib_nbextensions</code></p>
+        <h3 id="install-extensions-if-convert-commands-below-cant-work"><a class="markdownIt-Anchor" href="#install-extensions-if-convert-commands-below-cant-work"></a> Install extensions if convert commands below can’t work</h3>
+<p><code>pip install jupyter_contrib_nbextensions</code> or <code>conda install jupyter_contrib_nbextensions</code></p>
 <a id="more"></a>
-
-<h3 id="convert-ipynb-to-md"><a href="#convert-ipynb-to-md" class="headerlink" title="convert .ipynb to .md:"></a>convert .ipynb to .md:</h3><p>Run <code>jupyter nbconvert --to markdown notebook.ipynb</code> in terminal. A simple Markdown format output, cells are not affected, the code cell is indented by 4 spaces, graphs will be saved to a individual folder.</p>
-<h3 id="convert-ipynb-to-html"><a href="#convert-ipynb-to-html" class="headerlink" title="convert .ipynb to .html:"></a>convert .ipynb to .html:</h3><ul>
-<li><p>Option 1: run <code>jupyter nbconvert --to html notebook.ipynb</code></p>
+<h3 id="convert-ipynb-to-md"><a class="markdownIt-Anchor" href="#convert-ipynb-to-md"></a> convert .ipynb to .md:</h3>
+<p>Run <code>jupyter nbconvert --to markdown notebook.ipynb</code> in terminal. A simple Markdown format output, cells are not affected, the code cell is indented by 4 spaces, graphs will be saved to a individual folder.</p>
+<h3 id="convert-ipynb-to-html"><a class="markdownIt-Anchor" href="#convert-ipynb-to-html"></a> convert .ipynb to .html:</h3>
+<ul>
+<li>
+<p>Option 1: run <code>jupyter nbconvert --to html notebook.ipynb</code></p>
 </li>
-<li><p>Option 2: Some commands are provided in jupyter to configure the generated html format: <code>jupyter nbconvert --to html --template full notebook.ipynb</code>. This will provide full static HTML format, more interactive.</p>
+<li>
+<p>Option 2: Some commands are provided in jupyter to configure the generated html format: <code>jupyter nbconvert --to html --template full notebook.ipynb</code>. This will provide full static HTML format, more interactive.</p>
 </li>
-<li><p>Option 3: <code>jupyter nbconvert --to html --template basic notebook.ipynb</code>. Simplified HTML, for embedding web blogs, etc., does not include HTML headings.</p>
+<li>
+<p>Option 3: <code>jupyter nbconvert --to html --template basic notebook.ipynb</code>. Simplified HTML, for embedding web blogs, etc., does not include HTML headings.</p>
 </li>
 </ul>
-<h3 id="convert-ipynb-to-pdf"><a href="#convert-ipynb-to-pdf" class="headerlink" title="convert .ipynb to .pdf:"></a>convert .ipynb to .pdf:</h3><p><code>jupyter nbconvert --to pdf notebook.ipynb</code></p>
-<h3 id="Note"><a href="#Note" class="headerlink" title="Note"></a>Note</h3><p>Original version of command uses <code>ipython</code>: <code>ipython nbconvert --to html notebook.ipynb</code>. Now it is almost obsoleted.</p>
+<h3 id="convert-ipynb-to-pdf"><a class="markdownIt-Anchor" href="#convert-ipynb-to-pdf"></a> convert .ipynb to .pdf:</h3>
+<p><code>jupyter nbconvert --to pdf notebook.ipynb</code></p>
+<h3 id="note"><a class="markdownIt-Anchor" href="#note"></a> Note</h3>
+<p>Original version of command uses <code>ipython</code>: <code>ipython nbconvert --to html notebook.ipynb</code>. Now it is almost obsoleted.</p>
 
     </div>
 
@@ -364,7 +370,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Install-extensions-if-convert-commands-below-can’t-work"><span class="nav-number">1.</span> <span class="nav-text">Install extensions if convert commands below can’t work</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#convert-ipynb-to-md"><span class="nav-number">2.</span> <span class="nav-text">convert .ipynb to .md:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#convert-ipynb-to-html"><span class="nav-number">3.</span> <span class="nav-text">convert .ipynb to .html:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#convert-ipynb-to-pdf"><span class="nav-number">4.</span> <span class="nav-text">convert .ipynb to .pdf:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Note"><span class="nav-number">5.</span> <span class="nav-text">Note</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#install-extensions-if-convert-commands-below-cant-work"><span class="nav-number">1.</span> <span class="nav-text"> Install extensions if convert commands below can’t work</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#convert-ipynb-to-md"><span class="nav-number">2.</span> <span class="nav-text"> convert .ipynb to .md:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#convert-ipynb-to-html"><span class="nav-number">3.</span> <span class="nav-text"> convert .ipynb to .html:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#convert-ipynb-to-pdf"><span class="nav-number">4.</span> <span class="nav-text"> convert .ipynb to .pdf:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#note"><span class="nav-number">5.</span> <span class="nav-text"> Note</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -432,7 +438,7 @@
   </span>
   <span class="author" itemprop="copyrightHolder">J</span>
 </div>
-  <div class="powered-by">Powered by <span class="exturl theme-link" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> v4.2.0
+  <div class="powered-by">Powered by <span class="exturl theme-link" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> v5.3.0
   </div>
   <span class="post-meta-divider">|</span>
   <div class="theme-info">Theme – <span class="exturl theme-link" data-url="aHR0cHM6Ly9waXNjZXMudGhlbWUtbmV4dC5vcmc=">NexT.Pisces</span> v7.7.0
@@ -524,6 +530,8 @@
 
 
 
+
+  
 
   
 
