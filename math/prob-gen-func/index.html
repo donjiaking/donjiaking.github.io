@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"don.easiestsoft.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="This is for Probability and Statistics course project. Converted from Latex.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Further Properties of Probability Generating Function and its Applications">
+<meta property="og:url" content="http://don.easiestsoft.com/math/prob-gen-func/index.html">
+<meta property="og:site_name" content="Varlanar">
+<meta property="og:description" content="This is for Probability and Statistics course project. Converted from Latex.">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-01-14T14:23:07.000Z">
+<meta property="article:modified_time" content="2021-08-23T14:23:41.733Z">
+<meta property="article:author" content="J">
+<meta property="article:tag" content="Probability and Statistics">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://don.easiestsoft.com/math/prob-gen-func/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>Further Properties of Probability Generating Function and its Applications | Varlanar</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Varlanar</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">Share some knowledge, post study notes or talk nonsense.</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://don.easiestsoft.com/math/prob-gen-func/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="J">
+      <meta itemprop="description" content="<computer_science/>">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Varlanar">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Further Properties of Probability Generating Function and its Applications
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-01-14 22:23:07" itemprop="dateCreated datePublished" datetime="2021-01-14T22:23:07+08:00">2021-01-14</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-08-23 22:23:41" itemprop="dateModified" datetime="2021-08-23T22:23:41+08:00">2021-08-23</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Math/" itemprop="url" rel="index"><span itemprop="name">Math</span></a>
+                </span>
+            </span>
+
+          
+            <div class="post-description">This is for Probability and Statistics course project. Converted from Latex.</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><strong>Abstract:</strong> Probability generating Function is the simplest one among all the gernerating functions, yet it is compact and useful in dealing with discrete random variables, especially the sum of independent random variables. This makes it a powerful tool in theory like stochastic process, where there is a need to deal with a collection of independent random variables. Therefore, it is still necessary to explore further properties of p.g.f. Two applications related to simple random walk and<br>Galton Watson process will also be introduced in this paper.</p>
+<p><strong>Keywords:</strong> probability generating function; random walk; Galton Watson process;</p>
+<span id="more"></span>
+
+<h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>Assume X is a discrete integer-valued random variable with probability mass function ${p_k = P(X=k)}<em>{k=0}^{\infty}$, its probability generating function (p.g.f) is defined by the following power series: $$P(s):=E\left(s^{X}\right)=\sum</em>{k=0}^{\infty} p_{k} s^{k} \quad|s| \leq 1$$. We know that in the discrete case, probability distribution is determined by all the possible values of the random variable and the probability corresponding to those values, which is characterized by the so-called probability mass function. Probability generating function is another way to represent and characterize a probability distribution. From the following properties, we will see that it actually “encodes&quot; everything about the distribution. Meanwhile, it makes some probability calculation easier. This is also the reason why it is a useful tool in the study of branching process or stochastic process. Note that there are other ways to transform a distribution: characteristic function, moment generating function and cumulant generating function. Many properties of probability generating function can also be applied to these functions. But they are not in the scope of this article.</p>
+<h1 id="Properties"><a href="#Properties" class="headerlink" title="Properties"></a>Properties</h1><h2 id="Probability-Generating-Function-to-Probability-Distribution"><a href="#Probability-Generating-Function-to-Probability-Distribution" class="headerlink" title="Probability Generating Function to Probability Distribution"></a>Probability Generating Function to Probability Distribution</h2><p>If we take k-th derivative of p.g.f $P_X(s) = \sum_{k=0}^{\infty} p_{k} s^{k}$, we would get:<br>$$P_X^{(k)}(s) = \frac{d^{(k)}P_{X}(s)}{ds^k} = k!p_ks^0 + c_1s^1 + … + c_ns^n, c_i = const$$<br>$$\Rightarrow P_X^{(k)}(0) = \left.\frac{d^{(k)}P_{X}(s)}{d s^{k}}\right|_{s=0} = k!p_k$$<br>$$\Rightarrow p_k = P(X = k) = \frac{1}{k!} P_X^{(k)}(0)$$ </p>
+<p>Therefore, we can recover the probability distribution from the probability generating function. The p.g.f alone contains all the information about the original distribution. Since we can already derive all the probabilities of the distribution from p.g.f, it’s reasonable that we can extract properties like variance, expectation or moments of the distribution from p.g.f. . Through simple calculation, we would get (proof is omitted):</p>
+<ol>
+<li><p> $E(X) = P_X^{(1)}(1)$ (techniquely, it is left derivative)</p>
+</li>
+<li><p> $Var(X) = P_X^{(2)}(1) - [P_X^{(1)}(1)]^2 + P_X^{(1)}(1)$</p>
+</li>
+<li><p>$\mathbb{E}{X(X-1)(X-2) \ldots(X-k+1)}=P_{X}^{(k)}(1)$<br> (k-th derivative of p.g.f is k-th factorial moment of X. In principle you can recover all the moments from factorial moments.)</p>
+</li>
+</ol>
+<h2 id="Uniqueness-Theorem-for-Probability-Generating-Function"><a href="#Uniqueness-Theorem-for-Probability-Generating-Function" class="headerlink" title="Uniqueness Theorem for Probability Generating Function"></a>Uniqueness Theorem for Probability Generating Function</h2><p>From section 2.1, we know that p.g.f. determines ${p_n}$, which is the distribution. Uniqueness Theorem for p.g.f. tells us additionally that it determines a unique distribution.</p>
+<p><strong>Uniqueness Theorem:</strong> <em>Let X and Y be discrete random variables with probability generating functions $P_X$ and $P_Y$, respectively. Then $P_X(s) = P_Y(s)$ iff P(X=k) = P(Y=k) for all integers k $\geq$ 0, i.e. the probability generating functions are the same iff the distributions of X and Y are the same.</em><br><strong>Proof:</strong> If the distributions are the same, by the definition of p.g.f., $P_X(s) = P_Y(s)$. If $P_X(s) = P_Y(s)$, expand them into power series, $P_X(s) = \sum_{k=0}^{\infty} P(X=k)s^k = P_Y(s) = \sum_{k=0}^{\infty} P(Y=k)s^k$.<br>It follows that the coefficients of two power series must be the same, thus P(X=k) = P(Y=k) for all intergers $k \geq 0$, which means p.g.f. uniquelly determines a distribution.</p>
+<h2 id="Probability-Generating-Function-of-the-Sum-of-Independent-R-V-s"><a href="#Probability-Generating-Function-of-the-Sum-of-Independent-R-V-s" class="headerlink" title="Probability Generating Function of the Sum of Independent R.V.s"></a>Probability Generating Function of the Sum of Independent R.V.s</h2><p>The main reason why p.g.f is powerful is that it makes things easier in dealing with the sum of independent random variables. It turns convolution into product:<br><strong>Theorem 1:</strong> <em>Assume $X_1, . . . , X_n$ are independent random variables. Let $Y = X_1 + . . . + X_n$. Then $$P_{Y}(s)=\prod_{i=1}^{n} P_{X_{i}}(s)$$</em> .</p>
+<p><strong>Proof:</strong><br>$\begin{aligned} P_{Y}(s) &amp;=\mathbb{E}\left(s^{\left(X_{1}+\ldots+X_{n}\right)}\right) \ &amp;=\mathbb{E}\left(s^{X_{1}} s^{X_{2}} \ldots s^{X_{n}}\right) \ &amp;=\mathbb{E}\left(s^{X_{1}}\right) \mathbb{E}\left(s^{X_{2}}\right) \ldots \mathbb{E}\left(s^{X_{n}}\right) ; (since ; X_1, …, X_n ; are ; independent) \end{aligned}$<br>$\Rightarrow P_Y(s) =\prod_{i=1}^{n} P_{X_{i}}(s) . \quad$</p>
+<p>If we don’t know how many random variable are in the sum, i.e. n is not fixed, instead, it is itself a random variable (say N), then we have the following theorem:<br><strong>Theorem 2:</strong> <em>Let $X_1, X_2, . . .$ be a sequence of i.i.d random variables with common p.g.f. $P_X(s)$. Let N be a random variable, independent of $X_i$, with p.g.f $P_N(s)$, and let $S_N = X_1+. . .+X_N$. Then $$P_{S_N}(s) = P_N(P_X(s))$$</em> </p>
+<p><strong>Proof:</strong><br>$\begin{aligned} P_{S_{N}}(s) &amp;=\mathbb{E}\left(s^{S_{N}}\right)=\mathbb{E}\left(s^{X_{1}+\ldots+X_{N}}\right) \ &amp;=\mathbb{E}<em>{N}\left{\mathbb{E}\left(s^{X</em>{1}+\ldots+X_{N}} \mid N\right)\right} \quad(\text { law of total probability for expectations }) \ &amp;=\mathbb{E}<em>{N}\left{\mathbb{E}\left(s^{X</em>{1}} \ldots s^{X_{N}} \mid N\right)\right} \ &amp;=\mathbb{E}<em>{N}\left{\mathbb{E}\left(s^{X</em>{1}} \ldots s^{X_{N}}\right)\right} \quad\left(X_{i} \text { are independent of } N\right) \<br>&amp;=\mathbb{E}<em>{N}\left{\mathbb{E}\left(s^{X</em>{1}}\right) \ldots \mathbb{E}\left(s^{X_{N}}\right)\right} \quad\left(X_{i}\right.\text{ are independent of each other})\<br>&amp;=\mathbb{E}<em>{N}\left{\left(P</em>{X}(s)\right)^{N}\right} \quad\text{(by definition of }\left.P_{X}\right)\<br>&amp;=P_{N}\left(P_{X}(s)\right) \quad\text{(by definition of }\left.P_{N}\right)<br>\end{aligned}$</p>
+<p>This theorem helps us to compute the p.g.f. (equivalently, finding the distribution) of the sum of i.i.d. R.V. when the number of random variables is random.<br>Note that we could get the basic version of <strong>Wald’s Identity</strong> using the above result: $$\begin{aligned}<br>    P_{S_N} &amp;= P_N \circ P_X\<br>    P_{S_N}^{‘}(s) &amp;= P_X^{‘}(s) {P_N^{‘}(P_X(s))}\<br>    P_{S_N}^{‘}(1) &amp;= P_X^{‘}(1) {P_N^{‘}(P_X(1))}\<br>    E(S_N) &amp;= E(N)E(X) = E(N)E(X_1)\end{aligned}$$</p>
+<h2 id="Convergence-of-Probability-Generating-Function"><a href="#Convergence-of-Probability-Generating-Function" class="headerlink" title="Convergence of Probability Generating Function"></a>Convergence of Probability Generating Function</h2><p>Note that in the definition of probability generating function, it simply assumes that $|s| \leq 1$ (the radius of convergence = 1) to ensure the power series will converge. Though it is a sufficient condition for the convergence of p.g.f, it is not necessary. In many cases, the radius of convergence can &gt; 1. We now explore the convergence property of p.g.f. starting from some simple facts.</p>
+<p><strong>Theorem 1:</strong> <em>p.g.f. must converge (point-wise) for at least$ s \in [-1,1]$</em>.<br><strong>Proof:</strong> Suppose p.g.f $P_X(s) = \sum_{k=0}^{\infty} p_{k} s^{k}$.<br>$\forall -1 \leq s \leq 1$, series ${s^k}$ is monotonous and bounded,<br>and $\sum_{k=0}^{\infty} p_k$ converges, so by Albel’s test, series<br>$\sum_{k=0}^{\infty} p_{k} s^{k}$ converges.<br><strong>Remark:</strong> The radius of convergence for p.g.f is at least 1.</p>
+<p><strong>Theorem 2:</strong> <em>Suppose p.g.f. converges on (-R, R), i.e., the radius of convergence is R, then p.g.f. converges uniformly on any closed set [-r,r] where 0 &lt; r &lt; R</em>.<br><strong>Proof:</strong> $\forall 0 &lt; r &lt; R$, $\sum_{k=0}^{\infty} |p_{k} r^{k}|$ converges. So $|p_kx^k| \leq |p_kr^k|$ when $|x| \leq r$. By Weierstrass’s Theorem, $\sum_{k=0}^{\infty} p_{k} x^{k}$ converges uniformly on [-r,r].<br><strong>Remark:</strong> If p.g.f. converges on a closed set [-R, R], then it must converges uniformly on [-R, R]. Let R = 1, then we can get that p.g.f. must converge uniformly on [-1, 1].</p>
+<p><strong>Theorem 3:</strong> <em>Suppose p.g.f. converges on (-R, R), then p.g.f. is continuous on (-R, R).</em><br><strong>Proof:</strong> For any $x_0 \in (-R, R)$, there must exist $r &gt; 0$, s.t. $x_0 \in [-r,r] \subset (-R,R)$. Since p.g.f. converges uniformly on [-r,r], so p.g.f. is continuous at $x_0$. Since $x_0$ can be chosen arbitrarily in (-R,R), so p.g.f. is continuos at every point in (-R,R).</p>
+<p><strong>Theorem 4:</strong> <em>Suppose p.g.f converges at the right (left) end of interval (-R,R), then p.g.f. is left (right) continuos at this end.</em><br><strong>Proof:</strong> Without loss of generality, assume p.g.f. converges at x = R.<br>We only need to prove $\sum_{k=0}^{\infty} p_ks^k$ converges uniformly on [0,R].<br>$\sum_{k=0}^{\infty} p_ks^k = \sum_{k=0}^{\infty} p_kR^k(\frac{s}{R})^k$,<br>because $\sum_{k=0}^{\infty} p_kR^k$ converges, ${(\frac{s}{R})^n}$ monotonically decreasing and uniformly bounded, so by Abel’s test, $\sum_{k=0}^{\infty} p_ks^k$ converges uniformly on [0, R].<br><strong>Remark:</strong> Let R = 1, by the theorem we can get that $P_X(1) = P_X(1^-)$, and $P_X(-1) = P_X(-1^+)$, i.e., p.g.f. is continuous at both ends of (-1, 1). If R &gt; 1, p.g.f. may not be continuos on its ends.</p>
+<h1 id="Theoretical-Applications"><a href="#Theoretical-Applications" class="headerlink" title="Theoretical Applications"></a>Theoretical Applications</h1><h2 id="The-first-reaching-time-in-simple-random-walk"><a href="#The-first-reaching-time-in-simple-random-walk" class="headerlink" title="The first reaching time in simple random walk"></a>The first reaching time in simple random walk</h2><h3 id="Model-construction"><a href="#Model-construction" class="headerlink" title="Model construction:"></a>Model construction:</h3><p>Random walk is a Stochastic Process that describes a path that consists a succession of random steps on some mathematical space. Probability generating function is especially useful in this area due to its good property in computing independent sum of random variables. Here we only consider one dimensional random walk on the real line and the length of each step is a constant (assume is 1). Let $S_n$ denotes the position of the object at the n-th step. $X_1, …, X_n$ denotes each step’s behavior, i.e., $X_i = 1$ if at i-th step the object moves right on the axis and $X_i = -1$ if moves left. The probability that the object will move right at each step is p.</p>
+<h3 id="The-p-g-f-distribution-of-the-first-reaching-time"><a href="#The-p-g-f-distribution-of-the-first-reaching-time" class="headerlink" title="The p.g.f. (distribution) of the first reaching time:"></a>The p.g.f. (distribution) of the first reaching time:</h3><p>In this section, we aim to use probability generating funciton to find the distribution of reaching times of the object. The reaching time is defined as $T_{i,j} :=$ “the first time to reach position j from position i&quot;. We will concentrate on the situation when i = 0, j = 1, and assmue its distribution is characterized by p.m.f $p_n = P(T_{0,1} = n)$, then the goal is to find ${p_n}$, which is the distribution of the random varible $T_{0,1}$.</p>
+<p>Firstly, $p_1 = 1$ is obvious. When n &gt; 1, the object must have to go left to position -1 first and then reach 1 through the following (n-1) steps. Additionally, we can decompose those (n-1) steps into two phases: moving from -1 to 0, then moving from 0 to 1. So by the law of total probability we can get: $$\begin{aligned}<br>p_n &amp;= \sum_{j=1}^{n-2} qP(\text{<code>j steps to first reach 0 from -1&quot; and </code>n-j-1 steps to first reach 1 from 0”)}\<br>&amp;= q\sum_{j=1}^{n-2} P(T_{-1,0}=j \quad and \quad T_{0,1} = n-1-j) \end{aligned}$$<br>Intuitively, we can sense that the event “j steps to first reach 0 from -1&quot; won’t have any effect on the event “n-i-j steps to first reach 1 from 0&quot;, which means for any given j P($T_{0,1}$=n-1-j) = P($T_{0,1}$=n-1-j | $T_{-1,0}$=j). So it’s reasonable to regard two events as independent. This is the regeneration property of random walk.<br>With independence, we can get: $$\begin{aligned}<br>p_{n} &amp;= q\sum_{j=1}^{n-2} P(T_{-1,0}=j)P(T_{0,1} = n-1-j)\<br>&amp;= q\sum_{j=1}^{n-2} P(T_{0,1}=j)P(T_{0,1} = n-1-j)\<br>&amp;= q \sum_{j=1}^{n-2} p_{j} p_{n-j-1}, \quad n \geq 3, \quad p_{0}=0, \quad p_{1}=p, \quad p_{2} = 0\end{aligned}$$<br>It is hard to solve distribution $p_n$ from the above equation since it contains a form of convolution. But we can use gernerating function method to convert it into product to reduce complexity of computation:<br>$$\begin{aligned}<br>\text{by definition of p.g.f. , } P_X(s) &amp;= \sum_{k=0}^{\infty} p_ks^k\<br>\Rightarrow (P_X(s))^2 &amp;= \sum_{k=0}^{\infty}\left(\sum_{i=0}^{k} p_{i} p_{k-i}\right) s^{k}\<br>\sum_{i=0}^{k} p_ip_{k-i} &amp;= p_0p_k + p_kp_0 + \sum_{i=1}^{(k+1)-2} p_ip_{(k+1)-i-1}, \quad k \geq 2\<br>&amp;= \frac{p_{k+1}}{q}, \quad k \geq 2\<br>\Rightarrow q(P_X(s))^2 &amp;= \sum_{k=2}^{\infty} p_{k+1} s^k\<br>qs(P_X(s))^2 &amp;= \sum_{k=2}^{\infty} p_{k+1}s^{k+1} = \sum_{k=0}^{\infty} p_ks^k - sp = P_X(s) - sp\<br>\text{solving the quadratic equation, }\Rightarrow P_X(s) &amp;= \frac{1-\sqrt{1-4 p q s^{2}}}{2 q s}, \quad |s| \leq \frac{1}{2 \sqrt{p q}}\end{aligned}$$<br>By now we successfully get the p.g.f. of $T_{0,1}$. From section 2 above, we know that p.g.f. characterizes a unique distribution of a random variable, and we can extract useful information only through p.g.f. without calculating its “real distribution&quot; ${p_n}$. There are two major information concerned in this random walk example.</p>
+<h3 id="The-probability-that-the-object-will-never-reach-1-from-0"><a href="#The-probability-that-the-object-will-never-reach-1-from-0" class="headerlink" title="The probability that the object will never reach 1 from 0:"></a>The probability that the object will never reach 1 from 0:</h3><p>Since p.g.f. is defined as $P_X(s) = \sum_{k=0}^{\infty} p_ks^k ; (|s| \leq 1)$, $P_X(1) = \sum_{k=0}^{\infty} p_k = P(X &lt; \infty)$, thus if random variable X can take value $\infty$, i.e., $P(X=\infty) &gt; 0$, then $P_X(1) = 1 - P(X = \infty) &lt; 1$, and vice versa. So to determine if a random variable can take value $\infty$, one way is to check if $P_X(1)$<br>is &lt; 1.</p>
+<p>In this case, event “the object may never reach 1 from 0&quot; is equivalent with $P(T_{0,1}=\infty) &gt; 0$, so we only need to examine the value of $P_X(1)$. If $P_X(1) = 1$, $P(T_{0,1}=\infty) = 0$; Else,<br>$P(T_{0,1}=\infty) &gt; 0$:<br>$P_X(1)=\frac{1-\sqrt{1-4 p q}}{2 q}=\frac{1-|p-q|}{2 q}=\left{\begin{array}{ll}<br>    1, &amp; p \geq \frac{1}{2} \<br>    \frac{p}{q} &lt; 1, &amp; p&lt;\frac{1}{2}<br>    \end{array}\right.$.<br>So the conclution is: the object will definitely reach position 1 from position 0 when $p \geq 0.5 \Leftrightarrow p \geq q$, no matter how long it takes; but when $p &lt; 0.5 \Leftrightarrow p &lt; q$, it is possible that the object will never reach 1 from 0, with probability $1-\frac{p}{q}$.</p>
+<h3 id="Expected-time-number-of-steps-to-first-reach-1-from-0"><a href="#Expected-time-number-of-steps-to-first-reach-1-from-0" class="headerlink" title="Expected time (number of steps) to first reach 1 from 0:"></a>Expected time (number of steps) to first reach 1 from 0:</h3><p>Since we can easily extract expectation (first-order moment) of a random variable from its p.g.f., so we again apply generating function method to find expected time to reach 1 from 0, i.e., $E(T_{0,1})$. It should be emphasized that in this case $E(T_{0,1})$ may not equal to $P_{T_0}^{\prime}(1)$. This is because $T_{0,1}$ may take value of infinity but p.g.f. only defines for finite values.</p>
+<ol>
+<li><p>If $p &lt; 0.5$, then $P(T_{0,1} = \infty) &gt; 0$, so by definition of<br>expection we have $E(T_{0, 1}) = \infty$.</p>
+</li>
+<li><p>If $p = 0.5$,<br>$P_X^{\prime}(s)=\frac{2 p}{\sqrt{1-4 p q s^{2}}}-\frac{1-\sqrt{1-4 p q s^{2}}}{2 q s^{2}}$,<br>$E(T_{0,1}) = \lim _{s \rightarrow 1^-} P_X^{\prime}(s)=\lim _{s \rightarrow 1^-}\left(\frac{1}{\sqrt{1-s^{2}}}-\frac{1-\sqrt{1-s^{2}}}{s^{2}}\right)=+\infty$.<br>This means even if the object will definitely reach 1, the expected<br>reaching time, however, is $\infty$.</p>
+</li>
+<li><p>If $p &gt; 0.5$,<br>$E(T_{0,1}) = \lim _{s \rightarrow 1^-} P_X^{\prime}(s) = P_X^{\prime}(1) = \frac{1}{p-q}$.</p>
+</li>
+</ol>
+<h2 id="The-population-size-in-Galton-Watson-process"><a href="#The-population-size-in-Galton-Watson-process" class="headerlink" title="The population size in Galton Watson process"></a>The population size in Galton Watson process</h2><h3 id="Model-Construction"><a href="#Model-Construction" class="headerlink" title="Model Construction:"></a>Model Construction:</h3><p>At 0-th generation, there is one individual. It reproduces offsprings and then dies, these offsprings are then belong to 1-th generation. Afterwards, each of these offsprings can continue the same reproductionprocess, producing more and more generations.</p>
+<p>Now define $Z_n$ as the population size at n-th generation (i.e. the number of individuals at n), clealy $Z_0 = 1$. Y is the number of offsprings of an individual. Each individual’s family size (i.e. number of offsprings) $Y_1, Y_2, … ; i.i.d. \sim Y$.</p>
+<h3 id="The-p-g-f-distribution-of-Z-n"><a href="#The-p-g-f-distribution-of-Z-n" class="headerlink" title="The p.g.f. (distribution) of $Z_n$:"></a>The p.g.f. (distribution) of $Z_n$:</h3><p>To know the information of n-th generation, first consider (n-1)-th generation. Assume each individual in (n-1)-th generation is labelled $1, …, Z_{n-1}$, and their number of offsprings is given by $Y_1, …, Y_{Z_{n-1}}$. Then we can get a formula: $Z_n = \sum_{i=1}^{Z_{n-1}} Y_i$. This means $Z_n$ is the sum of i.i.d. random variables with random quantity. Section 2.3 shows that probability generating function will be a useful tool in dealing with this kind of problem.</p>
+<p>Let $P_Y(s)$, $P_{Z_n}(s)$, $P_{Z_{n-1}}(s)$ be the p.g.f. of random<br>variables $Y, Z_{n}, Z_{n-1}$.<br>Since $Z_n = \sum_{i=1}^{Z_{n-1}} Y_i$, by theorem 2 from section 2.3,<br>we can find a recursion formula for the p.g.f. of $Z_n$:<br>$P_{Z_n}(s) = P_{Z_{n-1}}(P_Y(s))$.<br>Continue iterating, we will get p.g.f. for $Z_n$:<br>$P_{Z_n}(s)=\underbrace{P_Y(P_Y(P_Y(\ldots P_Y(s) \ldots))}<em>{n \text { times }})$.<br>Note that $Z_1 = Y$, then we have the following important recursion furmula.<br><strong>Branching process recursion formula:</strong><br>$$P</em>{Z_n}(s)=\underbrace{P_{Z_1}(P_{Z_1}(P_{Z_1}(\ldots P_{Z_1}(s) \ldots))}<em>{n \text { times }}) = P</em>{Z_{n-1}}(P_{Z_1}(s)) = P_{Z_1}(P_{Z_{n-1}}(s))$$<br>Remark: In many cases it’s not easy to solve the explicit expression of p.g.f. from the above formula when n is large, but for any distribution Y we can use it to work out the mean and variance of $Z_n$.</p>
+<h3 id="Mean-and-variance-of-Z-n"><a href="#Mean-and-variance-of-Z-n" class="headerlink" title="Mean and variance of $Z_n$:"></a>Mean and variance of $Z_n$:</h3><p>Now we proceed to extract information about the distribution of $Z_n$ using p.g.f. and some of the consequences obtained in previous sections.</p>
+<p><strong>Theorem 1 (Mean):</strong> *Let $E(Y) = \mu$, if $\mu &lt; \infty$, then $E(Z_n) = \mu^n$.*<br>**Proof:** Since $P_{Z_n}(s) = P_{Z_{n-1}}(P_Y(s))$, derivative on both sides (or directly use Wald’s Identity introduced previously) will get: $E(Z_n) = E(Y)E(Z_{n-1}) = \mu E(Z_{n-1}) = \mu^2 E(Z_{n-2}) = … = \mu^n$.<br>**Remark:** In natural language, if each individual is expected to reproduce $\mu$ offsprings, then it is expected to have $\mu^n$ individuals at n-th generation. This implicates a fact that if $\mu &gt; 1$, the population size will grow exponentially by generation; if $\mu &lt; 1$, the population size will decrease exponentially by<br>generation.</p>
+<p><strong>Theorem 2 (Variance):</strong> <em>Let $E(Y) = \mu$, $Var(Y) = \sigma^2$, if$\ u &lt; \infty$ and $\sigma^2 &lt; \infty$, then<br>$V_n = \operatorname{Var}\left(Z_{n}\right)=\left{\begin{array}{cl}<br>    \sigma^{2} n &amp; \text { if } \mu=1 \<br>    \sigma^{2} \mu^{n-1}\left(\frac{1-\mu^{n}}{1-\mu}\right) &amp; \text { if } \mu \neq 1<br>    \end{array}\right.$</em><br><strong>Proof:</strong><br>$\begin{aligned}<br>    Z_{n} &amp;=\sum_{i=1}^{Z_{n-1}} Y_{i} \<br>    \Rightarrow \operatorname{Var}\left(Z_{n}\right) &amp;=\left{\mathbb{E}\left(Y\right)\right}^{2} \times \operatorname{Var}\left(Z_{n-1}\right)+\operatorname{Var}\left(Y\right) \times \mathbb{E}\left(Z_{n-1}\right)\<br>    \Rightarrow \quad V_{n} &amp;=\mu^{2} V_{n-1}+\sigma^{2} \mathbb{E}\left(Z_{n-1}\right) \<br>    \Rightarrow \quad V_{n} &amp;=\mu^{2} V_{n-1}+\sigma^{2} \mu^{n-1}<br>\end{aligned}$<br>It is then easy to get the result.</p>
+<h1 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h1><p>This article mainly covers all the important properties of probability generating function and uses two small examples to illustrate how p.g.f. works and why it is useful. The two examples introduced are just two basic and fundamental topics in the theory of random walk and branching process. If dig further, we can still use generation function method to analyze some classic problems like the Gambler’s Ruin or the Extinction Problem. These theoretical results can be applied in many aspects of the real world like in Demography or Econometrics.</p>
+<hr>
+<p><strong>References:</strong> </p>
+<p>$<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Generating/_function$">https://en.wikipedia.org/wiki/Generating\_function$</a><br>$<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Branching/_process/#Extinction\_problem\_for\_a\_Galton\_Watson\_process$$https://web.ma.utexas.edu/users/gordanz/notes/advanced\_random\_walks\_color.pdf$">https://en.wikipedia.org/wiki/Branching\_process\#Extinction\_problem\_for\_a\_Galton\_Watson\_process$$https://web.ma.utexas.edu/users/gordanz/notes/advanced\_random\_walks\_color.pdf$</a><br>$<a target="_blank" rel="noopener" href="https://www.stat.auckland.ac.nz//sim">https://www.stat.auckland.ac.nz/\sim</a> fewster/325/notes/ch6.pdf$<br>$<a target="_blank" rel="noopener" href="https://www.stat.auckland.ac.nz//sim">https://www.stat.auckland.ac.nz/\sim</a> fewster/325/notes/ch4.pdf$<br>$<a target="_blank" rel="noopener" href="https://www.dartmouth.edu//sim">https://www.dartmouth.edu/\sim</a> chance/teaching_aids/books_articles/probability_book/Chapter10.pdf$</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Probability-and-Statistics/" rel="tag"># Probability and Statistics</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/algorithm/406_queue_reconstruction/" rel="prev" title="[LeetCode 406] Queue Reconstrucion By Height (根据高度重建队列)">
+      <i class="fa fa-chevron-left"></i> [LeetCode 406] Queue Reconstrucion By Height (根据高度重建队列)
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Introduction"><span class="nav-number">1.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Properties"><span class="nav-number">2.</span> <span class="nav-text">Properties</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Probability-Generating-Function-to-Probability-Distribution"><span class="nav-number">2.1.</span> <span class="nav-text">Probability Generating Function to Probability Distribution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Uniqueness-Theorem-for-Probability-Generating-Function"><span class="nav-number">2.2.</span> <span class="nav-text">Uniqueness Theorem for Probability Generating Function</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Probability-Generating-Function-of-the-Sum-of-Independent-R-V-s"><span class="nav-number">2.3.</span> <span class="nav-text">Probability Generating Function of the Sum of Independent R.V.s</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Convergence-of-Probability-Generating-Function"><span class="nav-number">2.4.</span> <span class="nav-text">Convergence of Probability Generating Function</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Theoretical-Applications"><span class="nav-number">3.</span> <span class="nav-text">Theoretical Applications</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#The-first-reaching-time-in-simple-random-walk"><span class="nav-number">3.1.</span> <span class="nav-text">The first reaching time in simple random walk</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Model-construction"><span class="nav-number">3.1.1.</span> <span class="nav-text">Model construction:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-p-g-f-distribution-of-the-first-reaching-time"><span class="nav-number">3.1.2.</span> <span class="nav-text">The p.g.f. (distribution) of the first reaching time:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-probability-that-the-object-will-never-reach-1-from-0"><span class="nav-number">3.1.3.</span> <span class="nav-text">The probability that the object will never reach 1 from 0:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Expected-time-number-of-steps-to-first-reach-1-from-0"><span class="nav-number">3.1.4.</span> <span class="nav-text">Expected time (number of steps) to first reach 1 from 0:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-population-size-in-Galton-Watson-process"><span class="nav-number">3.2.</span> <span class="nav-text">The population size in Galton Watson process</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Model-Construction"><span class="nav-number">3.2.1.</span> <span class="nav-text">Model Construction:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-p-g-f-distribution-of-Z-n"><span class="nav-number">3.2.2.</span> <span class="nav-text">The p.g.f. (distribution) of $Z_n$:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Mean-and-variance-of-Z-n"><span class="nav-number">3.2.3.</span> <span class="nav-text">Mean and variance of $Z_n$:</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Conclusion"><span class="nav-number">4.</span> <span class="nav-text">Conclusion</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">J</p>
+  <div class="site-description" itemprop="description"><computer_science/></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/donjiaking" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;donjiaking" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://instagram.com/jiadong_tu" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;jiadong_tu" rel="noopener" target="_blank"><i class="fab fa-instagram fa-fw"></i>Instagram</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">J</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
