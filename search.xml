@@ -1,111 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>[LeetCode 18] 4Sum (四数之和)</title>
-    <url>/algorithm/18_4Sum/</url>
-    <content><![CDATA[<h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><p>Given an array <code>nums</code> of <em>n</em> integers and an integer <code>target</code>, are there elements <em>a</em>, <em>b</em>, <em>c</em>, and <em>d</em> in <code>nums</code> such that <em>a</em> + <em>b</em> + <em>c</em> + <em>d</em> = <code>target</code>? Find all unique quadruplets in the array which gives the sum of <code>target</code>.</p>
-<p><strong>Notice</strong> that the solution set must not contain duplicate quadruplets.</p>
-<span id="more"></span>
-
-<h3 id="Wrong-Way"><a href="#Wrong-Way" class="headerlink" title="Wrong Way"></a>Wrong Way</h3><p>由于题目的Tag是HashTable，自然要用<strong>Hash</strong>的方法。</p>
-<p>我一开始想把 <code>4Sum</code> 拆成两个 <code>2Sum</code> : </p>
-<ol>
-<li>遍历 <code>nums</code> , 找出所有不同的2个数字的pair，把它们加到 <code>unordered_map</code> 里面，其中 <code>key</code> 即为两个数字的和，<code>value</code> 是 <code>vector&lt;vector&lt;int&gt;&gt;</code>对象。复杂度为O(n^2)</li>
-<li>这样，我们只需每次先确定一个 <code>sum</code> ，找到这个 <code>sum</code> 下的<code>vector&lt;vector&lt;int&gt;&gt;</code>对象v1，然后再找到 <code>target-sum</code> 所对应的<code>vector&lt;vector&lt;int&gt;&gt;</code>对象v2，再两两组合即可。复杂度不会超过O(n^2)</li>
-</ol>
-<p><strong>错误之处：</strong>“从一个数组中选出4个数”不能简单地认为是两次“从一个数组中选出2个数”再组合。假如给的 <code>nums</code> 没有相同的数字，那么我们只需在第二步两两组合的过程中检查是否有相同的数字即可，有就不要组合，没有就组合，这个算法还是可以实现的。假如有相同的数字，我们不能作预处理“去重”（否则会少一些结果），因此也不能简单地在两两组合的过程中检查是否有相同的数字来解决这个问题。</p>
-<h3 id="Solutions"><a href="#Solutions" class="headerlink" title="Solutions"></a>Solutions</h3><p><strong>Solution 0：</strong>老老实实按照时间复杂度稍微高一点的算法</p>
-<ol>
-<li><p>还是用一个 <code>unordered_map</code>，不过只是以每个数字为key，出现的次数为value</p>
-</li>
-<li><p>三层for循环，确定前三个数nums[i], nums[j], nums[k], 再检查target-nums[i]-nums[j]-nums[k]是否在<code>unordered_map</code>里面并且要求target&gt;=nums[k]即可。但是当 <code>nums</code> 有相同的元素出现时, 最后的结果就会出现duplicate quadruplets，因此要进行以下三个操作：</p>
-<ul>
-<li><p>首先给 <code>nums</code> 排序。</p>
-</li>
-<li><p>在给result添加quadruplets的时候：</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span>(tmp_it != hashtable.<span class="built_in">end</span>() &amp;&amp; tmp &gt;= nums[k])&#123;</span><br><span class="line">    <span class="keyword">int</span> count = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span>(nums[k] == nums[j]) count++;</span><br><span class="line">    <span class="keyword">if</span>(nums[k] == nums[i]) count++;</span><br><span class="line">    <span class="keyword">if</span>(tmp == nums[k] &amp;&amp; tmp_it-&gt;second - count == <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">continue</span>;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        result.<span class="built_in">push_back</span>(vector&lt;<span class="keyword">int</span>&gt;&#123;nums[i], nums[j], nums[k], tmp&#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li><p>在那三层for循环结尾，要进行去重(以第二层for循环为例)。注意j+1&lt;n-2防止最后一次判断的时候数组越界；以及用while而不是if来消除多个重复的数字：</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">while</span>(j+<span class="number">1</span> &lt; n<span class="number">-2</span> &amp;&amp; nums[j+<span class="number">1</span>] == nums[j])</span><br><span class="line">	++j;</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-</ol>
-<p><strong>Solution 2：Hash Set</strong>，也是O(n^3)的时间复杂度。用了递归的思想，而且generalize到了kSum，不过它的Runtime（203ms）和Memory Usage（30MB）的排名也没好到哪里去：</p>
-<ol>
-<li>首先对数组排序，先确定一个数字，然后对这个数字后面的部分调用(k-1)Sum。要注意duplicate的出现</li>
-<li>直到进入到2Sum。2Sum的部分就是采用了hash的思想（利用<code>unorderd_set</code>）。也要注意duplicate的出现</li>
-</ol>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// https://leetcode.com/problems/4sum/solution/</span></span><br><span class="line"></span><br><span class="line">vector&lt;vector&lt;<span class="keyword">int</span>&gt;&gt; <span class="built_in">fourSum</span>(vector&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> target) &#123;</span><br><span class="line">    <span class="built_in">sort</span>(<span class="built_in">begin</span>(nums), <span class="built_in">end</span>(nums));</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">kSum</span>(nums, target, <span class="number">0</span>, <span class="number">4</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">vector&lt;vector&lt;<span class="keyword">int</span>&gt;&gt; <span class="built_in">kSum</span>(vector&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> target, <span class="keyword">int</span> start, <span class="keyword">int</span> k) &#123;</span><br><span class="line">    vector&lt;vector&lt;<span class="keyword">int</span>&gt;&gt; res;</span><br><span class="line">    <span class="keyword">if</span> (start == nums.<span class="built_in">size</span>() || nums[start] * k &gt; target || target &gt; nums.<span class="built_in">back</span>() * k)</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    <span class="keyword">if</span> (k == <span class="number">2</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">twoSum</span>(nums, target, start);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = start; i &lt; nums.<span class="built_in">size</span>(); ++i)</span><br><span class="line">        <span class="keyword">if</span> (i == start || nums[i - <span class="number">1</span>] != nums[i])</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">auto</span> &amp;set : <span class="built_in">kSum</span>(nums, target - nums[i], i + <span class="number">1</span>, k - <span class="number">1</span>)) &#123;</span><br><span class="line">                res.<span class="built_in">push_back</span>(&#123;nums[i]&#125;);</span><br><span class="line">                res.<span class="built_in">back</span>().<span class="built_in">insert</span>(<span class="built_in">end</span>(res.<span class="built_in">back</span>()), <span class="built_in">begin</span>(set), <span class="built_in">end</span>(set));</span><br><span class="line">            &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line">vector&lt;vector&lt;<span class="keyword">int</span>&gt;&gt; <span class="built_in">twoSum</span>(vector&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> target, <span class="keyword">int</span> start) &#123;</span><br><span class="line">    vector&lt;vector&lt;<span class="keyword">int</span>&gt;&gt; res;</span><br><span class="line">    unordered_set&lt;<span class="keyword">int</span>&gt; s;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> i = start; i &lt; nums.<span class="built_in">size</span>(); ++i) &#123;</span><br><span class="line">        <span class="keyword">if</span> (res.<span class="built_in">empty</span>() || res.<span class="built_in">back</span>()[<span class="number">1</span>] != nums[i])</span><br><span class="line">            <span class="keyword">if</span> (s.<span class="built_in">count</span>(target - nums[i]))</span><br><span class="line">                res.<span class="built_in">push_back</span>(&#123; target - nums[i], nums[i]&#125;);</span><br><span class="line">        s.<span class="built_in">insert</span>(nums[i]);  <span class="comment">// 边遍历边把元素加入hashtable里面，与在一开始就一下子把所有元素加进去相比，在防止出现duplicate时处理更方便</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><strong>C++ Grammar：</strong></p>
-<p><code>auto</code>，<code>vector.back()</code>, <code>vector.insert()</code>, <code>unorderd_set</code></p>
-<p>for循环的新用法(C++14): <code>for(auto each1: vec1) &#123;&#125;//只访问不修改 for(auto &amp; each1: vec1) &#123;&#125;//可访问可修改</code></p>
-<p>Use <code>vec.push_back(&#123;1, 2&#125;)</code> instead of <code>vec.push_back(vector&lt;int&gt;&#123;1, 2&#125;)</code></p>
-<p><strong>Solution 1：Two Pointers</strong>，只是<code>twoSum</code> 函数的实现不同，也是O(n^3)的时间复杂度，直接贴代码：</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// https://leetcode.com/problems/4sum/solution/</span></span><br><span class="line">vector&lt;vector&lt;<span class="keyword">int</span>&gt;&gt; <span class="built_in">twoSum</span>(vector&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> target, <span class="keyword">int</span> start) &#123;</span><br><span class="line">    vector&lt;vector&lt;<span class="keyword">int</span>&gt;&gt; res;</span><br><span class="line">    <span class="keyword">int</span> lo = start, hi = nums.<span class="built_in">size</span>() - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (lo &lt; hi) &#123;</span><br><span class="line">        <span class="keyword">int</span> sum = nums[lo] + nums[hi];</span><br><span class="line">        <span class="keyword">if</span> (sum &lt; target || (lo &gt; start &amp;&amp; nums[lo] == nums[lo - <span class="number">1</span>]))</span><br><span class="line">            ++lo;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (sum &gt; target || (hi &lt; nums.<span class="built_in">size</span>() - <span class="number">1</span> &amp;&amp; nums[hi] == nums[hi + <span class="number">1</span>]))</span><br><span class="line">            --hi;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            res.<span class="built_in">push_back</span>(&#123; nums[lo++], nums[hi--]&#125;);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h3><ol start="2">
-<li>善用递归简化代码</li>
-<li>将大问题分解成小问题的思想，比如从kSum到(k-1)Sum….</li>
-<li>考虑特殊及边界情况，比如数组中有数字相等的情况以及<code>start == nums.size() || nums[start] * k &gt; target || target &gt; nums.back() * k</code> 的情况</li>
-<li>本题应用的算法：<strong>hash</strong> or <strong>two pointers</strong></li>
-</ol>
-]]></content>
-      <categories>
-        <category>Data Structure</category>
-        <category>Hash Table</category>
-      </categories>
-      <tags>
-        <tag>Hash Table</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo Blog Customization Under NexT theme</title>
-    <url>/hexo/hexo-blog-customization/</url>
-    <content><![CDATA[<h2 id="Search"><a href="#Search" class="headerlink" title="Search"></a>Search</h2><ol>
-<li><p>run <code>npm install hexo-generator-searchdb --save</code></p>
-</li>
-<li><p>modify <code>_config.yml</code> in the root directory, add the following code:</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">search:</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">search.xml</span></span><br><span class="line">  <span class="attr">field:</span> <span class="string">post</span></span><br><span class="line">  <span class="attr">format:</span> <span class="string">html</span></span><br><span class="line">  <span class="attr">limit:</span> <span class="number">10000</span></span><br><span class="line">  <span class="attr">content:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure></li>
-<li><p>modify <code>_config.yml</code> in ./themes/next:</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">local_search:</span></span><br><span class="line">	<span class="attr">enable:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure></li>
-</ol>
-<h2 id="Show-reading-progress"><a href="#Show-reading-progress" class="headerlink" title="Show reading progress"></a>Show reading progress</h2><p>modify <code>themes/next/_config.yml</code>:</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Reading progress bar</span></span><br><span class="line"><span class="attr">reading_progress:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment"># Available values: top | bottom</span></span><br><span class="line">  <span class="attr">position:</span> <span class="string">top</span></span><br><span class="line">  <span class="attr">color:</span> <span class="string">&quot;#37c6c0&quot;</span></span><br><span class="line">  <span class="attr">height:</span> <span class="string">2px</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="Show-number-of-visitors"><a href="#Show-number-of-visitors" class="headerlink" title="Show number of visitors"></a>Show number of visitors</h2><p>append the following code in <code>themes/next/layout/_partials/footer.swig</code>:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;powered-by&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">async</span> <span class="attr">src</span>=<span class="string">&quot;//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">&quot;fa fa-user-md&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">&quot;busuanzi_container_site_uv&quot;</span>&gt;</span></span><br><span class="line">        Visitors:<span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">&quot;busuanzi_value_site_uv&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;post-meta-divider&quot;</span>&gt;</span>|<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">&quot;busuanzi_container_site_pv&quot;</span>&gt;</span></span><br><span class="line">        Views:<span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">&quot;busuanzi_value_site_pv&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="Custom-Gallery"><a href="#Custom-Gallery" class="headerlink" title="Custom Gallery"></a>Custom Gallery</h2><p>You can create a nice and simple gallery page by using custom html and css. Reference to <a href="https://yuan901202.github.io/2019/07/31/2019-07-31-add-gallery-to-hexo/">here</a>.</p>
-<h2 id="Site-map"><a href="#Site-map" class="headerlink" title="Site map"></a>Site map</h2><ol>
-<li><p>run <code>npm install hexo-generator-sitemap --save</code></p>
-</li>
-<li><p>modify <code>_config.yml</code> in the root directory, add the following code:</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Extensions</span></span><br><span class="line"><span class="attr">plugins:</span> <span class="string">hexo-generator-sitemap</span></span><br></pre></td></tr></table></figure></li>
-<li><p>modify <code>_config.yml</code> in ./themes/next:</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">    <span class="attr">sitemap:</span> <span class="string">/sitemap.xml</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-sitemap</span></span><br></pre></td></tr></table></figure></li>
-</ol>
-<h2 id="Excerption"><a href="#Excerption" class="headerlink" title="Excerption"></a>Excerption</h2><p>Solution 1: Insert <code>&lt;!--more--&gt;</code> in your article. Only content before this mark will be shown in the home page.</p>
-<p>Solution 2: Install plugin to achieve auto-excerption. This way you won’t need to insert additional marks in your article.</p>
-<ol>
-<li><p>run <code>npm install hexo-excerpt --save</code></p>
-</li>
-<li><p>add the following code in <code>./_config.yml</code>:</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">excerpt:</span></span><br><span class="line">  <span class="attr">depth:</span> <span class="number">5</span>  </span><br><span class="line">  <span class="attr">excerpt_excludes:</span> []</span><br><span class="line">  <span class="attr">more_excludes:</span> []</span><br><span class="line">  <span class="attr">hideWholePostExcerpts:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure></li>
-</ol>
-<h2 id="Sidebar-avatar"><a href="#Sidebar-avatar" class="headerlink" title="Sidebar avatar"></a>Sidebar avatar</h2><p>modify <code>themes/next/_config.yml</code>: (Note that you can create a new folder under <code>./themes/next/source/uploads</code> and put uploaded images to there)</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Sidebar Avatar</span></span><br><span class="line"><span class="attr">avatar:</span></span><br><span class="line">  <span class="comment"># Replace the default image and set the url here.</span></span><br><span class="line">  <span class="attr">url:</span> <span class="string">/uploads/avatar.jpg</span></span><br><span class="line">  <span class="comment"># If true, the avatar will be dispalyed in circle.</span></span><br><span class="line">  <span class="attr">rounded:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment"># If true, the avatar will be rotated with the cursor.</span></span><br><span class="line">  <span class="attr">rotated:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>[LeetCode 406] Queue Reconstrucion By Height (根据高度重建队列)</title>
     <url>/algorithm/406_queue_reconstruction/</url>
     <content><![CDATA[<h3 id="Description"><a href="#Description" class="headerlink" title="Description:"></a>Description:</h3><p>Suppose you have a random list of people standing in a queue. Each person is described by a pair of integers<code>(h, k)</code>, where <code>h</code> is the height of the person and <code>k</code> is the number of people in front of this person who have a height greater than or equal to <code>h</code>. Write an algorithm to reconstruct the queue.</p>
@@ -191,80 +86,63 @@
       </tags>
   </entry>
   <entry>
-    <title>Ubuntu下安装LaTeX并配置中文环境</title>
-    <url>/latex/latex-chinese/</url>
-    <content><![CDATA[<h2 id="Step-0-安装合适的LaTex"><a href="#Step-0-安装合适的LaTex" class="headerlink" title="Step 0: 安装合适的LaTex"></a>Step 0: 安装合适的LaTex</h2><ol>
-<li>安装LaTeX的发行版，最好选择texlive-full: <code>sudo apt install texlive-full</code></li>
-<li>安装xelatex编译引擎，即一个把Tex语言转换为排版的一个程序，支持unicode编码: <code>sudo apt install texlive-xetex</code></li>
-<li>安装中文包，xeCJK: <code>sudo apt install texlive-lang-chinese</code></li>
-<li>额外的字体支持: <code>sudo apt install texlive-fonts-extra</code></li>
-</ol>
+    <title>[LeetCode 18] 4Sum (四数之和)</title>
+    <url>/algorithm/18_4Sum/</url>
+    <content><![CDATA[<h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><p>Given an array <code>nums</code> of <em>n</em> integers and an integer <code>target</code>, are there elements <em>a</em>, <em>b</em>, <em>c</em>, and <em>d</em> in <code>nums</code> such that <em>a</em> + <em>b</em> + <em>c</em> + <em>d</em> = <code>target</code>? Find all unique quadruplets in the array which gives the sum of <code>target</code>.</p>
+<p><strong>Notice</strong> that the solution set must not contain duplicate quadruplets.</p>
 <span id="more"></span>
 
-<h2 id="Step-1-配置Vscode使其支持LaTeX"><a href="#Step-1-配置Vscode使其支持LaTeX" class="headerlink" title="Step 1: 配置Vscode使其支持LaTeX"></a>Step 1: 配置Vscode使其支持LaTeX</h2><ol>
-<li>安装 LaTeX Workshop 插件</li>
-<li>打开命令面板:<code>ctrl+shift+P</code>, 写入 <code>settings.json</code> 来打开设置</li>
-<li>将以下代码加入 <code>settings.json</code>:</li>
+<h3 id="Wrong-Way"><a href="#Wrong-Way" class="headerlink" title="Wrong Way"></a>Wrong Way</h3><p>由于题目的Tag是HashTable，自然要用<strong>Hash</strong>的方法。</p>
+<p>我一开始想把 <code>4Sum</code> 拆成两个 <code>2Sum</code> : </p>
+<ol>
+<li>遍历 <code>nums</code> , 找出所有不同的2个数字的pair，把它们加到 <code>unordered_map</code> 里面，其中 <code>key</code> 即为两个数字的和，<code>value</code> 是 <code>vector&lt;vector&lt;int&gt;&gt;</code>对象。复杂度为O(n^2)</li>
+<li>这样，我们只需每次先确定一个 <code>sum</code> ，找到这个 <code>sum</code> 下的<code>vector&lt;vector&lt;int&gt;&gt;</code>对象v1，然后再找到 <code>target-sum</code> 所对应的<code>vector&lt;vector&lt;int&gt;&gt;</code>对象v2，再两两组合即可。复杂度不会超过O(n^2)</li>
 </ol>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;latex-workshop.latex.recipes&quot;</span>: [    <span class="comment">// the first recipe is the default compile tool</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="attr">&quot;name&quot;</span>: <span class="string">&quot;xelatex&quot;</span>,  <span class="comment">// you can change this to your compile tool if different </span></span><br><span class="line">        <span class="attr">&quot;tools&quot;</span>: [<span class="string">&quot;xelatex&quot;</span>]</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;                               <span class="comment">// the seconde recipe is the recipe chain compile</span></span><br><span class="line">        <span class="attr">&quot;name&quot;</span>: <span class="string">&quot;xelatex-&gt;bibtex-&gt;xelatex*2&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;tools&quot;</span>: [</span><br><span class="line">        <span class="string">&quot;xelatex&quot;</span>,</span><br><span class="line">        <span class="string">&quot;bibtex&quot;</span>,</span><br><span class="line">        <span class="string">&quot;xelatex&quot;</span>,</span><br><span class="line">        <span class="string">&quot;xelatex&quot;</span></span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br><span class="line">],</span><br><span class="line"><span class="string">&quot;latex-workshop.latex.tools&quot;</span>:[</span><br><span class="line">    &#123;   <span class="comment">// compile tools and commands</span></span><br><span class="line">        <span class="attr">&quot;name&quot;</span>:<span class="string">&quot;xelatex&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;command&quot;</span>: <span class="string">&quot;xelatex&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;args&quot;</span>: [</span><br><span class="line">            <span class="string">&quot;-synctex=1&quot;</span>,</span><br><span class="line">            <span class="string">&quot;-interaction=nonstopmode&quot;</span>,</span><br><span class="line">            <span class="string">&quot;-file-line-error&quot;</span>,</span><br><span class="line">            <span class="string">&quot;%DOCFILE%&quot;</span></span><br><span class="line">        ]</span><br><span class="line">    &#125;, &#123;</span><br><span class="line">        <span class="attr">&quot;name&quot;</span>:<span class="string">&quot;bibtex&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;command&quot;</span>: <span class="string">&quot;bibtex&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;args&quot;</span>: [</span><br><span class="line">            <span class="string">&quot;%DOCFILE%&quot;</span></span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br><span class="line">],</span><br><span class="line"><span class="string">&quot;latex-workshop.latex.clean.fileTypes&quot;</span>: [           <span class="comment">// (Optional)choose which kind of files to clean</span></span><br><span class="line">    <span class="string">&quot;*.aux&quot;</span>,  </span><br><span class="line">    <span class="string">&quot;*.log&quot;</span>,  </span><br><span class="line">    <span class="string">&quot;*.synctex.gz&quot;</span>  </span><br><span class="line">  ],  </span><br><span class="line"><span class="string">&quot;latex-workshop.latex.autoClean.run&quot;</span>: <span class="string">&quot;onBuilt&quot;</span>,    <span class="comment">// (Optional)clean auxiliary files if you want a clean working directory</span></span><br><span class="line"><span class="string">&quot;latex-workshop.latex.autoBuild.run&quot;</span>: <span class="string">&quot;never&quot;</span>,      <span class="comment">// (Optional)never auto build .tex file when the file is auto-saved</span></span><br><span class="line"><span class="string">&quot;latex-workshop.view.pdf.hand&quot;</span>: <span class="literal">true</span>,               <span class="comment">// (Optional)set default to hand mode when open pdf viewer in vscode</span></span><br></pre></td></tr></table></figure>
+<p><strong>错误之处：</strong>“从一个数组中选出4个数”不能简单地认为是两次“从一个数组中选出2个数”再组合。假如给的 <code>nums</code> 没有相同的数字，那么我们只需在第二步两两组合的过程中检查是否有相同的数字即可，有就不要组合，没有就组合，这个算法还是可以实现的。假如有相同的数字，我们不能作预处理“去重”（否则会少一些结果），因此也不能简单地在两两组合的过程中检查是否有相同的数字来解决这个问题。</p>
+<h3 id="Solutions"><a href="#Solutions" class="headerlink" title="Solutions"></a>Solutions</h3><p><strong>Solution 0：</strong>老老实实按照时间复杂度稍微高一点的算法</p>
+<ol>
+<li><p>还是用一个 <code>unordered_map</code>，不过只是以每个数字为key，出现的次数为value</p>
+</li>
+<li><p>三层for循环，确定前三个数nums[i], nums[j], nums[k], 再检查target-nums[i]-nums[j]-nums[k]是否在<code>unordered_map</code>里面并且要求target&gt;=nums[k]即可。但是当 <code>nums</code> 有相同的元素出现时, 最后的结果就会出现duplicate quadruplets，因此要进行以下三个操作：</p>
+<ul>
+<li><p>首先给 <code>nums</code> 排序。</p>
+</li>
+<li><p>在给result添加quadruplets的时候：</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span>(tmp_it != hashtable.<span class="built_in">end</span>() &amp;&amp; tmp &gt;= nums[k])&#123;</span><br><span class="line">    <span class="keyword">int</span> count = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span>(nums[k] == nums[j]) count++;</span><br><span class="line">    <span class="keyword">if</span>(nums[k] == nums[i]) count++;</span><br><span class="line">    <span class="keyword">if</span>(tmp == nums[k] &amp;&amp; tmp_it-&gt;second - count == <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">continue</span>;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        result.<span class="built_in">push_back</span>(vector&lt;<span class="keyword">int</span>&gt;&#123;nums[i], nums[j], nums[k], tmp&#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>在那三层for循环结尾，要进行去重(以第二层for循环为例)。注意j+1&lt;n-2防止最后一次判断的时候数组越界；以及用while而不是if来消除多个重复的数字：</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">while</span>(j+<span class="number">1</span> &lt; n<span class="number">-2</span> &amp;&amp; nums[j+<span class="number">1</span>] == nums[j])</span><br><span class="line">	++j;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ol>
+<p><strong>Solution 2：Hash Set</strong>，也是O(n^3)的时间复杂度。用了递归的思想，而且generalize到了kSum，不过它的Runtime（203ms）和Memory Usage（30MB）的排名也没好到哪里去：</p>
+<ol>
+<li>首先对数组排序，先确定一个数字，然后对这个数字后面的部分调用(k-1)Sum。要注意duplicate的出现</li>
+<li>直到进入到2Sum。2Sum的部分就是采用了hash的思想（利用<code>unorderd_set</code>）。也要注意duplicate的出现</li>
+</ol>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// https://leetcode.com/problems/4sum/solution/</span></span><br><span class="line"></span><br><span class="line">vector&lt;vector&lt;<span class="keyword">int</span>&gt;&gt; <span class="built_in">fourSum</span>(vector&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> target) &#123;</span><br><span class="line">    <span class="built_in">sort</span>(<span class="built_in">begin</span>(nums), <span class="built_in">end</span>(nums));</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">kSum</span>(nums, target, <span class="number">0</span>, <span class="number">4</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">vector&lt;vector&lt;<span class="keyword">int</span>&gt;&gt; <span class="built_in">kSum</span>(vector&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> target, <span class="keyword">int</span> start, <span class="keyword">int</span> k) &#123;</span><br><span class="line">    vector&lt;vector&lt;<span class="keyword">int</span>&gt;&gt; res;</span><br><span class="line">    <span class="keyword">if</span> (start == nums.<span class="built_in">size</span>() || nums[start] * k &gt; target || target &gt; nums.<span class="built_in">back</span>() * k)</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    <span class="keyword">if</span> (k == <span class="number">2</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">twoSum</span>(nums, target, start);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = start; i &lt; nums.<span class="built_in">size</span>(); ++i)</span><br><span class="line">        <span class="keyword">if</span> (i == start || nums[i - <span class="number">1</span>] != nums[i])</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">auto</span> &amp;set : <span class="built_in">kSum</span>(nums, target - nums[i], i + <span class="number">1</span>, k - <span class="number">1</span>)) &#123;</span><br><span class="line">                res.<span class="built_in">push_back</span>(&#123;nums[i]&#125;);</span><br><span class="line">                res.<span class="built_in">back</span>().<span class="built_in">insert</span>(<span class="built_in">end</span>(res.<span class="built_in">back</span>()), <span class="built_in">begin</span>(set), <span class="built_in">end</span>(set));</span><br><span class="line">            &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line">vector&lt;vector&lt;<span class="keyword">int</span>&gt;&gt; <span class="built_in">twoSum</span>(vector&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> target, <span class="keyword">int</span> start) &#123;</span><br><span class="line">    vector&lt;vector&lt;<span class="keyword">int</span>&gt;&gt; res;</span><br><span class="line">    unordered_set&lt;<span class="keyword">int</span>&gt; s;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> i = start; i &lt; nums.<span class="built_in">size</span>(); ++i) &#123;</span><br><span class="line">        <span class="keyword">if</span> (res.<span class="built_in">empty</span>() || res.<span class="built_in">back</span>()[<span class="number">1</span>] != nums[i])</span><br><span class="line">            <span class="keyword">if</span> (s.<span class="built_in">count</span>(target - nums[i]))</span><br><span class="line">                res.<span class="built_in">push_back</span>(&#123; target - nums[i], nums[i]&#125;);</span><br><span class="line">        s.<span class="built_in">insert</span>(nums[i]);  <span class="comment">// 边遍历边把元素加入hashtable里面，与在一开始就一下子把所有元素加进去相比，在防止出现duplicate时处理更方便</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h2 id="Step-2-创建tex文件测试"><a href="#Step-2-创建tex文件测试" class="headerlink" title="Step 2: 创建tex文件测试"></a>Step 2: 创建tex文件测试</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">\documentclass&#123;article&#125;</span><br><span class="line">\usepackage&#123;xeCJK&#125;  </span><br><span class="line">\begin&#123;document&#125;</span><br><span class="line">中文测试</span><br><span class="line">\end&#123;document&#125;</span><br></pre></td></tr></table></figure>
-<p>Note:需导入xeCJK包</p>
-<p>这时候应该就可以build并view了</p>
-<h2 id="Step-3-可选-导入windows中的字体"><a href="#Step-3-可选-导入windows中的字体" class="headerlink" title="Step 3: (可选)导入windows中的字体"></a>Step 3: (可选)导入windows中的字体</h2><p>ubuntu自带的中文字体较少，可以选择导入Ｗｉｎｄｏｗｓ里的字体。</p>
-<p>在windows系统中找到字体文件，一般位于<code>C:\windows\fonts</code>, 再搬到ubuntu下的<code>/usr/share/fonts/</code>(当然，可以不必全部搬过来),可以重命名其为winfonts,再打开终端执行以下命令</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd /usr/share/fonts/winfonts</span><br><span class="line">sudo mkfontscale</span><br><span class="line">sudo mkfontdir</span><br><span class="line">sudo fc-cache -fv</span><br></pre></td></tr></table></figure>
+<p><strong>C++ Grammar：</strong></p>
+<p><code>auto</code>，<code>vector.back()</code>, <code>vector.insert()</code>, <code>unorderd_set</code></p>
+<p>for循环的新用法(C++14): <code>for(auto each1: vec1) &#123;&#125;//只访问不修改 for(auto &amp; each1: vec1) &#123;&#125;//可访问可修改</code></p>
+<p>Use <code>vec.push_back(&#123;1, 2&#125;)</code> instead of <code>vec.push_back(vector&lt;int&gt;&#123;1, 2&#125;)</code></p>
+<p><strong>Solution 1：Two Pointers</strong>，只是<code>twoSum</code> 函数的实现不同，也是O(n^3)的时间复杂度，直接贴代码：</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// https://leetcode.com/problems/4sum/solution/</span></span><br><span class="line">vector&lt;vector&lt;<span class="keyword">int</span>&gt;&gt; <span class="built_in">twoSum</span>(vector&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> target, <span class="keyword">int</span> start) &#123;</span><br><span class="line">    vector&lt;vector&lt;<span class="keyword">int</span>&gt;&gt; res;</span><br><span class="line">    <span class="keyword">int</span> lo = start, hi = nums.<span class="built_in">size</span>() - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (lo &lt; hi) &#123;</span><br><span class="line">        <span class="keyword">int</span> sum = nums[lo] + nums[hi];</span><br><span class="line">        <span class="keyword">if</span> (sum &lt; target || (lo &gt; start &amp;&amp; nums[lo] == nums[lo - <span class="number">1</span>]))</span><br><span class="line">            ++lo;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (sum &gt; target || (hi &lt; nums.<span class="built_in">size</span>() - <span class="number">1</span> &amp;&amp; nums[hi] == nums[hi + <span class="number">1</span>]))</span><br><span class="line">            --hi;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            res.<span class="built_in">push_back</span>(&#123; nums[lo++], nums[hi--]&#125;);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>查看字体是否存在了：　<code>fc-list :lang=zh | grep &#39;宋体&#39;</code></p>
-<h2 id="Step-4-排除问题"><a href="#Step-4-排除问题" class="headerlink" title="Step 4: 排除问题"></a>Step 4: 排除问题</h2><p>这样操作下来后，build的时候我遇到了如下Warnings：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Fandol is being set as the default font for CJK text.</span><br><span class="line">(xeCJK)	Please make sure it has been properly installed.</span><br><span class="line">Font &quot;FandolSong-Regular&quot; does not contain requested</span><br><span class="line">(fontspec)	Script &quot;CJK&quot;.</span><br></pre></td></tr></table></figure>
-<p>虽然有warnings, 但中文还是可以正常现实的，如果要解决它们,可以换字体, 只需加入，比如： <code>\setCJKmainfont&#123;Microsoft YaHei&#125;</code>, <code>\setCJKmainfont&#123;SimSun&#125;</code></p>
-<p>(事实上如果用v3.2.10 or later version的xeCJK, 使用中文字体Fandol得到时候总是会出现烦人的warning”，所以还是换字体吧…)</p>
-<p>如果还是遇到 <code>Font &quot;font-name&quot; does not contain requested (fontspec)    Script &quot;CJK&quot;.</code> 的waring, 但中文又是可以正常现实的，那么只要加入 <code>\PassOptionsToPackage&#123;quiet&#125;&#123;fontspec&#125;</code> 即可, (就是简单地disable警告)</p>
-<p>总之，我测试的时候，这样就可以没有警告地编译并预览了：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">\documentclass&#123;article&#125;</span><br><span class="line">% \PassOptionsToPackage&#123;quiet&#125;&#123;fontspec&#125;</span><br><span class="line">\usepackage&#123;xeCJK&#125;  </span><br><span class="line">\setCJKmainfont&#123;Microsoft YaHei&#125;</span><br><span class="line">\begin&#123;document&#125;</span><br><span class="line">中文测试</span><br><span class="line">\end&#123;document&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h3><ol start="2">
+<li>善用递归简化代码</li>
+<li>将大问题分解成小问题的思想，比如从kSum到(k-1)Sum….</li>
+<li>考虑特殊及边界情况，比如数组中有数字相等的情况以及<code>start == nums.size() || nums[start] * k &gt; target || target &gt; nums.back() * k</code> 的情况</li>
+<li>本题应用的算法：<strong>hash</strong> or <strong>two pointers</strong></li>
+</ol>
 ]]></content>
       <categories>
-        <category>LaTeX</category>
+        <category>Data Structure</category>
+        <category>Hash Table</category>
       </categories>
       <tags>
-        <tag>Ubuntu</tag>
-        <tag>LaTeX</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Ubunbu下配置L2TP/Ipsec搭建vpn教程</title>
-    <url>/ubuntu/ubuntu-vpn-l2tp/</url>
-    <content><![CDATA[<p><code>Network Manager L2TP</code>是一个功能强大的网络工具，尤其适用于配置VPN。</p>
-<h3 id="Step-1-安装-network-manager-l2tp-gnome-软件包"><a href="#Step-1-安装-network-manager-l2tp-gnome-软件包" class="headerlink" title="Step 1: 安装 network-manager-l2tp-gnome 软件包"></a>Step 1: 安装 network-manager-l2tp-gnome 软件包</h3><p>在terminal中运行：<code>sudo apt install network-manager-l2tp-gnome</code></p>
-<p>如果安装包没找到，可能需要添加官方的“universe”仓库源代码：</p>
-<pre><code>sudo add-apt-repository universe
-sudo apt update
-</code></pre>
-<span id="more"></span>
-
-<h3 id="Step-2-GUI-配置-IPsec-L2TP-VPN"><a href="#Step-2-GUI-配置-IPsec-L2TP-VPN" class="headerlink" title="Step 2: GUI 配置 IPsec/L2TP VPN"></a>Step 2: GUI 配置 IPsec/L2TP VPN</h3><p>打开“Settings”下拉找到“Network”, 然后点击“VPN +”，会出现一个新增的选项“Layer 2 Tunneling Protocol(L2Tp)”：</p>
-<p><img src="ubuntu-vpn-l2tp/01.png" alt="01"></p>
-<p>点击它，设置VPN Identity：</p>
-<p><img src="ubuntu-vpn-l2tp/02.png" alt="02"></p>
-<p>设置IPsec Setings：</p>
-<p><img src="ubuntu-vpn-l2tp/03.png" alt="03"></p>
-<p>设置PPP Settings:</p>
-<p><img src="ubuntu-vpn-l2tp/04.png" alt="04"></p>
-<p>接下来就可以进行连接了。</p>
-<h3 id="故障排除"><a href="#故障排除" class="headerlink" title="故障排除"></a>故障排除</h3><p>若连接失败，试在terminal中运行：</p>
-<pre><code>sudo systemctl stop xl2tpd
-sudo systemctl disable xl2tpd
-</code></pre>
-<p>因为可能会开启两个xl2tp，它们端口可能发生冲突。</p>
-<hr>
-<p><em>(注：适用Ubuntu 17.04 及以上版本。我用的是19.10 eoan)</em></p>
-]]></content>
-      <categories>
-        <category>ubuntu</category>
-      </categories>
-      <tags>
-        <tag>ubuntu</tag>
+        <tag>Hash Table</tag>
       </tags>
   </entry>
   <entry>
@@ -348,6 +226,150 @@ sudo systemctl disable xl2tpd
       </categories>
       <tags>
         <tag>Ubuntu</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Ubunbu下配置L2TP/Ipsec搭建vpn教程</title>
+    <url>/ubuntu/ubuntu-vpn-l2tp/</url>
+    <content><![CDATA[<p><code>Network Manager L2TP</code>是一个功能强大的网络工具，尤其适用于配置VPN。</p>
+<h3 id="Step-1-安装-network-manager-l2tp-gnome-软件包"><a href="#Step-1-安装-network-manager-l2tp-gnome-软件包" class="headerlink" title="Step 1: 安装 network-manager-l2tp-gnome 软件包"></a>Step 1: 安装 network-manager-l2tp-gnome 软件包</h3><p>在terminal中运行：<code>sudo apt install network-manager-l2tp-gnome</code></p>
+<p>如果安装包没找到，可能需要添加官方的“universe”仓库源代码：</p>
+<pre><code>sudo add-apt-repository universe
+sudo apt update
+</code></pre>
+<span id="more"></span>
+
+<h3 id="Step-2-GUI-配置-IPsec-L2TP-VPN"><a href="#Step-2-GUI-配置-IPsec-L2TP-VPN" class="headerlink" title="Step 2: GUI 配置 IPsec/L2TP VPN"></a>Step 2: GUI 配置 IPsec/L2TP VPN</h3><p>打开“Settings”下拉找到“Network”, 然后点击“VPN +”，会出现一个新增的选项“Layer 2 Tunneling Protocol(L2Tp)”：</p>
+<p><img src="ubuntu-vpn-l2tp/01.png" alt="01"></p>
+<p>点击它，设置VPN Identity：</p>
+<p><img src="ubuntu-vpn-l2tp/02.png" alt="02"></p>
+<p>设置IPsec Setings：</p>
+<p><img src="ubuntu-vpn-l2tp/03.png" alt="03"></p>
+<p>设置PPP Settings:</p>
+<p><img src="ubuntu-vpn-l2tp/04.png" alt="04"></p>
+<p>接下来就可以进行连接了。</p>
+<h3 id="故障排除"><a href="#故障排除" class="headerlink" title="故障排除"></a>故障排除</h3><p>若连接失败，试在terminal中运行：</p>
+<pre><code>sudo systemctl stop xl2tpd
+sudo systemctl disable xl2tpd
+</code></pre>
+<p>因为可能会开启两个xl2tp，它们端口可能发生冲突。</p>
+<hr>
+<p><em>(注：适用Ubuntu 17.04 及以上版本。我用的是19.10 eoan)</em></p>
+]]></content>
+      <categories>
+        <category>ubuntu</category>
+      </categories>
+      <tags>
+        <tag>ubuntu</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo Blog Customization Under NexT theme</title>
+    <url>/hexo/hexo-blog-customization/</url>
+    <content><![CDATA[<h2 id="Search"><a href="#Search" class="headerlink" title="Search"></a>Search</h2><ol>
+<li><p>run <code>npm install hexo-generator-searchdb --save</code></p>
+</li>
+<li><p>modify <code>_config.yml</code> in the root directory, add the following code:</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">search:</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">search.xml</span></span><br><span class="line">  <span class="attr">field:</span> <span class="string">post</span></span><br><span class="line">  <span class="attr">format:</span> <span class="string">html</span></span><br><span class="line">  <span class="attr">limit:</span> <span class="number">10000</span></span><br><span class="line">  <span class="attr">content:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure></li>
+<li><p>modify <code>_config.yml</code> in ./themes/next:</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">local_search:</span></span><br><span class="line">	<span class="attr">enable:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="Show-reading-progress"><a href="#Show-reading-progress" class="headerlink" title="Show reading progress"></a>Show reading progress</h2><p>modify <code>themes/next/_config.yml</code>:</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Reading progress bar</span></span><br><span class="line"><span class="attr">reading_progress:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment"># Available values: top | bottom</span></span><br><span class="line">  <span class="attr">position:</span> <span class="string">top</span></span><br><span class="line">  <span class="attr">color:</span> <span class="string">&quot;#37c6c0&quot;</span></span><br><span class="line">  <span class="attr">height:</span> <span class="string">2px</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Show-number-of-visitors"><a href="#Show-number-of-visitors" class="headerlink" title="Show number of visitors"></a>Show number of visitors</h2><p>append the following code in <code>themes/next/layout/_partials/footer.swig</code>:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;powered-by&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">async</span> <span class="attr">src</span>=<span class="string">&quot;//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">&quot;fa fa-user-md&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">&quot;busuanzi_container_site_uv&quot;</span>&gt;</span></span><br><span class="line">        Visitors:<span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">&quot;busuanzi_value_site_uv&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;post-meta-divider&quot;</span>&gt;</span>|<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">&quot;busuanzi_container_site_pv&quot;</span>&gt;</span></span><br><span class="line">        Views:<span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">&quot;busuanzi_value_site_pv&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Custom-Gallery"><a href="#Custom-Gallery" class="headerlink" title="Custom Gallery"></a>Custom Gallery</h2><p>You can create a nice and simple gallery page by using custom html and css. Reference to <a href="https://yuan901202.github.io/2019/07/31/2019-07-31-add-gallery-to-hexo/">here</a>.</p>
+<h2 id="Site-map"><a href="#Site-map" class="headerlink" title="Site map"></a>Site map</h2><ol>
+<li><p>run <code>npm install hexo-generator-sitemap --save</code></p>
+</li>
+<li><p>modify <code>_config.yml</code> in the root directory, add the following code:</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Extensions</span></span><br><span class="line"><span class="attr">plugins:</span> <span class="string">hexo-generator-sitemap</span></span><br></pre></td></tr></table></figure></li>
+<li><p>modify <code>_config.yml</code> in ./themes/next:</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">    <span class="attr">sitemap:</span> <span class="string">/sitemap.xml</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-sitemap</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="Excerption"><a href="#Excerption" class="headerlink" title="Excerption"></a>Excerption</h2><p>Solution 1: Insert <code>&lt;!--more--&gt;</code> in your article. Only content before this mark will be shown in the home page.</p>
+<p>Solution 2: Install plugin to achieve auto-excerption. This way you won’t need to insert additional marks in your article.</p>
+<ol>
+<li><p>run <code>npm install hexo-excerpt --save</code></p>
+</li>
+<li><p>add the following code in <code>./_config.yml</code>:</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">excerpt:</span></span><br><span class="line">  <span class="attr">depth:</span> <span class="number">3</span></span><br><span class="line">  <span class="attr">excerpt_excludes:</span> []</span><br><span class="line">  <span class="attr">more_excludes:</span> []</span><br><span class="line">  <span class="attr">hideWholePostExcerpts:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="Sidebar-avatar"><a href="#Sidebar-avatar" class="headerlink" title="Sidebar avatar"></a>Sidebar avatar</h2><p>modify <code>themes/next/_config.yml</code>: (Note that you can create a new folder under <code>./themes/next/source/uploads</code> and put uploaded images to there)</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Sidebar Avatar</span></span><br><span class="line"><span class="attr">avatar:</span></span><br><span class="line">  <span class="comment"># Replace the default image and set the url here.</span></span><br><span class="line">  <span class="attr">url:</span> <span class="string">/uploads/avatar.jpg</span></span><br><span class="line">  <span class="comment"># If true, the avatar will be dispalyed in circle.</span></span><br><span class="line">  <span class="attr">rounded:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment"># If true, the avatar will be rotated with the cursor.</span></span><br><span class="line">  <span class="attr">rotated:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Add-menu-items-in-sidebar"><a href="#Add-menu-items-in-sidebar" class="headerlink" title="Add menu items in sidebar"></a>Add menu items in sidebar</h2><ol>
+<li><p>Run <code>hexo new page diary </code>. This will create a <code>diary</code> folder under <code>./source</code></p>
+</li>
+<li><p>You can modify <code>./source/diary/index.md</code> at your will.</p>
+</li>
+<li><p>Modify <code>themes/next/_config.yml</code>:</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="comment"># add the following line!</span></span><br><span class="line">  <span class="attr">Diary:</span> <span class="string">/diary/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-book</span></span><br></pre></td></tr></table></figure>
+
+<p>“book” is the icon name in the font-awesome website. You can choose whatever icon you like and use that icon’s name.</p>
+</li>
+</ol>
+<h2 id="Password-protection"><a href="#Password-protection" class="headerlink" title="Password protection"></a>Password protection</h2><ol>
+<li><p>run <code>npm install --save hexo-blog-encrypt</code> to install plugin</p>
+</li>
+<li><p>add the following code in <code>./_config.yml</code>:</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">encrypt:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">default_abstract:</span> <span class="string">blabla</span></span><br><span class="line">    <span class="attr">default_message:</span> <span class="string">blabla</span></span><br></pre></td></tr></table></figure></li>
+<li><p>add password, abstract and message fields at the header of the article that you want to protect, like this:</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: Diary</span><br><span class="line">date: 2021-08-025</span><br><span class="line">password: 123</span><br><span class="line">abstract: ENCRYPTED!</span><br><span class="line"><span class="section">message: Enter password to get access.</span></span><br><span class="line"><span class="section">---</span></span><br></pre></td></tr></table></figure>
+
+<p>If you don’t provide the “abstract” and “message” field, they will be replaced by the default abstract and default message you set.</p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Ubuntu下安装LaTeX并配置中文环境</title>
+    <url>/latex/latex-chinese/</url>
+    <content><![CDATA[<h2 id="Step-0-安装合适的LaTex"><a href="#Step-0-安装合适的LaTex" class="headerlink" title="Step 0: 安装合适的LaTex"></a>Step 0: 安装合适的LaTex</h2><ol>
+<li>安装LaTeX的发行版，最好选择texlive-full: <code>sudo apt install texlive-full</code></li>
+<li>安装xelatex编译引擎，即一个把Tex语言转换为排版的一个程序，支持unicode编码: <code>sudo apt install texlive-xetex</code></li>
+<li>安装中文包，xeCJK: <code>sudo apt install texlive-lang-chinese</code></li>
+<li>额外的字体支持: <code>sudo apt install texlive-fonts-extra</code></li>
+</ol>
+<span id="more"></span>
+
+<h2 id="Step-1-配置Vscode使其支持LaTeX"><a href="#Step-1-配置Vscode使其支持LaTeX" class="headerlink" title="Step 1: 配置Vscode使其支持LaTeX"></a>Step 1: 配置Vscode使其支持LaTeX</h2><ol>
+<li>安装 LaTeX Workshop 插件</li>
+<li>打开命令面板:<code>ctrl+shift+P</code>, 写入 <code>settings.json</code> 来打开设置</li>
+<li>将以下代码加入 <code>settings.json</code>:</li>
+</ol>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;latex-workshop.latex.recipes&quot;</span>: [    <span class="comment">// the first recipe is the default compile tool</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="attr">&quot;name&quot;</span>: <span class="string">&quot;xelatex&quot;</span>,  <span class="comment">// you can change this to your compile tool if different </span></span><br><span class="line">        <span class="attr">&quot;tools&quot;</span>: [<span class="string">&quot;xelatex&quot;</span>]</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;                               <span class="comment">// the seconde recipe is the recipe chain compile</span></span><br><span class="line">        <span class="attr">&quot;name&quot;</span>: <span class="string">&quot;xelatex-&gt;bibtex-&gt;xelatex*2&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;tools&quot;</span>: [</span><br><span class="line">        <span class="string">&quot;xelatex&quot;</span>,</span><br><span class="line">        <span class="string">&quot;bibtex&quot;</span>,</span><br><span class="line">        <span class="string">&quot;xelatex&quot;</span>,</span><br><span class="line">        <span class="string">&quot;xelatex&quot;</span></span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br><span class="line">],</span><br><span class="line"><span class="string">&quot;latex-workshop.latex.tools&quot;</span>:[</span><br><span class="line">    &#123;   <span class="comment">// compile tools and commands</span></span><br><span class="line">        <span class="attr">&quot;name&quot;</span>:<span class="string">&quot;xelatex&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;command&quot;</span>: <span class="string">&quot;xelatex&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;args&quot;</span>: [</span><br><span class="line">            <span class="string">&quot;-synctex=1&quot;</span>,</span><br><span class="line">            <span class="string">&quot;-interaction=nonstopmode&quot;</span>,</span><br><span class="line">            <span class="string">&quot;-file-line-error&quot;</span>,</span><br><span class="line">            <span class="string">&quot;%DOCFILE%&quot;</span></span><br><span class="line">        ]</span><br><span class="line">    &#125;, &#123;</span><br><span class="line">        <span class="attr">&quot;name&quot;</span>:<span class="string">&quot;bibtex&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;command&quot;</span>: <span class="string">&quot;bibtex&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;args&quot;</span>: [</span><br><span class="line">            <span class="string">&quot;%DOCFILE%&quot;</span></span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br><span class="line">],</span><br><span class="line"><span class="string">&quot;latex-workshop.latex.clean.fileTypes&quot;</span>: [           <span class="comment">// (Optional)choose which kind of files to clean</span></span><br><span class="line">    <span class="string">&quot;*.aux&quot;</span>,  </span><br><span class="line">    <span class="string">&quot;*.log&quot;</span>,  </span><br><span class="line">    <span class="string">&quot;*.synctex.gz&quot;</span>  </span><br><span class="line">  ],  </span><br><span class="line"><span class="string">&quot;latex-workshop.latex.autoClean.run&quot;</span>: <span class="string">&quot;onBuilt&quot;</span>,    <span class="comment">// (Optional)clean auxiliary files if you want a clean working directory</span></span><br><span class="line"><span class="string">&quot;latex-workshop.latex.autoBuild.run&quot;</span>: <span class="string">&quot;never&quot;</span>,      <span class="comment">// (Optional)never auto build .tex file when the file is auto-saved</span></span><br><span class="line"><span class="string">&quot;latex-workshop.view.pdf.hand&quot;</span>: <span class="literal">true</span>,               <span class="comment">// (Optional)set default to hand mode when open pdf viewer in vscode</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Step-2-创建tex文件测试"><a href="#Step-2-创建tex文件测试" class="headerlink" title="Step 2: 创建tex文件测试"></a>Step 2: 创建tex文件测试</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">\documentclass&#123;article&#125;</span><br><span class="line">\usepackage&#123;xeCJK&#125;  </span><br><span class="line">\begin&#123;document&#125;</span><br><span class="line">中文测试</span><br><span class="line">\end&#123;document&#125;</span><br></pre></td></tr></table></figure>
+<p>Note:需导入xeCJK包</p>
+<p>这时候应该就可以build并view了</p>
+<h2 id="Step-3-可选-导入windows中的字体"><a href="#Step-3-可选-导入windows中的字体" class="headerlink" title="Step 3: (可选)导入windows中的字体"></a>Step 3: (可选)导入windows中的字体</h2><p>ubuntu自带的中文字体较少，可以选择导入Ｗｉｎｄｏｗｓ里的字体。</p>
+<p>在windows系统中找到字体文件，一般位于<code>C:\windows\fonts</code>, 再搬到ubuntu下的<code>/usr/share/fonts/</code>(当然，可以不必全部搬过来),可以重命名其为winfonts,再打开终端执行以下命令</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd /usr/share/fonts/winfonts</span><br><span class="line">sudo mkfontscale</span><br><span class="line">sudo mkfontdir</span><br><span class="line">sudo fc-cache -fv</span><br></pre></td></tr></table></figure>
+
+<p>查看字体是否存在了：　<code>fc-list :lang=zh | grep &#39;宋体&#39;</code></p>
+<h2 id="Step-4-排除问题"><a href="#Step-4-排除问题" class="headerlink" title="Step 4: 排除问题"></a>Step 4: 排除问题</h2><p>这样操作下来后，build的时候我遇到了如下Warnings：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Fandol is being set as the default font for CJK text.</span><br><span class="line">(xeCJK)	Please make sure it has been properly installed.</span><br><span class="line">Font &quot;FandolSong-Regular&quot; does not contain requested</span><br><span class="line">(fontspec)	Script &quot;CJK&quot;.</span><br></pre></td></tr></table></figure>
+<p>虽然有warnings, 但中文还是可以正常现实的，如果要解决它们,可以换字体, 只需加入，比如： <code>\setCJKmainfont&#123;Microsoft YaHei&#125;</code>, <code>\setCJKmainfont&#123;SimSun&#125;</code></p>
+<p>(事实上如果用v3.2.10 or later version的xeCJK, 使用中文字体Fandol得到时候总是会出现烦人的warning”，所以还是换字体吧…)</p>
+<p>如果还是遇到 <code>Font &quot;font-name&quot; does not contain requested (fontspec)    Script &quot;CJK&quot;.</code> 的waring, 但中文又是可以正常现实的，那么只要加入 <code>\PassOptionsToPackage&#123;quiet&#125;&#123;fontspec&#125;</code> 即可, (就是简单地disable警告)</p>
+<p>总之，我测试的时候，这样就可以没有警告地编译并预览了：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">\documentclass&#123;article&#125;</span><br><span class="line">% \PassOptionsToPackage&#123;quiet&#125;&#123;fontspec&#125;</span><br><span class="line">\usepackage&#123;xeCJK&#125;  </span><br><span class="line">\setCJKmainfont&#123;Microsoft YaHei&#125;</span><br><span class="line">\begin&#123;document&#125;</span><br><span class="line">中文测试</span><br><span class="line">\end&#123;document&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>LaTeX</category>
+      </categories>
+      <tags>
+        <tag>Ubuntu</tag>
+        <tag>LaTeX</tag>
       </tags>
   </entry>
   <entry>

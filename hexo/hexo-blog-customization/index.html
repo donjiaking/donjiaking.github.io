@@ -28,7 +28,7 @@
 <meta property="og:description" content="Some of my customizations.">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-08-25T07:46:25.000Z">
-<meta property="article:modified_time" content="2021-08-25T09:47:30.825Z">
+<meta property="article:modified_time" content="2021-08-25T11:10:58.264Z">
 <meta property="article:author" content="J">
 <meta property="article:tag" content="Hexo">
 <meta name="twitter:card" content="summary">
@@ -140,6 +140,11 @@
     <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
 
   </li>
+        <li class="menu-item menu-item-diary">
+
+    <a href="/diary/" rel="section"><i class="fa fa-book fa-fw"></i>Diary</a>
+
+  </li>
         <li class="menu-item menu-item-sitemap">
 
     <a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a>
@@ -225,7 +230,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2021-08-25 15:46:25 / Modified: 17:47:30" itemprop="dateCreated datePublished" datetime="2021-08-25T15:46:25+08:00">2021-08-25</time>
+              <time title="Created: 2021-08-25 15:46:25 / Modified: 19:10:58" itemprop="dateCreated datePublished" datetime="2021-08-25T15:46:25+08:00">2021-08-25</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -278,11 +283,33 @@
 <li><p>run <code>npm install hexo-excerpt --save</code></p>
 </li>
 <li><p>add the following code in <code>./_config.yml</code>:</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">excerpt:</span></span><br><span class="line">  <span class="attr">depth:</span> <span class="number">5</span>  </span><br><span class="line">  <span class="attr">excerpt_excludes:</span> []</span><br><span class="line">  <span class="attr">more_excludes:</span> []</span><br><span class="line">  <span class="attr">hideWholePostExcerpts:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure></li>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">excerpt:</span></span><br><span class="line">  <span class="attr">depth:</span> <span class="number">3</span></span><br><span class="line">  <span class="attr">excerpt_excludes:</span> []</span><br><span class="line">  <span class="attr">more_excludes:</span> []</span><br><span class="line">  <span class="attr">hideWholePostExcerpts:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure></li>
 </ol>
 <h2 id="Sidebar-avatar"><a href="#Sidebar-avatar" class="headerlink" title="Sidebar avatar"></a>Sidebar avatar</h2><p>modify <code>themes/next/_config.yml</code>: (Note that you can create a new folder under <code>./themes/next/source/uploads</code> and put uploaded images to there)</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Sidebar Avatar</span></span><br><span class="line"><span class="attr">avatar:</span></span><br><span class="line">  <span class="comment"># Replace the default image and set the url here.</span></span><br><span class="line">  <span class="attr">url:</span> <span class="string">/uploads/avatar.jpg</span></span><br><span class="line">  <span class="comment"># If true, the avatar will be dispalyed in circle.</span></span><br><span class="line">  <span class="attr">rounded:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment"># If true, the avatar will be rotated with the cursor.</span></span><br><span class="line">  <span class="attr">rotated:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
 
+<h2 id="Add-menu-items-in-sidebar"><a href="#Add-menu-items-in-sidebar" class="headerlink" title="Add menu items in sidebar"></a>Add menu items in sidebar</h2><ol>
+<li><p>Run <code>hexo new page diary </code>. This will create a <code>diary</code> folder under <code>./source</code></p>
+</li>
+<li><p>You can modify <code>./source/diary/index.md</code> at your will.</p>
+</li>
+<li><p>Modify <code>themes/next/_config.yml</code>:</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="comment"># add the following line!</span></span><br><span class="line">  <span class="attr">Diary:</span> <span class="string">/diary/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-book</span></span><br></pre></td></tr></table></figure>
+
+<p>“book” is the icon name in the font-awesome website. You can choose whatever icon you like and use that icon’s name.</p>
+</li>
+</ol>
+<h2 id="Password-protection"><a href="#Password-protection" class="headerlink" title="Password protection"></a>Password protection</h2><ol>
+<li><p>run <code>npm install --save hexo-blog-encrypt</code> to install plugin</p>
+</li>
+<li><p>add the following code in <code>./_config.yml</code>:</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">encrypt:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">default_abstract:</span> <span class="string">blabla</span></span><br><span class="line">    <span class="attr">default_message:</span> <span class="string">blabla</span></span><br></pre></td></tr></table></figure></li>
+<li><p>add password, abstract and message fields at the header of the article that you want to protect, like this:</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: Diary</span><br><span class="line">date: 2021-08-025</span><br><span class="line">password: 123</span><br><span class="line">abstract: ENCRYPTED!</span><br><span class="line"><span class="section">message: Enter password to get access.</span></span><br><span class="line"><span class="section">---</span></span><br></pre></td></tr></table></figure>
+
+<p>If you don’t provide the “abstract” and “message” field, they will be replaced by the default abstract and default message you set.</p>
+</li>
+</ol>
 
     </div>
 
@@ -363,7 +390,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Search"><span class="nav-number">1.</span> <span class="nav-text">Search</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Show-reading-progress"><span class="nav-number">2.</span> <span class="nav-text">Show reading progress</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Show-number-of-visitors"><span class="nav-number">3.</span> <span class="nav-text">Show number of visitors</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Custom-Gallery"><span class="nav-number">4.</span> <span class="nav-text">Custom Gallery</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Site-map"><span class="nav-number">5.</span> <span class="nav-text">Site map</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Excerption"><span class="nav-number">6.</span> <span class="nav-text">Excerption</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sidebar-avatar"><span class="nav-number">7.</span> <span class="nav-text">Sidebar avatar</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Search"><span class="nav-number">1.</span> <span class="nav-text">Search</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Show-reading-progress"><span class="nav-number">2.</span> <span class="nav-text">Show reading progress</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Show-number-of-visitors"><span class="nav-number">3.</span> <span class="nav-text">Show number of visitors</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Custom-Gallery"><span class="nav-number">4.</span> <span class="nav-text">Custom Gallery</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Site-map"><span class="nav-number">5.</span> <span class="nav-text">Site map</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Excerption"><span class="nav-number">6.</span> <span class="nav-text">Excerption</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sidebar-avatar"><span class="nav-number">7.</span> <span class="nav-text">Sidebar avatar</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Add-menu-items-in-sidebar"><span class="nav-number">8.</span> <span class="nav-text">Add menu items in sidebar</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Password-protection"><span class="nav-number">9.</span> <span class="nav-text">Password protection</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
