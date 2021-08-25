@@ -17,7 +17,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"don.easiestsoft.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"don.easiestsoft.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta property="og:type" content="website">
@@ -101,6 +101,7 @@
 
   <div class="site-nav-right">
     <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
 </div>
@@ -135,11 +136,43 @@
     <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
 
   </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
   </ul>
 </nav>
 
 
 
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
 
 </div>
     </header>
@@ -149,6 +182,7 @@
     <i class="fa fa-arrow-up"></i>
     <span>0%</span>
   </div>
+  <div class="reading-progress-bar"></div>
 
 
     <main class="main">
@@ -162,10 +196,94 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://don.easiestsoft.com/hexo/hexo-blog-customization/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+      <meta itemprop="name" content="J">
+      <meta itemprop="description" content="<computer_science/>">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Eastwatch">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/hexo/hexo-blog-customization/" class="post-title-link" itemprop="url">Hexo Blog Customization Under NexT theme</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-08-25 15:46:25 / Modified: 17:47:30" itemprop="dateCreated datePublished" datetime="2021-08-25T15:46:25+08:00">2021-08-25</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a>
+                </span>
+            </span>
+
+          
+            <div class="post-description">Some of my customizations.</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="Search"><a href="#Search" class="headerlink" title="Search"></a>Search</h2><ol>
+<li><p>run <code>npm install hexo-generator-searchdb --save</code></p>
+</li>
+<li><p>modify <code>_config.yml</code> in the root directory, add the following code:</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">search:</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">search.xml</span></span><br><span class="line">  <span class="attr">field:</span> <span class="string">post</span></span><br><span class="line">  <span class="attr">format:</span> <span class="string">html</span></span><br><span class="line">  <span class="attr">limit:</span> <span class="number">10000</span></span><br><span class="line">  <span class="attr">content:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure></li>
+<li><p>modify <code>_config.yml</code> in ./themes/next:</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">local_search:</span></span><br><span class="line">	<span class="attr">enable:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="Show-reading-progress"><a href="#Show-reading-progress" class="headerlink" title="Show reading progress"></a>Show reading progress</h2>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/hexo/hexo-blog-customization/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://don.easiestsoft.com/math/prob-gen-func/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
       <meta itemprop="name" content="J">
       <meta itemprop="description" content="<computer_science/>">
     </span>
@@ -193,7 +311,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-08-23 22:23:41" itemprop="dateModified" datetime="2021-08-23T22:23:41+08:00">2021-08-23</time>
+                <time title="Modified: 2021-08-25 17:19:48" itemprop="dateModified" datetime="2021-08-25T17:19:48+08:00">2021-08-25</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -206,6 +324,7 @@
             </span>
 
           
+            <div class="post-description">This is for Probability and Statistics course project. Converted from Latex.</div>
 
         </div>
       </header>
@@ -216,10 +335,12 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>This is for Probability and Statistics course project. Converted from Latex.</p>
+          <p><strong>Abstract:</strong> Probability generating Function is the simplest one among all the gernerating functions, yet it is compact and useful in dealing with discrete random variables, especially the sum of independent random variables. This makes it a powerful tool in theory like stochastic process, where there is a need to deal with a collection of independent random variables. Therefore, it is still necessary to explore further properties of p.g.f. Two applications related to simple random walk and Galton Watson process will also be introduced in this paper.</p>
+<p><strong>Keywords:</strong> probability generating function; random walk; Galton Watson process;</p>
+<h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/math/prob-gen-func/">
+              <a class="btn" href="/math/prob-gen-func/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -246,7 +367,7 @@
     <link itemprop="mainEntityOfPage" href="http://don.easiestsoft.com/algorithm/406_queue_reconstruction/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
       <meta itemprop="name" content="J">
       <meta itemprop="description" content="<computer_science/>">
     </span>
@@ -296,6 +417,7 @@
 
       
           <h3 id="Description"><a href="#Description" class="headerlink" title="Description:"></a>Description:</h3><p>Suppose you have a random list of people standing in a queue. Each person is described by a pair of integers<code>(h, k)</code>, where <code>h</code> is the height of the person and <code>k</code> is the number of people in front of this person who have a height greater than or equal to <code>h</code>. Write an algorithm to reconstruct the queue.</p>
+<span id="more"></span>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/algorithm/406_queue_reconstruction/#more" rel="contents">
@@ -325,7 +447,7 @@
     <link itemprop="mainEntityOfPage" href="http://don.easiestsoft.com/algorithm/36_valid_sudoku/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
       <meta itemprop="name" content="J">
       <meta itemprop="description" content="<computer_science/>">
     </span>
@@ -409,7 +531,7 @@
     <link itemprop="mainEntityOfPage" href="http://don.easiestsoft.com/algorithm/18_4Sum/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
       <meta itemprop="name" content="J">
       <meta itemprop="description" content="<computer_science/>">
     </span>
@@ -489,7 +611,7 @@
     <link itemprop="mainEntityOfPage" href="http://don.easiestsoft.com/latex/latex-chinese/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
       <meta itemprop="name" content="J">
       <meta itemprop="description" content="<computer_science/>">
     </span>
@@ -546,6 +668,7 @@
 <li>安装中文包，xeCJK: <code>sudo apt install texlive-lang-chinese</code></li>
 <li>额外的字体支持: <code>sudo apt install texlive-fonts-extra</code></li>
 </ol>
+<span id="more"></span>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/latex/latex-chinese/#more" rel="contents">
@@ -575,7 +698,7 @@
     <link itemprop="mainEntityOfPage" href="http://don.easiestsoft.com/ubuntu/ubuntu-vpn-l2tp/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
       <meta itemprop="name" content="J">
       <meta itemprop="description" content="<computer_science/>">
     </span>
@@ -616,6 +739,7 @@
             </span>
 
           
+            <div class="post-description">Ubunbu下配置L2TP/Ipsec搭建vpn教程</div>
 
         </div>
       </header>
@@ -626,10 +750,11 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>Ubunbu下配置L2TP/Ipsec搭建vpn教程</p>
+          <p><code>Network Manager L2TP</code>是一个功能强大的网络工具，尤其适用于配置VPN。</p>
+<h3 id="Step-1-安装-network-manager-l2tp-gnome-软件包"><a href="#Step-1-安装-network-manager-l2tp-gnome-软件包" class="headerlink" title="Step 1: 安装 network-manager-l2tp-gnome 软件包"></a>Step 1: 安装 network-manager-l2tp-gnome 软件包</h3><p>在terminal中运行：<code>sudo apt install network-manager-l2tp-gnome</code></p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/ubuntu/ubuntu-vpn-l2tp/">
+              <a class="btn" href="/ubuntu/ubuntu-vpn-l2tp/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -656,7 +781,7 @@
     <link itemprop="mainEntityOfPage" href="http://don.easiestsoft.com/ubuntu/ubuntu-tips/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
       <meta itemprop="name" content="J">
       <meta itemprop="description" content="<computer_science/>">
     </span>
@@ -697,6 +822,7 @@
             </span>
 
           
+            <div class="post-description">A note about some Ubuntu command line tips in order to improve efficiency.</div>
 
         </div>
       </header>
@@ -707,10 +833,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>A note about some Ubuntu command line tips in order to improve efficiency.</p>
+          <h2 id="Create-a-symlink-symbolic-link-in-Ubuntu"><a href="#Create-a-symlink-symbolic-link-in-Ubuntu" class="headerlink" title="Create a symlink (symbolic link) in Ubuntu"></a>Create a symlink (symbolic link) in Ubuntu</h2><ul>
+<li>Usage (Example): <code>sudo ln -s ~/Downloads/eigen/Eigen /usr/local/include/Eigen</code></li>
+<li>After doing this, <code>/usr/local/include/Eigen</code> will link to the original folder <code>~/Downloads/eigen/Eigen</code>, so the compiler will be able to detect Eigen library. </li>
+<li>Note: <code>-s</code> means the link is permanant ( will not disappear after rebooting ); must provide full paths rather than relative paths.</li>
+</ul>
+<span id="more"></span>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/ubuntu/ubuntu-tips/">
+              <a class="btn" href="/ubuntu/ubuntu-tips/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -788,6 +919,8 @@
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="J"
+      src="/uploads/avatar.jpg">
   <p class="site-author-name" itemprop="name">J</p>
   <div class="site-description" itemprop="description"><computer_science/></div>
 </div>
@@ -796,20 +929,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-count">8</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -826,6 +959,8 @@
 
 
       </div>
+
+      <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=27848765&auto=0&height=66"></iframe>
 
     </div>
   </aside>
@@ -850,8 +985,20 @@
   </span>
   <span class="author" itemprop="copyrightHolder">J</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
   </div>
+
+<div class="powered-by">
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <i class="fa fa-user-md"></i>
+    <span id="busuanzi_container_site_uv">
+        Visitors:<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span id="busuanzi_container_site_pv">
+        Views:<span id="busuanzi_value_site_pv"></span>
+    </span>
+</div>
 
         
 
@@ -876,7 +1023,7 @@
 <script src="/js/motion.js"></script>
 
 
-<script src="/js/schemes/muse.js"></script>
+<script src="/js/schemes/pisces.js"></script>
 
 
 <script src="/js/next-boot.js"></script>
@@ -887,6 +1034,10 @@
   
 
 
+
+
+  
+<script src="/js/local-search.js"></script>
 
 
 
