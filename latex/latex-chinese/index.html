@@ -267,27 +267,23 @@
 <li>额外的字体支持: <code>sudo apt install texlive-fonts-extra</code></li>
 </ol>
 <span id="more"></span>
-
 <h2 id="Step-1-配置Vscode使其支持LaTeX"><a href="#Step-1-配置Vscode使其支持LaTeX" class="headerlink" title="Step 1: 配置Vscode使其支持LaTeX"></a>Step 1: 配置Vscode使其支持LaTeX</h2><ol>
 <li>安装 LaTeX Workshop 插件</li>
 <li>打开命令面板:<code>ctrl+shift+P</code>, 写入 <code>settings.json</code> 来打开设置</li>
 <li>将以下代码加入 <code>settings.json</code>:</li>
 </ol>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;latex-workshop.latex.recipes&quot;</span>: [    <span class="comment">// the first recipe is the default compile tool</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="attr">&quot;name&quot;</span>: <span class="string">&quot;xelatex&quot;</span>,  <span class="comment">// you can change this to your compile tool if different </span></span><br><span class="line">        <span class="attr">&quot;tools&quot;</span>: [<span class="string">&quot;xelatex&quot;</span>]</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;                               <span class="comment">// the seconde recipe is the recipe chain compile</span></span><br><span class="line">        <span class="attr">&quot;name&quot;</span>: <span class="string">&quot;xelatex-&gt;bibtex-&gt;xelatex*2&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;tools&quot;</span>: [</span><br><span class="line">        <span class="string">&quot;xelatex&quot;</span>,</span><br><span class="line">        <span class="string">&quot;bibtex&quot;</span>,</span><br><span class="line">        <span class="string">&quot;xelatex&quot;</span>,</span><br><span class="line">        <span class="string">&quot;xelatex&quot;</span></span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br><span class="line">],</span><br><span class="line"><span class="string">&quot;latex-workshop.latex.tools&quot;</span>:[</span><br><span class="line">    &#123;   <span class="comment">// compile tools and commands</span></span><br><span class="line">        <span class="attr">&quot;name&quot;</span>:<span class="string">&quot;xelatex&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;command&quot;</span>: <span class="string">&quot;xelatex&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;args&quot;</span>: [</span><br><span class="line">            <span class="string">&quot;-synctex=1&quot;</span>,</span><br><span class="line">            <span class="string">&quot;-interaction=nonstopmode&quot;</span>,</span><br><span class="line">            <span class="string">&quot;-file-line-error&quot;</span>,</span><br><span class="line">            <span class="string">&quot;%DOCFILE%&quot;</span></span><br><span class="line">        ]</span><br><span class="line">    &#125;, &#123;</span><br><span class="line">        <span class="attr">&quot;name&quot;</span>:<span class="string">&quot;bibtex&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;command&quot;</span>: <span class="string">&quot;bibtex&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;args&quot;</span>: [</span><br><span class="line">            <span class="string">&quot;%DOCFILE%&quot;</span></span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br><span class="line">],</span><br><span class="line"><span class="string">&quot;latex-workshop.latex.clean.fileTypes&quot;</span>: [           <span class="comment">// (Optional)choose which kind of files to clean</span></span><br><span class="line">    <span class="string">&quot;*.aux&quot;</span>,  </span><br><span class="line">    <span class="string">&quot;*.log&quot;</span>,  </span><br><span class="line">    <span class="string">&quot;*.synctex.gz&quot;</span>  </span><br><span class="line">  ],  </span><br><span class="line"><span class="string">&quot;latex-workshop.latex.autoClean.run&quot;</span>: <span class="string">&quot;onBuilt&quot;</span>,    <span class="comment">// (Optional)clean auxiliary files if you want a clean working directory</span></span><br><span class="line"><span class="string">&quot;latex-workshop.latex.autoBuild.run&quot;</span>: <span class="string">&quot;never&quot;</span>,      <span class="comment">// (Optional)never auto build .tex file when the file is auto-saved</span></span><br><span class="line"><span class="string">&quot;latex-workshop.view.pdf.hand&quot;</span>: <span class="literal">true</span>,               <span class="comment">// (Optional)set default to hand mode when open pdf viewer in vscode</span></span><br></pre></td></tr></table></figure>
-
 <h2 id="Step-2-创建tex文件测试"><a href="#Step-2-创建tex文件测试" class="headerlink" title="Step 2: 创建tex文件测试"></a>Step 2: 创建tex文件测试</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">\documentclass&#123;article&#125;</span><br><span class="line">\usepackage&#123;xeCJK&#125;  </span><br><span class="line">\begin&#123;document&#125;</span><br><span class="line">中文测试</span><br><span class="line">\end&#123;document&#125;</span><br></pre></td></tr></table></figure>
 <p>Note:需导入xeCJK包</p>
 <p>这时候应该就可以build并view了</p>
 <h2 id="Step-3-可选-导入windows中的字体"><a href="#Step-3-可选-导入windows中的字体" class="headerlink" title="Step 3: (可选)导入windows中的字体"></a>Step 3: (可选)导入windows中的字体</h2><p>ubuntu自带的中文字体较少，可以选择导入Ｗｉｎｄｏｗｓ里的字体。</p>
 <p>在windows系统中找到字体文件，一般位于<code>C:\windows\fonts</code>, 再搬到ubuntu下的<code>/usr/share/fonts/</code>(当然，可以不必全部搬过来),可以重命名其为winfonts,再打开终端执行以下命令</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cd /usr/share/fonts/winfonts</span><br><span class="line">sudo mkfontscale</span><br><span class="line">sudo mkfontdir</span><br><span class="line">sudo fc-cache -fv</span><br></pre></td></tr></table></figure>
-
 <p>查看字体是否存在了：　<code>fc-list :lang=zh | grep &#39;宋体&#39;</code></p>
-<h2 id="Step-4-排除问题"><a href="#Step-4-排除问题" class="headerlink" title="Step 4: 排除问题"></a>Step 4: 排除问题</h2><p>这样操作下来后，build的时候我遇到了如下Warnings：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Fandol is being set as the default font for CJK text.</span><br><span class="line">(xeCJK)	Please make sure it has been properly installed.</span><br><span class="line">Font &quot;FandolSong-Regular&quot; does not contain requested</span><br><span class="line">(fontspec)	Script &quot;CJK&quot;.</span><br></pre></td></tr></table></figure>
-<p>虽然有warnings, 但中文还是可以正常现实的，如果要解决它们,可以换字体, 只需加入，比如： <code>\setCJKmainfont&#123;Microsoft YaHei&#125;</code>, <code>\setCJKmainfont&#123;SimSun&#125;</code></p>
+<h2 id="Step-4-排除问题"><a href="#Step-4-排除问题" class="headerlink" title="Step 4: 排除问题"></a>Step 4: 排除问题</h2><p>这样操作下来后，build的时候我遇到了如下Warnings：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Fandol is being set as the default font for CJK text.</span><br><span class="line">(xeCJK)	Please make sure it has been properly installed.</span><br><span class="line">Font &quot;FandolSong-Regular&quot; does not contain requested</span><br><span class="line">(fontspec)	Script &quot;CJK&quot;.</span><br></pre></td></tr></table></figure><br>虽然有warnings, 但中文还是可以正常现实的，如果要解决它们,可以换字体, 只需加入，比如： <code>\setCJKmainfont&#123;Microsoft YaHei&#125;</code>, <code>\setCJKmainfont&#123;SimSun&#125;</code></p>
 <p>(事实上如果用v3.2.10 or later version的xeCJK, 使用中文字体Fandol得到时候总是会出现烦人的warning”，所以还是换字体吧…)</p>
-<p>如果还是遇到 <code>Font &quot;font-name&quot; does not contain requested (fontspec)    Script &quot;CJK&quot;.</code> 的waring, 但中文又是可以正常现实的，那么只要加入 <code>\PassOptionsToPackage&#123;quiet&#125;&#123;fontspec&#125;</code> 即可, (就是简单地disable警告)</p>
+<p>如果还是遇到 <code>Font &quot;font-name&quot; does not contain requested
+(fontspec)    Script &quot;CJK&quot;.</code> 的waring, 但中文又是可以正常现实的，那么只要加入 <code>\PassOptionsToPackage&#123;quiet&#125;&#123;fontspec&#125;</code> 即可, (就是简单地disable警告)</p>
 <p>总之，我测试的时候，这样就可以没有警告地编译并预览了：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">\documentclass&#123;article&#125;</span><br><span class="line">% \PassOptionsToPackage&#123;quiet&#125;&#123;fontspec&#125;</span><br><span class="line">\usepackage&#123;xeCJK&#125;  </span><br><span class="line">\setCJKmainfont&#123;Microsoft YaHei&#125;</span><br><span class="line">\begin&#123;document&#125;</span><br><span class="line">中文测试</span><br><span class="line">\end&#123;document&#125;</span><br></pre></td></tr></table></figure>
 
@@ -309,12 +305,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/ubuntu/ubuntu-vpn-l2tp/" rel="prev" title="Ubunbu下配置L2TP/Ipsec搭建vpn教程">
-      <i class="fa fa-chevron-left"></i> Ubunbu下配置L2TP/Ipsec搭建vpn教程
+    <a href="/ubuntu/ubuntu-command-line-usage/" rel="prev" title="Some Practical Ubuntu Command Line Usage">
+      <i class="fa fa-chevron-left"></i> Some Practical Ubuntu Command Line Usage
     </a></div>
       <div class="post-nav-item">
-    <a href="/algorithm/18_4Sum/" rel="next" title="[LeetCode 18] 4Sum (四数之和)">
-      [LeetCode 18] 4Sum (四数之和) <i class="fa fa-chevron-right"></i>
+    <a href="/algorithm/18_4Sum/" rel="next" title="[LeetCode 18] 4Sum">
+      [LeetCode 18] 4Sum <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -390,20 +386,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-count">7</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">8</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -513,6 +509,63 @@
 
 
   
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+          load: ['[tex]/mhchem'],
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+          packages: {'[+]': ['mhchem']},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
 
   
 

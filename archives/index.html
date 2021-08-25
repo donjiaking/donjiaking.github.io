@@ -204,7 +204,7 @@
   <div class="post-block">
     <div class="posts-collapse">
       <div class="collection-title">
-        <span class="collection-header">Um..! 8 posts in total. Keep on posting.</span>
+        <span class="collection-header">Um..! 7 posts in total. Keep on posting.</span>
       </div>
 
       
@@ -268,7 +268,7 @@
 
       <div class="post-title">
           <a class="post-title-link" href="/algorithm/406_queue_reconstruction/" itemprop="url">
-            <span itemprop="name">[LeetCode 406] Queue Reconstrucion By Height (根据高度重建队列)</span>
+            <span itemprop="name">[LeetCode 406] Queue Reconstrucion By Height</span>
           </a>
       </div>
 
@@ -288,7 +288,7 @@
 
       <div class="post-title">
           <a class="post-title-link" href="/algorithm/36_valid_sudoku/" itemprop="url">
-            <span itemprop="name">[LeetCode 36] Valid Sudoku (验证数独)</span>
+            <span itemprop="name">[LeetCode 36] Valid Sudoku</span>
           </a>
       </div>
 
@@ -308,7 +308,7 @@
 
       <div class="post-title">
           <a class="post-title-link" href="/algorithm/18_4Sum/" itemprop="url">
-            <span itemprop="name">[LeetCode 18] 4Sum (四数之和)</span>
+            <span itemprop="name">[LeetCode 18] 4Sum</span>
           </a>
       </div>
 
@@ -340,26 +340,6 @@
 
       <div class="post-meta">
         <time itemprop="dateCreated"
-              datetime="2020-02-22T10:31:21+08:00"
-              content="2020-02-22">
-          02-22
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/ubuntu/ubuntu-vpn-l2tp/" itemprop="url">
-            <span itemprop="name">Ubunbu下配置L2TP/Ipsec搭建vpn教程</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
               datetime="2020-02-03T21:51:19+08:00"
               content="2020-02-03">
           02-03
@@ -367,8 +347,8 @@
       </div>
 
       <div class="post-title">
-          <a class="post-title-link" href="/ubuntu/ubuntu-tips/" itemprop="url">
-            <span itemprop="name">Some Practical Ubuntu Command Line Tips</span>
+          <a class="post-title-link" href="/ubuntu/ubuntu-command-line-usage/" itemprop="url">
+            <span itemprop="name">Some Practical Ubuntu Command Line Usage</span>
           </a>
       </div>
 
@@ -449,20 +429,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-count">7</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">8</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -572,6 +552,63 @@
 
 
   
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+          load: ['[tex]/mhchem'],
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+          packages: {'[+]': ['mhchem']},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
 
   
 

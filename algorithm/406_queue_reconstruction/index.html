@@ -22,13 +22,13 @@
 
   <meta name="description" content="Description:Suppose you have a random list of people standing in a queue. Each person is described by a pair of integers(h, k), where h is the height of the person and k is the number of people in fro">
 <meta property="og:type" content="article">
-<meta property="og:title" content="[LeetCode 406] Queue Reconstrucion By Height (根据高度重建队列)">
+<meta property="og:title" content="[LeetCode 406] Queue Reconstrucion By Height">
 <meta property="og:url" content="http://don.easiestsoft.com/algorithm/406_queue_reconstruction/index.html">
 <meta property="og:site_name" content="Eastwatch">
 <meta property="og:description" content="Description:Suppose you have a random list of people standing in a queue. Each person is described by a pair of integers(h, k), where h is the height of the person and k is the number of people in fro">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-12-07T14:00:42.000Z">
-<meta property="article:modified_time" content="2020-12-07T14:24:28.387Z">
+<meta property="article:modified_time" content="2021-08-25T11:57:00.222Z">
 <meta property="article:author" content="J">
 <meta property="article:tag" content="Greedy">
 <meta name="twitter:card" content="summary">
@@ -46,7 +46,7 @@
   };
 </script>
 
-  <title>[LeetCode 406] Queue Reconstrucion By Height (根据高度重建队列) | Eastwatch</title>
+  <title>[LeetCode 406] Queue Reconstrucion By Height | Eastwatch</title>
   
 
 
@@ -219,7 +219,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          [LeetCode 406] Queue Reconstrucion By Height (根据高度重建队列)
+          [LeetCode 406] Queue Reconstrucion By Height
         </h1>
 
         <div class="post-meta">
@@ -228,10 +228,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2020-12-07 22:00:42 / Modified: 22:24:28" itemprop="dateCreated datePublished" datetime="2020-12-07T22:00:42+08:00">2020-12-07</time>
+              <time title="Created: 2020-12-07 22:00:42" itemprop="dateCreated datePublished" datetime="2020-12-07T22:00:42+08:00">2020-12-07</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-08-25 19:57:00" itemprop="dateModified" datetime="2021-08-25T19:57:00+08:00">2021-08-25</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -259,7 +265,6 @@
       
         <h3 id="Description"><a href="#Description" class="headerlink" title="Description:"></a>Description:</h3><p>Suppose you have a random list of people standing in a queue. Each person is described by a pair of integers<code>(h, k)</code>, where <code>h</code> is the height of the person and <code>k</code> is the number of people in front of this person who have a height greater than or equal to <code>h</code>. Write an algorithm to reconstruct the queue.</p>
 <span id="more"></span>
-
 <h3 id="Strategy"><a href="#Strategy" class="headerlink" title="Strategy:"></a>Strategy:</h3><ul>
 <li>先按照身高h从高到低对(h, k)排序，如果h相同，k小的排在前面</li>
 <li>新建一个空的res数组，遍历排好序后的(h, k)对，依次插入到res数组索引为k的位置即可</li>
@@ -268,18 +273,9 @@
 <p>我们可以假设第i-1次插入后queue是正确的，考虑第i次插入的情形：由于是身高高的优先插入，因此当前res数组里的所有人$(h_0, k_0), …, (h_{i-1}, k_{i-1})$的身高都比即将要插入的$(h_i, k_i)$要高，所以在位置$k_i$插入对于$(h_i, k_i)$来说一定是正确，并且对于那些已经在res数组中的元素来说，新插入一个身高比他们都小的人并不会影响他们的排列。其实这就是贪心，局部最优推出全局最优，这道题则是局部正确推出全局正确。（然而我一开始并没有想出来orz）</p>
 <h3 id="Implementation："><a href="#Implementation：" class="headerlink" title="Implementation："></a>Implementation：</h3><p>至于实现就比较简单了</p>
 <h4 id="Solution-1"><a href="#Solution-1" class="headerlink" title="Solution 1"></a>Solution 1</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// https://github.com/grandyang/leetcode/issues/406</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    vector&lt;vector&lt;<span class="keyword">int</span>&gt;&gt; <span class="built_in">reconstructQueue</span>(vector&lt;vector&lt;<span class="keyword">int</span>&gt;&gt;&amp; people) &#123;</span><br><span class="line">        <span class="built_in">sort</span>(people.<span class="built_in">begin</span>(), people.<span class="built_in">end</span>(), [](vector&lt;<span class="keyword">int</span>&gt;&amp; a, vector&lt;<span class="keyword">int</span>&gt;&amp; b) &#123;</span><br><span class="line">            <span class="keyword">return</span> a[<span class="number">0</span>] &gt; b[<span class="number">0</span>] || (a[<span class="number">0</span>] == b[<span class="number">0</span>] &amp;&amp; a[<span class="number">1</span>] &lt; b[<span class="number">1</span>]);</span><br><span class="line">        &#125;);</span><br><span class="line">        vector&lt;vector&lt;<span class="keyword">int</span>&gt;&gt; res;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span> a : people) &#123;</span><br><span class="line">            res.<span class="built_in">insert</span>(res.<span class="built_in">begin</span>() + a[<span class="number">1</span>], a); <span class="comment">// vector的insert时间复杂度是O(n)</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
 <h4 id="Solution-2"><a href="#Solution-2" class="headerlink" title="Solution 2"></a>Solution 2</h4><p>没有使用额外的空间，但多了erase的操作</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// https://github.com/grandyang/leetcode/issues/406</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    vector&lt;vector&lt;<span class="keyword">int</span>&gt;&gt; <span class="built_in">reconstructQueue</span>(vector&lt;vector&lt;<span class="keyword">int</span>&gt;&gt;&amp; people) &#123;</span><br><span class="line">        <span class="built_in">sort</span>(people.<span class="built_in">begin</span>(), people.<span class="built_in">end</span>(), [](vector&lt;<span class="keyword">int</span>&gt;&amp; a, vector&lt;<span class="keyword">int</span>&gt;&amp; b) &#123;</span><br><span class="line">            <span class="keyword">return</span> a[<span class="number">0</span>] &gt; b[<span class="number">0</span>] || (a[<span class="number">0</span>] == b[<span class="number">0</span>] &amp;&amp; a[<span class="number">1</span>] &lt; b[<span class="number">1</span>]);</span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; people.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">            <span class="keyword">auto</span> p = people[i];</span><br><span class="line">            <span class="keyword">if</span> (p[<span class="number">1</span>] != i) &#123;</span><br><span class="line">                people.<span class="built_in">erase</span>(people.<span class="built_in">begin</span>() + i);</span><br><span class="line">                people.<span class="built_in">insert</span>(people.<span class="built_in">begin</span>() + p[<span class="number">1</span>], p);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> people;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-
-
 <h4 id="C-Grammar"><a href="#C-Grammar" class="headerlink" title="C++ Grammar"></a>C++ Grammar</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 使用了lambda表达式，创建了一个匿名的函数对象</span></span><br><span class="line"><span class="built_in">sort</span>(people.<span class="built_in">begin</span>(), people.<span class="built_in">end</span>(), [](vector&lt;<span class="keyword">int</span>&gt;&amp; a, vector&lt;<span class="keyword">int</span>&gt;&amp; b) &#123;</span><br><span class="line">            <span class="keyword">return</span> a[<span class="number">0</span>] &gt; b[<span class="number">0</span>] || (a[<span class="number">0</span>] == b[<span class="number">0</span>] &amp;&amp; a[<span class="number">1</span>] &lt; b[<span class="number">1</span>]);</span><br><span class="line">        &#125;);</span><br></pre></td></tr></table></figure>
-
-
-
-
-
 
     </div>
 
@@ -298,8 +294,8 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/algorithm/36_valid_sudoku/" rel="prev" title="[LeetCode 36] Valid Sudoku (验证数独)">
-      <i class="fa fa-chevron-left"></i> [LeetCode 36] Valid Sudoku (验证数独)
+    <a href="/algorithm/36_valid_sudoku/" rel="prev" title="[LeetCode 36] Valid Sudoku">
+      <i class="fa fa-chevron-left"></i> [LeetCode 36] Valid Sudoku
     </a></div>
       <div class="post-nav-item">
     <a href="/math/prob-gen-func/" rel="next" title="Further Properties of Probability Generating Function and its Applications">
@@ -379,20 +375,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-count">7</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">8</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -502,6 +498,63 @@
 
 
   
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+          load: ['[tex]/mhchem'],
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+          packages: {'[+]': ['mhchem']},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
 
   
 
