@@ -197,7 +197,184 @@
 
           <div class="content index posts-expand">
             
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://don.easiestsoft.com/hexo/hexo-diary/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+      <meta itemprop="name" content="J">
+      <meta itemprop="description" content="<computer_science/>">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Eastwatch">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/hexo/hexo-diary/" class="post-title-link" itemprop="url">Write personal diary in Hexo blog</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-08-25 21:29:52 / Modified: 23:05:17" itemprop="dateCreated datePublished" datetime="2021-08-25T21:29:52+08:00">2021-08-25</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
+          <h2 id="Create-diary-menu-item-in-sidebar"><a href="#Create-diary-menu-item-in-sidebar" class="headerlink" title="Create diary menu item in sidebar"></a>Create diary menu item in sidebar</h2><ol>
+<li><p>Run <code>hexo new page diary</code>. This will create a <code>diary</code> folder under <code>./source</code></p>
+</li>
+<li><p>You can modify <code>./source/diary/index.md</code>. It is this file that will be rendered when you click the diary menu item in the sidebar.</p>
+</li>
+<li><p>Modify <code>themes/next/_config.yml</code> to show the diary item in the sidebar:</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="comment"># add the following line!</span></span><br><span class="line">  <span class="attr">Diary:</span> <span class="string">/diary/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-book</span></span><br></pre></td></tr></table></figure>
+<p>Note: “book” is the icon name in the font-awesome website. You can choose whatever icon you like and use that icon’s name.</p>
+</li>
+</ol>
+<p><img src=".\hexo-diary_img\image-20210825213712550.png" alt="image-20210825213712550" style="zoom:50%;"></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/hexo/hexo-diary/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://don.easiestsoft.com/hexo/hexo-latex-support/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+      <meta itemprop="name" content="J">
+      <meta itemprop="description" content="<computer_science/>">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Eastwatch">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/hexo/hexo-latex-support/" class="post-title-link" itemprop="url">How to support Latex in Hexo</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-08-25 20:13:32 / Modified: 20:36:52" itemprop="dateCreated datePublished" datetime="2021-08-25T20:13:32+08:00">2021-08-25</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a>
+                </span>
+            </span>
+
+          
+            <div class="post-description">Solution to support math equation in Hexo.</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>Environment: Hexo v5.4.0, NexT v7.8.0, windows 10</p>
+<h2 id="Install-plugin"><a href="#Install-plugin" class="headerlink" title="Install plugin"></a>Install plugin</h2><ol>
+<li><p>Check if you have installed “hexo-math”: <code>npm list hexo-math</code>. </p>
+</li>
+<li><p>If true, uninstall it: <code>npm uninstall hexo-math --save</code>.</p>
+</li>
+<li><p>Install “hexo-filter-mathjax”: <code>npm uninstall hexo-math --save</code>.</p>
+</li>
+<li><p>Check if you have successfully installed: <code>npm list hexo-filter-mathjax</code></p>
+</li>
+<li><p>Modify <code>./_config.yml</code>, add the following code to support mathjax:</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">mathjax:</span></span><br><span class="line">  <span class="attr">tags:</span> <span class="string">none</span> <span class="comment"># or &#x27;ams&#x27; or &#x27;all&#x27;</span></span><br><span class="line">  <span class="attr">single_dollars:</span> <span class="literal">true</span> <span class="comment"># enable single dollar signs as in-line math delimiters</span></span><br><span class="line">  <span class="attr">cjk_width:</span> <span class="number">0.9</span> <span class="comment"># relative CJK char width</span></span><br><span class="line">  <span class="attr">normal_width:</span> <span class="number">0.6</span> <span class="comment"># relative normal (monospace) width</span></span><br><span class="line">  <span class="attr">append_css:</span> <span class="literal">true</span> <span class="comment"># add CSS to pages rendered by MathJax</span></span><br><span class="line">  <span class="attr">every_page:</span> <span class="literal">false</span> <span class="comment"># if true, every page will be rendered by MathJax regardless the `mathjax` setting in Front-matter</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Modify <code>./themes/next/_config.yml</code> to support mathjax: </p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">math:</span></span><br><span class="line">  <span class="comment"># Default (true) will load mathjax / katex script on demand.</span></span><br><span class="line">  <span class="comment"># That is it only render those page which has `mathjax: true` in Front-matter.</span></span><br><span class="line">  <span class="comment"># If you set it to false, it will load mathjax / katex srcipt EVERY PAGE.</span></span><br><span class="line">  <span class="attr">per_page:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment"># hexo-renderer-pandoc (or hexo-renderer-kramed) required for full MathJax support.</span></span><br><span class="line">  <span class="attr">mathjax:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">    <span class="comment"># See: https://mhchem.github.io/MathJax-mhchem/</span></span><br><span class="line">    <span class="attr">mhchem:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/hexo/hexo-latex-support/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
@@ -226,7 +403,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2021-08-25 15:46:25 / Modified: 19:40:58" itemprop="dateCreated datePublished" datetime="2021-08-25T15:46:25+08:00">2021-08-25</time>
+              <time title="Created: 2021-08-25 15:46:25 / Modified: 23:13:26" itemprop="dateCreated datePublished" datetime="2021-08-25T15:46:25+08:00">2021-08-25</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -250,7 +427,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="Search"><a href="#Search" class="headerlink" title="Search"></a>Search</h2><ol>
+          <p>Environment: Hexo v5.4.0, NexT v7.8.0, windows 10</p>
+<h2 id="Search"><a href="#Search" class="headerlink" title="Search"></a>Search</h2><ol>
 <li><p>run <code>npm install hexo-generator-searchdb --save</code></p>
 </li>
 <li><p>modify <code>_config.yml</code> in the root directory, add the following code:</p>
@@ -260,7 +438,6 @@
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">local_search:</span></span><br><span class="line">	<span class="attr">enable:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<h2 id="Show-reading-progress"><a href="#Show-reading-progress" class="headerlink" title="Show reading progress"></a>Show reading progress</h2>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/hexo/hexo-blog-customization/#more" rel="contents">
@@ -283,7 +460,7 @@
   
   
 
-      
+        
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
@@ -367,7 +544,7 @@
   
   
 
-      
+        
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
@@ -453,7 +630,7 @@
   
   
 
-      
+        
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
@@ -543,7 +720,7 @@
   
   
 
-      
+        
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
@@ -629,7 +806,7 @@
   
   
 
-      
+        
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
@@ -716,7 +893,7 @@
   
   
 
-      
+        
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
@@ -871,7 +1048,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-count">9</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -884,7 +1061,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>

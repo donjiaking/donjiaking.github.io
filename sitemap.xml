@@ -2,6 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://don.easiestsoft.com/hexo/hexo-blog-customization/</loc>
+    
+    <lastmod>2021-08-25</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://don.easiestsoft.com/hexo/hexo-diary/</loc>
+    
+    <lastmod>2021-08-25</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://don.easiestsoft.com/diary/index.html</loc>
+    
+    <lastmod>2021-08-25</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://don.easiestsoft.com/hexo/hexo-latex-support/</loc>
+    
+    <lastmod>2021-08-25</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://don.easiestsoft.com/ubuntu/ubuntu-command-line-usage/</loc>
     
     <lastmod>2021-08-25</lastmod>
@@ -37,21 +65,7 @@
   </url>
   
   <url>
-    <loc>http://don.easiestsoft.com/hexo/hexo-blog-customization/</loc>
-    
-    <lastmod>2021-08-25</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://don.easiestsoft.com/about/index.html</loc>
-    
-    <lastmod>2021-08-25</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://don.easiestsoft.com/diary/index.html</loc>
     
     <lastmod>2021-08-25</lastmod>
     
@@ -102,6 +116,20 @@
   </url>
   
   <url>
+    <loc>http://don.easiestsoft.com/tags/Hexo/</loc>
+    <lastmod>2021-08-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://don.easiestsoft.com/tags/Latex/</loc>
+    <lastmod>2021-08-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://don.easiestsoft.com/tags/Ubuntu/</loc>
     <lastmod>2021-08-25</lastmod>
     <changefreq>daily</changefreq>
@@ -110,13 +138,6 @@
   
   <url>
     <loc>http://don.easiestsoft.com/tags/LaTeX/</loc>
-    <lastmod>2021-08-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://don.easiestsoft.com/tags/Hexo/</loc>
     <lastmod>2021-08-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -146,7 +167,7 @@
   </url>
   
   <url>
-    <loc>http://don.easiestsoft.com/categories/LaTeX/</loc>
+    <loc>http://don.easiestsoft.com/categories/Hexo/</loc>
     <lastmod>2021-08-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -160,7 +181,7 @@
   </url>
   
   <url>
-    <loc>http://don.easiestsoft.com/categories/Hexo/</loc>
+    <loc>http://don.easiestsoft.com/categories/LaTeX/</loc>
     <lastmod>2021-08-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
