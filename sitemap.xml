@@ -2,13 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://don.easiestsoft.com/googlee3feb63475da5be0.html</loc>
-    
-    <lastmod>2021-08-27</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://don.easiestsoft.com/hexo/hexo-blog-customization/</loc>
     
     <lastmod>2021-08-27</lastmod>
@@ -116,7 +109,7 @@
   </url>
   
   <url>
-    <loc>http://don.easiestsoft.com/tags/Hexo/</loc>
+    <loc>http://don.easiestsoft.com/tags/Greedy/</loc>
     <lastmod>2021-08-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -137,7 +130,7 @@
   </url>
   
   <url>
-    <loc>http://don.easiestsoft.com/tags/Greedy/</loc>
+    <loc>http://don.easiestsoft.com/tags/Hexo/</loc>
     <lastmod>2021-08-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -167,7 +160,7 @@
   </url>
   
   <url>
-    <loc>http://don.easiestsoft.com/categories/Hexo/</loc>
+    <loc>http://don.easiestsoft.com/categories/Algorithm/</loc>
     <lastmod>2021-08-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -188,14 +181,7 @@
   </url>
   
   <url>
-    <loc>http://don.easiestsoft.com/categories/Algorithm/</loc>
-    <lastmod>2021-08-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://don.easiestsoft.com/categories/Ubuntu/</loc>
+    <loc>http://don.easiestsoft.com/categories/Hexo/</loc>
     <lastmod>2021-08-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -203,6 +189,13 @@
   
   <url>
     <loc>http://don.easiestsoft.com/categories/Algorithm/Greedy/</loc>
+    <lastmod>2021-08-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://don.easiestsoft.com/categories/Ubuntu/</loc>
     <lastmod>2021-08-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
