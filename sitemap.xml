@@ -116,21 +116,7 @@
   </url>
   
   <url>
-    <loc>http://don.easiestsoft.com/tags/Greedy/</loc>
-    <lastmod>2021-08-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://don.easiestsoft.com/tags/Hexo/</loc>
-    <lastmod>2021-08-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://don.easiestsoft.com/tags/Latex/</loc>
     <lastmod>2021-08-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -145,6 +131,20 @@
   
   <url>
     <loc>http://don.easiestsoft.com/tags/LaTeX/</loc>
+    <lastmod>2021-08-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://don.easiestsoft.com/tags/Greedy/</loc>
+    <lastmod>2021-08-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://don.easiestsoft.com/tags/Latex/</loc>
     <lastmod>2021-08-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -167,14 +167,14 @@
   </url>
   
   <url>
-    <loc>http://don.easiestsoft.com/categories/Algorithm/</loc>
+    <loc>http://don.easiestsoft.com/categories/Hexo/</loc>
     <lastmod>2021-08-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://don.easiestsoft.com/categories/Hexo/</loc>
+    <loc>http://don.easiestsoft.com/categories/LaTeX/</loc>
     <lastmod>2021-08-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -188,14 +188,14 @@
   </url>
   
   <url>
-    <loc>http://don.easiestsoft.com/categories/Ubuntu/</loc>
+    <loc>http://don.easiestsoft.com/categories/Algorithm/</loc>
     <lastmod>2021-08-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://don.easiestsoft.com/categories/LaTeX/</loc>
+    <loc>http://don.easiestsoft.com/categories/Ubuntu/</loc>
     <lastmod>2021-08-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
