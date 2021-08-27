@@ -257,11 +257,11 @@
       
         <p>Environment: Hexo v5.4.0, NexT v7.8.0, windows 10</p>
 <h2 id="Install-plugin"><a href="#Install-plugin" class="headerlink" title="Install plugin"></a>Install plugin</h2><ol>
-<li><p>Check if you have installed “hexo-math”: <code>npm list hexo-math</code>. </p>
+<li><p>Check if you have installed &quot;hexo-math&quot;: <code>npm list hexo-math</code>. </p>
 </li>
 <li><p>If true, uninstall it: <code>npm uninstall hexo-math --save</code>.</p>
 </li>
-<li><p>Install “hexo-filter-mathjax”: <code>npm uninstall hexo-math --save</code>.</p>
+<li><p>Install &quot;hexo-filter-mathjax&quot;: <code>npm uninstall hexo-math --save</code>.</p>
 </li>
 <li><p>Check if you have successfully installed: <code>npm list hexo-filter-mathjax</code></p>
 </li>
@@ -273,11 +273,11 @@
 </li>
 </ol>
 <h2 id="Install-Renderer"><a href="#Install-Renderer" class="headerlink" title="Install Renderer"></a>Install Renderer</h2><ol>
-<li><p>Check if you have installed the default renderer “hexo-renderer-marked”: <code>npm list hexo-renderer-marked</code>.</p>
+<li><p>Check if you have installed the default renderer &quot;hexo-renderer-marked&quot;: <code>npm list hexo-renderer-marked</code>.</p>
 </li>
 <li><p>If true, uninstall it: <code>npm uninstall hexo-renderer-marked  --save</code>.</p>
 </li>
-<li><p>Install a new renderer “hexo-renderer-kramed”: <code>npm install hexo-renderer-kramed --save</code>.</p>
+<li><p>Install a new renderer &quot;hexo-renderer-kramed&quot;: <code>npm install hexo-renderer-kramed --save</code>.</p>
 </li>
 <li><p>Open <code>\node_modules\kramed\lib\rules\inline.js</code> and modify two lines in order to avoid some grammar conflicts:</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//escape: /^\\([\\`*&#123;&#125;\[\]()#$+\-.!_&gt;])/,</span><br><span class="line">//change to：</span><br><span class="line">escape: /^\\([`*\[\]()#$+\-.!_&gt;])/,</span><br><span class="line">   </span><br><span class="line">//em: /^\b_((?:__|[\s\S])+?)_\b|^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,</span><br><span class="line">//change to:</span><br><span class="line">em: /^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,</span><br></pre></td></tr></table></figure>

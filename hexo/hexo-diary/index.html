@@ -27,15 +27,15 @@
 <meta property="og:site_name" content="Eastwatch">
 <meta property="og:description" content="Create diary menu item in sidebar Run hexo new page diary. This will create a diary folder under .&#x2F;source  You can modify .&#x2F;source&#x2F;diary&#x2F;index.md. It is this file that will be rendered when you click">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://don.easiestsoft.com/hexo/hexo-diary/hexo-diary_img/image-20210825213712550.png">
-<meta property="og:image" content="http://don.easiestsoft.com/hexo/hexo-diary/hexo-diary_img/image-20210825215635104.png">
-<meta property="og:image" content="http://don.easiestsoft.com/hexo/hexo-diary/hexo-diary_img/image-20210825215622325.png">
+<meta property="og:image" content="http://don.easiestsoft.com/.com//1.png">
+<meta property="og:image" content="http://don.easiestsoft.com/.com//2.png">
+<meta property="og:image" content="http://don.easiestsoft.com/.com//3.png">
 <meta property="article:published_time" content="2021-08-25T13:29:52.000Z">
-<meta property="article:modified_time" content="2021-08-25T15:05:17.821Z">
+<meta property="article:modified_time" content="2021-08-27T09:10:13.128Z">
 <meta property="article:author" content="J">
 <meta property="article:tag" content="Hexo">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://don.easiestsoft.com/hexo/hexo-diary/hexo-diary_img/image-20210825213712550.png">
+<meta name="twitter:image" content="http://don.easiestsoft.com/.com//1.png">
 
 <link rel="canonical" href="http://don.easiestsoft.com/hexo/hexo-diary/">
 
@@ -232,10 +232,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2021-08-25 21:29:52 / Modified: 23:05:17" itemprop="dateCreated datePublished" datetime="2021-08-25T21:29:52+08:00">2021-08-25</time>
+              <time title="Created: 2021-08-25 21:29:52" itemprop="dateCreated datePublished" datetime="2021-08-25T21:29:52+08:00">2021-08-25</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-08-27 17:10:13" itemprop="dateModified" datetime="2021-08-27T17:10:13+08:00">2021-08-27</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -264,10 +270,10 @@
 </li>
 <li><p>Modify <code>themes/next/_config.yml</code> to show the diary item in the sidebar:</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="comment"># add the following line!</span></span><br><span class="line">  <span class="attr">Diary:</span> <span class="string">/diary/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-book</span></span><br></pre></td></tr></table></figure>
-<p>Note: “book” is the icon name in the font-awesome website. You can choose whatever icon you like and use that icon’s name.</p>
+<p>Note: &quot;book&quot; is the icon name in the font-awesome website. You can choose whatever icon you like and use that icon&#39;s name.</p>
 </li>
 </ol>
-<p><img src=".\hexo-diary_img\image-20210825213712550.png" alt="image-20210825213712550" style="zoom:50%;" /></p>
+<p><img src="/.com//1.png" alt="image-20210825213712550" style="zoom:50%;"></p>
 <h2 id="Protect-your-diary-using-password"><a href="#Protect-your-diary-using-password" class="headerlink" title="Protect your diary using password"></a>Protect your diary using password</h2><ol>
 <li><p>run <code>npm install --save hexo-blog-encrypt</code> to install plugin</p>
 </li>
@@ -276,8 +282,8 @@
 </li>
 <li><p>Add password and message fields at the header(Front-matter) of <code>./source/diary/index.md</code>, like this:</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: My Diary</span><br><span class="line">comments: false</span><br><span class="line">password: psw</span><br><span class="line"><span class="section">message: Oops, you need a password</span></span><br><span class="line"><span class="section">---</span></span><br></pre></td></tr></table></figure>
-<p>Note: If you don’t provide the “message” field, it will be replaced by the default message you set.</p>
-<p><img src=".\hexo-diary_img\image-20210825215635104.png" alt="image-20210825215635104" style="zoom:40%;" /></p>
+<p>Note: If you don&#39;t provide the &quot;message&quot; field, it will be replaced by the default message you set.</p>
+<p><img src="/.com//2.png" alt="image-20210825215635104" style="zoom:40%;"></p>
 </li>
 </ol>
 <h2 id="Generate-diaries"><a href="#Generate-diaries" class="headerlink" title="Generate diaries"></a>Generate diaries</h2><ol>
@@ -290,7 +296,7 @@
 </li>
 <li><p>modify <code>./source/diary/index.md</code> to link the new file you created:</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: My Diary</span><br><span class="line">comments: false</span><br><span class="line">password: psw</span><br><span class="line"><span class="section">message: Oops, you need a password</span></span><br><span class="line"><span class="section">---</span></span><br><span class="line"></span><br><span class="line"><span class="bullet">-</span> 2021</span><br><span class="line"><span class="bullet">  -</span> [<span class="string">08-25</span>](<span class="link">/diary/2021/08-25/</span>)</span><br></pre></td></tr></table></figure>
-<p><img src=".\hexo-diary_img\image-20210825215622325.png" alt="image-20210825215622325" style="zoom:40%;" /></p>
+<p><img src="/.com//3.png" alt="image-20210825215622325" style="zoom:40%;"></p>
 </li>
 </ol>
 <h2 id="Hide-diaries-in-the-home-page-not-recommended"><a href="#Hide-diaries-in-the-home-page-not-recommended" class="headerlink" title="Hide diaries in the home page (not recommended)"></a>Hide diaries in the home page (not recommended)</h2><ol>
@@ -303,7 +309,7 @@
 <p>All the posts with <code>notshow: true</code> in their front-matters will be hidden in the home page (only in the home page).</p>
 <h2 id="Hide-diaries-everywhere"><a href="#Hide-diaries-everywhere" class="headerlink" title="Hide diaries everywhere"></a>Hide diaries everywhere</h2><p>Afte testing, I found the solution above only let the diaries visually disappear in the home page. But they can also appear in the achieve, category, sitemap or being indexed by google. I found a plugin which can conveniently hide diaries everywhere. You can see the installation and configuration in here: <a target="_blank" rel="noopener" href="https://github.com/printempw/hexo-hide-posts">https://github.com/printempw/hexo-hide-posts</a>. </p>
 <blockquote>
-<p><strong>Hide</strong> means your posts will not come up in article lists (homepage, archive, category, tag, feed, sitemap, whatever), or search results either (by telling search engines not to index these pages with a “noindex” meta tag). Only those who know the link can view the post, and you can share the link with anyone.  —— From hexo-hide-posts</p>
+<p><strong>Hide</strong> means your posts will not come up in article lists (homepage, archive, category, tag, feed, sitemap, whatever), or search results either (by telling search engines not to index these pages with a &quot;noindex&quot; meta tag). Only those who know the link can view the post, and you can share the link with anyone.  ---- From hexo-hide-posts</p>
 </blockquote>
 
     </div>

@@ -28,7 +28,7 @@
 <meta property="og:description" content="Some of my customizations.">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-08-25T07:46:25.000Z">
-<meta property="article:modified_time" content="2021-08-25T15:13:26.289Z">
+<meta property="article:modified_time" content="2021-08-27T09:19:03.451Z">
 <meta property="article:author" content="J">
 <meta property="article:tag" content="Hexo">
 <meta name="twitter:card" content="summary">
@@ -228,10 +228,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2021-08-25 15:46:25 / Modified: 23:13:26" itemprop="dateCreated datePublished" datetime="2021-08-25T15:46:25+08:00">2021-08-25</time>
+              <time title="Created: 2021-08-25 15:46:25" itemprop="dateCreated datePublished" datetime="2021-08-25T15:46:25+08:00">2021-08-25</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-08-27 17:19:03" itemprop="dateModified" datetime="2021-08-27T17:19:03+08:00">2021-08-27</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -280,7 +286,7 @@
 </li>
 </ol>
 <h2 id="Excerption"><a href="#Excerption" class="headerlink" title="Excerption"></a>Excerption</h2><p>Solution 1: Insert <code>&lt;!--more--&gt;</code> in your article. Only content before this mark will be shown in the home page.</p>
-<p>Solution 2: Install plugin to achieve auto-excerption. This way you won’t need to insert additional marks in your article.</p>
+<p>Solution 2: Install plugin to achieve auto-excerption. This way you won&#39;t need to insert additional marks in your article.</p>
 <ol>
 <li><p>run <code>npm install hexo-excerpt --save</code></p>
 </li>
@@ -295,9 +301,9 @@
 </li>
 <li><p>You can modify <code>./source/diary/index.md</code> at your will.</p>
 </li>
-<li><p>Modify <code>themes/next/_config.yml</code> to show the “diary” item:</p>
+<li><p>Modify <code>themes/next/_config.yml</code> to show the &quot;diary&quot; item:</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="comment"># add the following line!</span></span><br><span class="line">  <span class="attr">Diary:</span> <span class="string">/diary/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-book</span></span><br></pre></td></tr></table></figure>
-<p>“book” is the icon name in the font-awesome website. You can choose whatever icon you like and use that icon’s name.</p>
+<p>&quot;book&quot; is the icon name in the font-awesome website. You can choose whatever icon you like and use that icon&#39;s name.</p>
 </li>
 </ol>
 <h2 id="Password-protection"><a href="#Password-protection" class="headerlink" title="Password protection"></a>Password protection</h2><ol>
@@ -308,13 +314,18 @@
 </li>
 <li><p>add password, abstract and message fields at the header(Front-matter) of the article that you want to protect, like this:</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: Diary</span><br><span class="line">date: 2021-08-025</span><br><span class="line">password: 123</span><br><span class="line">abstract: ENCRYPTED!</span><br><span class="line"><span class="section">message: Enter password to get access.</span></span><br><span class="line"><span class="section">---</span></span><br></pre></td></tr></table></figure>
-<p>If you don’t provide the “abstract” and “message” field, they will be replaced by the default abstract and default message you set.</p>
+<p>If you don&#39;t provide the &quot;abstract&quot; and &quot;message&quot; field, they will be replaced by the default abstract and default message you set.</p>
 </li>
 </ol>
-<h2 id="Latex-support"><a href="#Latex-support" class="headerlink" title="Latex support"></a>Latex support</h2><p>Hexo doesn’t support Latex rendering. Need to install plugins. Details see my post <a href="https://don.easiestsoft.com/hexo/hexo-latex-support/">here</a>.</p>
-<h2 id="Custom-gallery"><a href="#Custom-gallery" class="headerlink" title="Custom gallery"></a>Custom gallery</h2><p>You can create a nice and simple gallery page by using custom html and css, if you want. Please reference to <a target="_blank" rel="noopener" href="https://yuan901202.github.io/2019/07/31/2019-07-31-add-gallery-to-hexo/">here</a>.</p>
-<h2 id="Write-Diary"><a href="#Write-Diary" class="headerlink" title="Write Diary"></a>Write Diary</h2><p>See my post <a href="https://don.easiestsoft.com/hexo/hexo-diary/">here</a>.</p>
-
+<h2 id="Latex-support"><a href="#Latex-support" class="headerlink" title="Latex support"></a>Latex support</h2><p>Hexo doesn&#39;t support Latex rendering. Need to install plugins. Details see my post <a href="https://don.easiestsoft.com/hexo/hexo-latex-support/">here</a>.</p>
+<h2 id="Custom-gallery"><a href="#Custom-gallery" class="headerlink" title="Custom gallery"></a>Custom gallery</h2><p>You can create a nice and simple gallery page by using custom html and css, if you want. Please reference to other&#39;s post <a target="_blank" rel="noopener" href="https://yuan901202.github.io/2019/07/31/2019-07-31-add-gallery-to-hexo/">here</a>.</p>
+<h2 id="Write-diary"><a href="#Write-diary" class="headerlink" title="Write diary"></a>Write diary</h2><p>See my post <a href="https://don.easiestsoft.com/hexo/hexo-diary/">here</a>.</p>
+<h2 id="Add-local-image-in-your-article"><a href="#Add-local-image-in-your-article" class="headerlink" title="Add local image in your article"></a>Add local image in your article</h2><ol>
+<li>Install plugin: <code>npm install hexo-asset-image --save</code></li>
+<li>Modify <code>./_config.yml</code>:  set <code>post_asset_folder</code> to <code>true</code></li>
+</ol>
+<p>Then when you run <code>hexo new xxx</code>, it will create a folder with the same name xxx. Put images to that folder. Then you can link the image in xxx.md by using format like <code>![alt text](xxx/image_name.jpg)</code></p>
+<h2 id><a href="#" class="headerlink" title=" "></a> </h2>
     </div>
 
     
@@ -397,7 +408,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Search"><span class="nav-number">1.</span> <span class="nav-text">Search</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Show-reading-progress"><span class="nav-number">2.</span> <span class="nav-text">Show reading progress</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Show-number-of-visitors"><span class="nav-number">3.</span> <span class="nav-text">Show number of visitors</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Site-map"><span class="nav-number">4.</span> <span class="nav-text">Site map</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Excerption"><span class="nav-number">5.</span> <span class="nav-text">Excerption</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sidebar-avatar"><span class="nav-number">6.</span> <span class="nav-text">Sidebar avatar</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Add-menu-items-in-sidebar"><span class="nav-number">7.</span> <span class="nav-text">Add menu items in sidebar</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Password-protection"><span class="nav-number">8.</span> <span class="nav-text">Password protection</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Latex-support"><span class="nav-number">9.</span> <span class="nav-text">Latex support</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Custom-gallery"><span class="nav-number">10.</span> <span class="nav-text">Custom gallery</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Write-Diary"><span class="nav-number">11.</span> <span class="nav-text">Write Diary</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Search"><span class="nav-number">1.</span> <span class="nav-text">Search</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Show-reading-progress"><span class="nav-number">2.</span> <span class="nav-text">Show reading progress</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Show-number-of-visitors"><span class="nav-number">3.</span> <span class="nav-text">Show number of visitors</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Site-map"><span class="nav-number">4.</span> <span class="nav-text">Site map</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Excerption"><span class="nav-number">5.</span> <span class="nav-text">Excerption</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sidebar-avatar"><span class="nav-number">6.</span> <span class="nav-text">Sidebar avatar</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Add-menu-items-in-sidebar"><span class="nav-number">7.</span> <span class="nav-text">Add menu items in sidebar</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Password-protection"><span class="nav-number">8.</span> <span class="nav-text">Password protection</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Latex-support"><span class="nav-number">9.</span> <span class="nav-text">Latex support</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Custom-gallery"><span class="nav-number">10.</span> <span class="nav-text">Custom gallery</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Write-diary"><span class="nav-number">11.</span> <span class="nav-text">Write diary</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Add-local-image-in-your-article"><span class="nav-number">12.</span> <span class="nav-text">Add local image in your article</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">13.</span> <span class="nav-text"> </span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
