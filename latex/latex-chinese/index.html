@@ -247,12 +247,12 @@
             </span>
 
           
-            <span id="/latex/latex-chinese/" class="post-meta-item leancloud_visitors" data-flag-title="Ubuntu下安装LaTeX并配置中文环境" title="Views">
+            <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv" style="display: none;">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
               <span class="post-meta-item-text">Views: </span>
-              <span class="leancloud-visitors-count"></span>
+              <span id="busuanzi_value_page_pv"></span>
             </span>
   
   <span class="post-meta-item">
@@ -462,19 +462,27 @@
   <span class="author" itemprop="copyrightHolder">J</span>
 </div>
 
-<div class="powered-by">
-    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-    <i class="fa fa-user-md"></i>
-    <span id="busuanzi_container_site_uv">
-        Visitors:<span id="busuanzi_value_site_uv"></span>
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
     </span>
     <span class="post-meta-divider">|</span>
-    <span id="busuanzi_container_site_pv">
-        Views:<span id="busuanzi_value_site_pv"></span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
     </span>
 </div>
-
-        
 
 
 
@@ -552,7 +560,7 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
       avatar     : 'mm',
       meta       : guest,
       pageSize   : '10' || 10,
-      visitor    : true,
+      visitor    : false,
       lang       : 'en' || 'zh-cn',
       path       : location.pathname,
       recordIP   : false,
