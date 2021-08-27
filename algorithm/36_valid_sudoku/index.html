@@ -28,7 +28,7 @@
 <meta property="og:description" content="DescriptionDetermine if a 9 x 9 Sudoku board is valid. Only the filled cells need to be validated according to the following rules:  Each row must contain the digits 1-9 without repetition. Each colum">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-12-07T13:57:26.000Z">
-<meta property="article:modified_time" content="2021-08-25T11:57:21.239Z">
+<meta property="article:modified_time" content="2021-08-27T09:57:24.982Z">
 <meta property="article:author" content="J">
 <meta property="article:tag" content="Hash Table">
 <meta name="twitter:card" content="summary">
@@ -77,7 +77,119 @@
   </style>
 </noscript>
 
-</head>
+<style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
   <div class="container use-motion">
@@ -236,7 +348,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-08-25 19:57:21" itemprop="dateModified" datetime="2021-08-25T19:57:21+08:00">2021-08-25</time>
+                <time title="Modified: 2021-08-27 17:57:24" itemprop="dateModified" datetime="2021-08-27T17:57:24+08:00">2021-08-27</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -278,19 +390,19 @@
 </ol>
 <p>具体实现细节上：</p>
 <ul>
-<li><p>使用<strong>unorderd_set（hash的方法）</strong>来分别判断每行每列每个block中是否有相同的元素，这样以上的每一步就只需$O(n^2)$的时间复杂度</p>
+<li><p>使用<strong>unorderd_set（hash的方法）</strong>来分别判断每行每列每个block中是否有相同的元素，这样以上的每一步就只需<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex" xmlns="http://www.w3.org/2000/svg" width="5.832ex" height="2.452ex" role="img" focusable="false" viewbox="0 -833.9 2577.6 1083.9"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D442" d="M740 435Q740 320 676 213T511 42T304 -22Q207 -22 138 35T51 201Q50 209 50 244Q50 346 98 438T227 601Q351 704 476 704Q514 704 524 703Q621 689 680 617T740 435ZM637 476Q637 565 591 615T476 665Q396 665 322 605Q242 542 200 428T157 216Q157 126 200 73T314 19Q404 19 485 98T608 313Q637 408 637 476Z"/></g><g data-mml-node="mo" transform="translate(763,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"/></g><g data-mml-node="msup" transform="translate(1152,0)"><g data-mml-node="mi"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"/></g><g data-mml-node="mn" transform="translate(633,363) scale(0.707)"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"/></g></g><g data-mml-node="mo" transform="translate(2188.6,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"/></g></g></g></svg></mjx-container>的时间复杂度</p>
 </li>
-<li><p>注意<code>&quot;.&quot;</code>的处理</p>
+<li><p>注意<code>"."</code>的处理</p>
 </li>
 </ul>
 <h4 id="Solution-1"><a href="#Solution-1" class="headerlink" title="Solution 1"></a>Solution 1</h4><p>由于数字是<code>1-9</code>（有9个位置），每行每列都有9个位置，每个block规定为<code>3*3</code>（也有9个位置），因此在每行或每列或每个block内，可以构建从数字到位置的一一映射，因此相同的数字会被映到相同的位置，而如果那个位置已经被其它数字“占据”了，那就说明有重复的数字。其实这也是哈希的思想，哈希就是将数字经一个函数映射到代表位置的index，再在那个index对应的位置里插入数字即可。</p>
 <p>具体实现上：创建三个二维布尔型数组v1、v2、v3，分别记录各行，各列，各小方阵是否出现某个数字。在遍历9*9的矩阵的时候，将每个数字分别映射到这三个布尔型数组相应的位置上，检查那个位置是否已经1，若为1就<code>return false</code>。其中，将数字映射到v1和v2只需做这样的映射即可：<code>num-&gt;(r, num)</code>和<code>num-&gt;(num, c)</code>，而将数字映射到v3就需要做一定的转换了。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isValidSudoku</span><span class="params">(vector&lt;vector&lt;<span class="keyword">char</span>&gt;&gt;&amp; board)</span> </span>&#123;</span><br><span class="line">        vector&lt;vector&lt;<span class="keyword">bool</span>&gt;&gt; <span class="built_in">rowFlag</span>(<span class="number">9</span>, vector&lt;<span class="keyword">bool</span>&gt;(<span class="number">9</span>));</span><br><span class="line">        vector&lt;vector&lt;<span class="keyword">bool</span>&gt;&gt; <span class="built_in">colFlag</span>(<span class="number">9</span>, vector&lt;<span class="keyword">bool</span>&gt;(<span class="number">9</span>));</span><br><span class="line">        vector&lt;vector&lt;<span class="keyword">bool</span>&gt;&gt; <span class="built_in">cellFlag</span>(<span class="number">9</span>, vector&lt;<span class="keyword">bool</span>&gt;(<span class="number">9</span>));</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">9</span>; ++i) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">9</span>; ++j) &#123;</span><br><span class="line">                <span class="keyword">if</span> (board[i][j] == <span class="string">&#x27;.&#x27;</span>) <span class="keyword">continue</span>;</span><br><span class="line">                <span class="keyword">int</span> c = board[i][j] - <span class="string">&#x27;1&#x27;</span>;</span><br><span class="line">                <span class="keyword">if</span> (rowFlag[i][c] || colFlag[c][j] || cellFlag[<span class="number">3</span> * (i / <span class="number">3</span>) + j / <span class="number">3</span>][c]) 					<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">                rowFlag[i][c] = <span class="literal">true</span>;</span><br><span class="line">                colFlag[c][j] = <span class="literal">true</span>;</span><br><span class="line">                cellFlag[<span class="number">3</span> * (i / <span class="number">3</span>) + j / <span class="number">3</span>][c] = <span class="literal">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> {</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isValidSudoku</span><span class="params">(vector&lt;vector&lt;<span class="keyword">char</span>&gt;&gt;&amp; board)</span> </span>{</span><br><span class="line">        vector&lt;vector&lt;<span class="keyword">bool</span>&gt;&gt; <span class="built_in">rowFlag</span>(<span class="number">9</span>, vector&lt;<span class="keyword">bool</span>&gt;(<span class="number">9</span>));</span><br><span class="line">        vector&lt;vector&lt;<span class="keyword">bool</span>&gt;&gt; <span class="built_in">colFlag</span>(<span class="number">9</span>, vector&lt;<span class="keyword">bool</span>&gt;(<span class="number">9</span>));</span><br><span class="line">        vector&lt;vector&lt;<span class="keyword">bool</span>&gt;&gt; <span class="built_in">cellFlag</span>(<span class="number">9</span>, vector&lt;<span class="keyword">bool</span>&gt;(<span class="number">9</span>));</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">9</span>; ++i) {</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">9</span>; ++j) {</span><br><span class="line">                <span class="keyword">if</span> (board[i][j] == <span class="string">'.'</span>) <span class="keyword">continue</span>;</span><br><span class="line">                <span class="keyword">int</span> c = board[i][j] - <span class="string">'1'</span>;</span><br><span class="line">                <span class="keyword">if</span> (rowFlag[i][c] || colFlag[c][j] || cellFlag[<span class="number">3</span> * (i / <span class="number">3</span>) + j / <span class="number">3</span>][c]) 					<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">                rowFlag[i][c] = <span class="literal">true</span>;</span><br><span class="line">                colFlag[c][j] = <span class="literal">true</span>;</span><br><span class="line">                cellFlag[<span class="number">3</span> * (i / <span class="number">3</span>) + j / <span class="number">3</span>][c] = <span class="literal">true</span>;</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    }</span><br><span class="line">};</span><br></pre></td></tr></table></figure>
 <h4 id="Solution-2"><a href="#Solution-2" class="headerlink" title="Solution 2"></a>Solution 2</h4><p>由于Solution 1需要创建三个和原数组相同大小的数组，我们可以简化一下，只用一个hash table就搞定(不过实际上并没有节省空间)。</p>
 <p>由于我们要分别检查每行、每列、每个block是否有相同的元素，因此每个数字可以认为有三种互不联系的状态：在行中，在列中，在block中。我们可以将每个状态编码为1个字符串，而且只要状态不同，字符串也不同，只要状态相同，字符串也相同，具体做法为：将数字放在一个括号中，每行上的数字就将行号放在括号左边，每列上的数字就将列数放在括号右边，每个小区间内的数字就将在小区间内的行列数分别放在括号的左右两边。</p>
 <p>具体实现上：在遍历9*9的矩阵的时候，将每个元素的三种状态编码成三个string，先判断unorderd_set有没有这三个状态，没有就加到unordered_set里面，有就return false</p>
 <p>其实这个idea本质上和Solution 1是一样的，只不过这个解法将Solution 1的三个二维数组合在一起了。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isValidSudoku</span><span class="params">(vector&lt;vector&lt;<span class="keyword">char</span>&gt;&gt;&amp; board)</span> </span>&#123;</span><br><span class="line">        unordered_set&lt;string&gt; st;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">9</span>; ++i) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">9</span>; ++j) &#123;</span><br><span class="line">                <span class="keyword">if</span> (board[i][j] == <span class="string">&#x27;.&#x27;</span>) <span class="keyword">continue</span>;</span><br><span class="line">                string t = <span class="string">&quot;(&quot;</span> + <span class="built_in">to_string</span>(board[i][j]) + <span class="string">&quot;)&quot;</span>;</span><br><span class="line">                string row = <span class="built_in">to_string</span>(i) + t, col = t + <span class="built_in">to_string</span>(j), cell = <span class="built_in">to_string</span>(i / <span class="number">3</span>) + t + <span class="built_in">to_string</span>(j / <span class="number">3</span>);</span><br><span class="line">                <span class="keyword">if</span> (st.<span class="built_in">count</span>(row) || st.<span class="built_in">count</span>(col) || st.<span class="built_in">count</span>(cell)) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">                st.<span class="built_in">insert</span>(row);</span><br><span class="line">                st.<span class="built_in">insert</span>(col);</span><br><span class="line">                st.<span class="built_in">insert</span>(cell);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> {</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isValidSudoku</span><span class="params">(vector&lt;vector&lt;<span class="keyword">char</span>&gt;&gt;&amp; board)</span> </span>{</span><br><span class="line">        unordered_set&lt;string&gt; st;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">9</span>; ++i) {</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">9</span>; ++j) {</span><br><span class="line">                <span class="keyword">if</span> (board[i][j] == <span class="string">'.'</span>) <span class="keyword">continue</span>;</span><br><span class="line">                string t = <span class="string">"("</span> + <span class="built_in">to_string</span>(board[i][j]) + <span class="string">")"</span>;</span><br><span class="line">                string row = <span class="built_in">to_string</span>(i) + t, col = t + <span class="built_in">to_string</span>(j), cell = <span class="built_in">to_string</span>(i / <span class="number">3</span>) + t + <span class="built_in">to_string</span>(j / <span class="number">3</span>);</span><br><span class="line">                <span class="keyword">if</span> (st.<span class="built_in">count</span>(row) || st.<span class="built_in">count</span>(col) || st.<span class="built_in">count</span>(cell)) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">                st.<span class="built_in">insert</span>(row);</span><br><span class="line">                st.<span class="built_in">insert</span>(col);</span><br><span class="line">                st.<span class="built_in">insert</span>(cell);</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    }</span><br><span class="line">};</span><br></pre></td></tr></table></figure>
 <p><strong>Reference:</strong> <a target="_blank" rel="noopener" href="https://github.com/grandyang/leetcode/issues/36">https://github.com/grandyang/leetcode/issues/36</a></p>
 <h3 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h3><ol>
 <li>Solution1、2是遍历一次数组，判断每个数字是否在它所在的行或列或块上唯一；而Solution 0是遍历三次数组，每次只判断一类</li>

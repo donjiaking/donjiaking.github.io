@@ -28,7 +28,7 @@
 <meta property="og:description" content="DescriptionGiven an array nums of n integers and an integer target, are there elements a, b, c, and d in nums such that a + b + c + d &#x3D; target? Find all unique quadruplets in the array which gives the">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-12-07T13:49:28.000Z">
-<meta property="article:modified_time" content="2021-08-25T11:56:41.792Z">
+<meta property="article:modified_time" content="2021-08-27T09:57:23.217Z">
 <meta property="article:author" content="J">
 <meta property="article:tag" content="Hash Table">
 <meta name="twitter:card" content="summary">
@@ -77,7 +77,119 @@
   </style>
 </noscript>
 
-</head>
+<style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
   <div class="container use-motion">
@@ -236,7 +348,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-08-25 19:56:41" itemprop="dateModified" datetime="2021-08-25T19:56:41+08:00">2021-08-25</time>
+                <time title="Modified: 2021-08-27 17:57:23" itemprop="dateModified" datetime="2021-08-27T17:57:23+08:00">2021-08-27</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -282,7 +394,7 @@
 <li><p>首先给 <code>nums</code> 排序。</p>
 </li>
 <li><p>在给result添加quadruplets的时候：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(tmp_it != hashtable.<span class="built_in">end</span>() &amp;&amp; tmp &gt;= nums[k])&#123;</span><br><span class="line">    <span class="keyword">int</span> count = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span>(nums[k] == nums[j]) count++;</span><br><span class="line">    <span class="keyword">if</span>(nums[k] == nums[i]) count++;</span><br><span class="line">    <span class="keyword">if</span>(tmp == nums[k] &amp;&amp; tmp_it-&gt;second - count == <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">continue</span>;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        result.<span class="built_in">push_back</span>(vector&lt;<span class="keyword">int</span>&gt;&#123;nums[i], nums[j], nums[k], tmp&#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(tmp_it != hashtable.<span class="built_in">end</span>() &amp;&amp; tmp &gt;= nums[k]){</span><br><span class="line">    <span class="keyword">int</span> count = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span>(nums[k] == nums[j]) count++;</span><br><span class="line">    <span class="keyword">if</span>(nums[k] == nums[i]) count++;</span><br><span class="line">    <span class="keyword">if</span>(tmp == nums[k] &amp;&amp; tmp_it-&gt;second - count == <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">continue</span>;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        result.<span class="built_in">push_back</span>(vector&lt;<span class="keyword">int</span>&gt;{nums[i], nums[j], nums[k], tmp});</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>在那三层for循环结尾，要进行去重(以第二层for循环为例)。注意j+1&lt;n-2防止最后一次判断的时候数组越界；以及用while而不是if来消除多个重复的数字：</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span>(j+<span class="number">1</span> &lt; n<span class="number">-2</span> &amp;&amp; nums[j+<span class="number">1</span>] == nums[j])</span><br><span class="line">	++j;</span><br></pre></td></tr></table></figure>
@@ -295,13 +407,13 @@
 <li>首先对数组排序，先确定一个数字，然后对这个数字后面的部分调用(k-1)Sum。要注意duplicate的出现</li>
 <li>直到进入到2Sum。2Sum的部分就是采用了hash的思想（利用<code>unorderd_set</code>）。也要注意duplicate的出现</li>
 </ol>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// https://leetcode.com/problems/4sum/solution/</span></span><br><span class="line"></span><br><span class="line">vector&lt;vector&lt;<span class="keyword">int</span>&gt;&gt; <span class="built_in">fourSum</span>(vector&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> target) &#123;</span><br><span class="line">    <span class="built_in">sort</span>(<span class="built_in">begin</span>(nums), <span class="built_in">end</span>(nums));</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">kSum</span>(nums, target, <span class="number">0</span>, <span class="number">4</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">vector&lt;vector&lt;<span class="keyword">int</span>&gt;&gt; <span class="built_in">kSum</span>(vector&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> target, <span class="keyword">int</span> start, <span class="keyword">int</span> k) &#123;</span><br><span class="line">    vector&lt;vector&lt;<span class="keyword">int</span>&gt;&gt; res;</span><br><span class="line">    <span class="keyword">if</span> (start == nums.<span class="built_in">size</span>() || nums[start] * k &gt; target || target &gt; nums.<span class="built_in">back</span>() * k)</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    <span class="keyword">if</span> (k == <span class="number">2</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">twoSum</span>(nums, target, start);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = start; i &lt; nums.<span class="built_in">size</span>(); ++i)</span><br><span class="line">        <span class="keyword">if</span> (i == start || nums[i - <span class="number">1</span>] != nums[i])</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">auto</span> &amp;set : <span class="built_in">kSum</span>(nums, target - nums[i], i + <span class="number">1</span>, k - <span class="number">1</span>)) &#123;</span><br><span class="line">                res.<span class="built_in">push_back</span>(&#123;nums[i]&#125;);</span><br><span class="line">                res.<span class="built_in">back</span>().<span class="built_in">insert</span>(<span class="built_in">end</span>(res.<span class="built_in">back</span>()), <span class="built_in">begin</span>(set), <span class="built_in">end</span>(set));</span><br><span class="line">            &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line">vector&lt;vector&lt;<span class="keyword">int</span>&gt;&gt; <span class="built_in">twoSum</span>(vector&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> target, <span class="keyword">int</span> start) &#123;</span><br><span class="line">    vector&lt;vector&lt;<span class="keyword">int</span>&gt;&gt; res;</span><br><span class="line">    unordered_set&lt;<span class="keyword">int</span>&gt; s;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> i = start; i &lt; nums.<span class="built_in">size</span>(); ++i) &#123;</span><br><span class="line">        <span class="keyword">if</span> (res.<span class="built_in">empty</span>() || res.<span class="built_in">back</span>()[<span class="number">1</span>] != nums[i])</span><br><span class="line">            <span class="keyword">if</span> (s.<span class="built_in">count</span>(target - nums[i]))</span><br><span class="line">                res.<span class="built_in">push_back</span>(&#123; target - nums[i], nums[i]&#125;);</span><br><span class="line">        s.<span class="built_in">insert</span>(nums[i]);  <span class="comment">// 边遍历边把元素加入hashtable里面，与在一开始就一下子把所有元素加进去相比，在防止出现duplicate时处理更方便</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// https://leetcode.com/problems/4sum/solution/</span></span><br><span class="line"></span><br><span class="line">vector&lt;vector&lt;<span class="keyword">int</span>&gt;&gt; <span class="built_in">fourSum</span>(vector&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> target) {</span><br><span class="line">    <span class="built_in">sort</span>(<span class="built_in">begin</span>(nums), <span class="built_in">end</span>(nums));</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">kSum</span>(nums, target, <span class="number">0</span>, <span class="number">4</span>);</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">vector&lt;vector&lt;<span class="keyword">int</span>&gt;&gt; <span class="built_in">kSum</span>(vector&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> target, <span class="keyword">int</span> start, <span class="keyword">int</span> k) {</span><br><span class="line">    vector&lt;vector&lt;<span class="keyword">int</span>&gt;&gt; res;</span><br><span class="line">    <span class="keyword">if</span> (start == nums.<span class="built_in">size</span>() || nums[start] * k &gt; target || target &gt; nums.<span class="built_in">back</span>() * k)</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    <span class="keyword">if</span> (k == <span class="number">2</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">twoSum</span>(nums, target, start);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = start; i &lt; nums.<span class="built_in">size</span>(); ++i)</span><br><span class="line">        <span class="keyword">if</span> (i == start || nums[i - <span class="number">1</span>] != nums[i])</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">auto</span> &amp;set : <span class="built_in">kSum</span>(nums, target - nums[i], i + <span class="number">1</span>, k - <span class="number">1</span>)) {</span><br><span class="line">                res.<span class="built_in">push_back</span>({nums[i]});</span><br><span class="line">                res.<span class="built_in">back</span>().<span class="built_in">insert</span>(<span class="built_in">end</span>(res.<span class="built_in">back</span>()), <span class="built_in">begin</span>(set), <span class="built_in">end</span>(set));</span><br><span class="line">            }</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">}</span><br><span class="line">vector&lt;vector&lt;<span class="keyword">int</span>&gt;&gt; <span class="built_in">twoSum</span>(vector&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> target, <span class="keyword">int</span> start) {</span><br><span class="line">    vector&lt;vector&lt;<span class="keyword">int</span>&gt;&gt; res;</span><br><span class="line">    unordered_set&lt;<span class="keyword">int</span>&gt; s;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> i = start; i &lt; nums.<span class="built_in">size</span>(); ++i) {</span><br><span class="line">        <span class="keyword">if</span> (res.<span class="built_in">empty</span>() || res.<span class="built_in">back</span>()[<span class="number">1</span>] != nums[i])</span><br><span class="line">            <span class="keyword">if</span> (s.<span class="built_in">count</span>(target - nums[i]))</span><br><span class="line">                res.<span class="built_in">push_back</span>({ target - nums[i], nums[i]});</span><br><span class="line">        s.<span class="built_in">insert</span>(nums[i]);  <span class="comment">// 边遍历边把元素加入hashtable里面，与在一开始就一下子把所有元素加进去相比，在防止出现duplicate时处理更方便</span></span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
 <p><strong>C++ Grammar：</strong></p>
 <p><code>auto</code>，<code>vector.back()</code>, <code>vector.insert()</code>, <code>unorderd_set</code></p>
-<p>for循环的新用法(C++14): <code>for(auto each1: vec1) &#123;&#125;//只访问不修改 for(auto &amp; each1: vec1) &#123;&#125;//可访问可修改</code></p>
-<p>Use <code>vec.push_back(&#123;1, 2&#125;)</code> instead of <code>vec.push_back(vector&lt;int&gt;&#123;1, 2&#125;)</code></p>
+<p>for循环的新用法(C++14): <code>for(auto each1: vec1) {}//只访问不修改 for(auto &amp; each1: vec1) {}//可访问可修改</code></p>
+<p>Use <code>vec.push_back({1, 2})</code> instead of <code>vec.push_back(vector&lt;int&gt;{1, 2})</code></p>
 <p><strong>Solution 1：Two Pointers</strong>，只是<code>twoSum</code> 函数的实现不同，也是O(n^3)的时间复杂度，直接贴代码：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// https://leetcode.com/problems/4sum/solution/</span></span><br><span class="line">vector&lt;vector&lt;<span class="keyword">int</span>&gt;&gt; <span class="built_in">twoSum</span>(vector&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> target, <span class="keyword">int</span> start) &#123;</span><br><span class="line">    vector&lt;vector&lt;<span class="keyword">int</span>&gt;&gt; res;</span><br><span class="line">    <span class="keyword">int</span> lo = start, hi = nums.<span class="built_in">size</span>() - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (lo &lt; hi) &#123;</span><br><span class="line">        <span class="keyword">int</span> sum = nums[lo] + nums[hi];</span><br><span class="line">        <span class="keyword">if</span> (sum &lt; target || (lo &gt; start &amp;&amp; nums[lo] == nums[lo - <span class="number">1</span>]))</span><br><span class="line">            ++lo;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (sum &gt; target || (hi &lt; nums.<span class="built_in">size</span>() - <span class="number">1</span> &amp;&amp; nums[hi] == nums[hi + <span class="number">1</span>]))</span><br><span class="line">            --hi;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            res.<span class="built_in">push_back</span>(&#123; nums[lo++], nums[hi--]&#125;);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// https://leetcode.com/problems/4sum/solution/</span></span><br><span class="line">vector&lt;vector&lt;<span class="keyword">int</span>&gt;&gt; <span class="built_in">twoSum</span>(vector&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> target, <span class="keyword">int</span> start) {</span><br><span class="line">    vector&lt;vector&lt;<span class="keyword">int</span>&gt;&gt; res;</span><br><span class="line">    <span class="keyword">int</span> lo = start, hi = nums.<span class="built_in">size</span>() - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (lo &lt; hi) {</span><br><span class="line">        <span class="keyword">int</span> sum = nums[lo] + nums[hi];</span><br><span class="line">        <span class="keyword">if</span> (sum &lt; target || (lo &gt; start &amp;&amp; nums[lo] == nums[lo - <span class="number">1</span>]))</span><br><span class="line">            ++lo;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (sum &gt; target || (hi &lt; nums.<span class="built_in">size</span>() - <span class="number">1</span> &amp;&amp; nums[hi] == nums[hi + <span class="number">1</span>]))</span><br><span class="line">            --hi;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            res.<span class="built_in">push_back</span>({ nums[lo++], nums[hi--]});</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
 <h3 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h3><ol>
 <li>善用递归简化代码</li>
 <li>将大问题分解成小问题的思想，比如从kSum到(k-1)Sum....</li>

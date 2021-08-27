@@ -2,14 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://don.easiestsoft.com/hexo/hexo-blog-customization/</loc>
+    <loc>http://don.easiestsoft.com/hexo/hexo-diary/</loc>
     
     <lastmod>2021-08-27</lastmod>
     
   </url>
   
   <url>
-    <loc>http://don.easiestsoft.com/hexo/hexo-diary/</loc>
+    <loc>http://don.easiestsoft.com/math/prob-gen-func/</loc>
+    
+    <lastmod>2021-08-27</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://don.easiestsoft.com/algorithm/406_queue_reconstruction/</loc>
+    
+    <lastmod>2021-08-27</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://don.easiestsoft.com/algorithm/36_valid_sudoku/</loc>
+    
+    <lastmod>2021-08-27</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://don.easiestsoft.com/algorithm/18_4Sum/</loc>
+    
+    <lastmod>2021-08-27</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://don.easiestsoft.com/hexo/hexo-blog-customization/</loc>
     
     <lastmod>2021-08-27</lastmod>
     
@@ -31,34 +59,6 @@
   
   <url>
     <loc>http://don.easiestsoft.com/ubuntu/ubuntu-command-line-usage/</loc>
-    
-    <lastmod>2021-08-25</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://don.easiestsoft.com/algorithm/36_valid_sudoku/</loc>
-    
-    <lastmod>2021-08-25</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://don.easiestsoft.com/algorithm/406_queue_reconstruction/</loc>
-    
-    <lastmod>2021-08-25</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://don.easiestsoft.com/algorithm/18_4Sum/</loc>
-    
-    <lastmod>2021-08-25</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://don.easiestsoft.com/math/prob-gen-func/</loc>
     
     <lastmod>2021-08-25</lastmod>
     
@@ -102,13 +102,6 @@
 
   
   <url>
-    <loc>http://don.easiestsoft.com/tags/Greedy/</loc>
-    <lastmod>2021-08-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://don.easiestsoft.com/tags/Hash-Table/</loc>
     <lastmod>2021-08-27</lastmod>
     <changefreq>daily</changefreq>
@@ -116,7 +109,21 @@
   </url>
   
   <url>
+    <loc>http://don.easiestsoft.com/tags/Greedy/</loc>
+    <lastmod>2021-08-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://don.easiestsoft.com/tags/Hexo/</loc>
+    <lastmod>2021-08-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://don.easiestsoft.com/tags/Latex/</loc>
     <lastmod>2021-08-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -137,13 +144,6 @@
   </url>
   
   <url>
-    <loc>http://don.easiestsoft.com/tags/Latex/</loc>
-    <lastmod>2021-08-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://don.easiestsoft.com/tags/Probability-and-Statistics/</loc>
     <lastmod>2021-08-27</lastmod>
     <changefreq>daily</changefreq>
@@ -153,13 +153,6 @@
 
   
   <url>
-    <loc>http://don.easiestsoft.com/categories/Algorithm/</loc>
-    <lastmod>2021-08-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://don.easiestsoft.com/categories/Data-Structure/</loc>
     <lastmod>2021-08-27</lastmod>
     <changefreq>daily</changefreq>
@@ -167,21 +160,14 @@
   </url>
   
   <url>
+    <loc>http://don.easiestsoft.com/categories/Algorithm/</loc>
+    <lastmod>2021-08-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://don.easiestsoft.com/categories/Hexo/</loc>
-    <lastmod>2021-08-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://don.easiestsoft.com/categories/Algorithm/Greedy/</loc>
-    <lastmod>2021-08-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://don.easiestsoft.com/categories/LaTeX/</loc>
     <lastmod>2021-08-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -196,6 +182,20 @@
   
   <url>
     <loc>http://don.easiestsoft.com/categories/Ubuntu/</loc>
+    <lastmod>2021-08-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://don.easiestsoft.com/categories/LaTeX/</loc>
+    <lastmod>2021-08-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://don.easiestsoft.com/categories/Algorithm/Greedy/</loc>
     <lastmod>2021-08-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
