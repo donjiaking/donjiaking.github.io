@@ -109,21 +109,14 @@
   </url>
   
   <url>
-    <loc>http://don.easiestsoft.com/tags/Hexo/</loc>
-    <lastmod>2021-09-13</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://don.easiestsoft.com/tags/Latex/</loc>
-    <lastmod>2021-09-13</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://don.easiestsoft.com/tags/Greedy/</loc>
+    <lastmod>2021-09-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://don.easiestsoft.com/tags/Hexo/</loc>
     <lastmod>2021-09-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -138,6 +131,13 @@
   
   <url>
     <loc>http://don.easiestsoft.com/tags/LaTeX/</loc>
+    <lastmod>2021-09-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://don.easiestsoft.com/tags/Latex/</loc>
     <lastmod>2021-09-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -160,6 +160,13 @@
   </url>
   
   <url>
+    <loc>http://don.easiestsoft.com/categories/Algorithm/</loc>
+    <lastmod>2021-09-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://don.easiestsoft.com/categories/Hexo/</loc>
     <lastmod>2021-09-13</lastmod>
     <changefreq>daily</changefreq>
@@ -174,7 +181,7 @@
   </url>
   
   <url>
-    <loc>http://don.easiestsoft.com/categories/Algorithm/</loc>
+    <loc>http://don.easiestsoft.com/categories/LaTeX/</loc>
     <lastmod>2021-09-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -182,13 +189,6 @@
   
   <url>
     <loc>http://don.easiestsoft.com/categories/Algorithm/Greedy/</loc>
-    <lastmod>2021-09-13</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://don.easiestsoft.com/categories/LaTeX/</loc>
     <lastmod>2021-09-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
