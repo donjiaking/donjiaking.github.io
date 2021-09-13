@@ -35,7 +35,7 @@
 <meta property="og:image" content="http://don.easiestsoft.com/hexo/hexo-diary/2.png">
 <meta property="og:image" content="http://don.easiestsoft.com/hexo/hexo-diary/3.png">
 <meta property="article:published_time" content="2021-08-25T13:29:52.000Z">
-<meta property="article:modified_time" content="2021-09-13T03:33:58.692Z">
+<meta property="article:modified_time" content="2021-09-13T04:24:15.937Z">
 <meta property="article:author" content="J">
 <meta property="article:tag" content="Hexo">
 <meta name="twitter:card" content="summary">
@@ -311,7 +311,7 @@
 <li><p>Create <code>./scaffolds/diary.md</code>, which will be your diary template:  (you can also make it nicer)</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: &#123;&#123;title&#125;&#125;</span><br><span class="line">date: &#123;&#123;data&#125;&#125;</span><br><span class="line"><span class="section">description: </span></span><br><span class="line"><span class="section">---</span></span><br></pre></td></tr></table></figure>
 </li>
-<li><p>Create your diary using the template you created: <code>hexo new diary --path &quot;diary/2021/0825&quot; &quot;Diary 08-25&quot;</code></p>
+<li><p>Create your diary using the template you created: <code>hexo new diary --path &quot;diaries/2021/0825__&quot; &quot;08/25 diary&quot;</code></p>
 </li>
 <li><p>Modify <code>./source/diary/index.md</code> to link the new file you created:</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: My Diary</span><br><span class="line">comments: false</span><br><span class="line">password: psw</span><br><span class="line"><span class="section">message: Oops, you need a password</span></span><br><span class="line"><span class="section">---</span></span><br><span class="line"></span><br><span class="line"><span class="bullet">-</span> 2021</span><br><span class="line"><span class="bullet">  -</span> [<span class="string">08-25</span>](<span class="link">/diary/2021/08-25/</span>)</span><br></pre></td></tr></table></figure>
